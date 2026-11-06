@@ -1,0 +1,36 @@
+# 概念装置 · 工具带（docs/10-契约/mini-codex.md §一 #7；L4 三件之一）。
+# 墙上四把工具（读/写/跑/搜），被选中那把发光：计划逐步执行时哪步亮哪把。
+# 世界状态注册见 game/scripts/levels/l4/l4_flow.gd setup_world()——
+# assetId/defaults/端口形状照抄运行时注册，防漂移。
+# blockTypes 理由：流程机械——工具挂具，承载「有哪些工具」与当前选中项，
+# 不承载流程拓扑或表格，归家族一 code_block 即可。
+assetId: conc_tool_belt
+kind: parametric
+blockTypes: [code_block]
+conceptIds: [c8.1]
+footprint: [3, 1]
+anchor: bottom-center
+ports:
+  - id: tool_in
+    kind: ANALOG
+    dir: in
+defaults:
+  selected_tool: ""
+scene: game/scenes/levels/l4/components/tool_belt.tscn
+shots:
+  - shot: iso
+    action: idle
+    duration: 3.0
+    output: assets/conc_tool_belt/iso_idle/
+  - shot: iso
+    action: run
+    duration: 5.0
+    output: assets/conc_tool_belt/iso_run/
+  - shot: front
+    action: idle
+    duration: 2.0
+    output: assets/conc_tool_belt/front_idle/
+  - shot: close
+    action: run
+    duration: 4.0
+    output: assets/conc_tool_belt/close_run/

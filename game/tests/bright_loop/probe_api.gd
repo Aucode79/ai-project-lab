@@ -1,0 +1,17 @@
+extends SceneTree
+func _initialize() -> void:
+	var builder = load("res://tests/bright_loop/bright_specimens.gd")
+	print("parsed=", builder != null)
+	print("is script=", builder is GDScript)
+	print("has MODULES const=", "MODULES" in builder)
+	print("has _static_init method=", builder.has_method("_static_init"))
+	var inst = builder.new()
+	print("instance has MODULES=", "MODULES" in inst)
+	print("instance MODULES.size()=", inst.MODULES.size() if "MODULES" in inst else -1)
+	print("has build_machine=", inst.has_method("build_machine"))
+	print("has build_label=", inst.has_method("build_label"))
+	print("has build_arrows=", inst.has_method("build_arrows"))
+	print("has label_lines=", inst.has_method("label_lines"))
+	print("has footprint=", inst.has_method("footprint"))
+	print("has scene_has_label3d=", inst.has_method("scene_has_label3d"))
+	quit(0)

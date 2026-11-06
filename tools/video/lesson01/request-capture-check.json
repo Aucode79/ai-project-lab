@@ -1,0 +1,31 @@
+{
+  "verified": true,
+  "requests": [
+    {
+      "contextFile": "requests/r1790013720-001-2327d7a8dae54b218237c6978a71a681.json",
+      "contextMessages": 2,
+      "costMs": 2242,
+      "model": "deepseek-flash",
+      "response": {
+        "args": {},
+        "tool": "observe"
+      },
+      "responseText": "{\"tool\":\"observe\",\"args\":{}}",
+      "tokens": 282
+    },
+    {
+      "contextFile": "requests/r1790013720-001-362c4ff63af5493b82a7f912ada7dc7b.json",
+      "contextMessages": 4,
+      "costMs": 1229,
+      "model": "deepseek-flash",
+      "response": {
+        "args": {
+          "text": "货物已在 D，运输完成。"
+        },
+        "tool": "finish"
+      },
+      "responseText": "{\"tool\":\"finish\",\"args\":{\"text\":\"货物已在 D，运输完成。\"}}",
+      "tokens": 551
+    }
+  ]
+}

@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/asset_lib/mach_counter.gd" id="1_mach_counter"]
+
+[node name="MachCounter" type="Node3D"]
+script = ExtResource("1_mach_counter")

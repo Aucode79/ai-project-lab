@@ -1,0 +1,34 @@
+# 基础件 · 容器（敞口接料、侧面排料）
+assetId: base_container
+kind: parametric
+blockTypes: [code_block]
+conceptIds: []
+footprint: [2, 2]
+anchor: bottom-center
+ports:
+  - id: mouth
+    kind: BOOL
+    dir: in
+  - id: drain
+    kind: BOOL
+    dir: out
+defaults:
+  capacity: 8
+  wall_height: 0.5
+shots:
+  - shot: iso
+    action: idle
+    duration: 3.0
+    output: assets/base_container/iso_idle/
+  - shot: iso
+    action: run
+    duration: 4.0
+    output: assets/base_container/iso_run/
+  - shot: top
+    action: run
+    duration: 3.0
+    output: assets/base_container/top_run/
+  - shot: front
+    action: idle
+    duration: 2.0
+    output: assets/base_container/front_idle/

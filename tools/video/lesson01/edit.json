@@ -1,0 +1,3934 @@
+{
+  "fps": 25,
+  "duration": 276.4,
+  "frames": 6910,
+  "runId": "r1790010445-001",
+  "initial": {
+    "blocked_edges": [],
+    "carrier": "A",
+    "carrying": "",
+    "crates": {
+      "蓝方块": "E",
+      "货物": "A",
+      "黄方块": "F"
+    },
+    "destination": "D",
+    "edges": [
+      [
+        "A",
+        "B"
+      ],
+      [
+        "B",
+        "C"
+      ],
+      [
+        "C",
+        "D"
+      ],
+      [
+        "B",
+        "E"
+      ],
+      [
+        "E",
+        "F"
+      ],
+      [
+        "F",
+        "C"
+      ]
+    ],
+    "nodes": {
+      "A": [
+        -4,
+        0
+      ],
+      "B": [
+        -2,
+        0
+      ],
+      "C": [
+        2,
+        0
+      ],
+      "D": [
+        4,
+        0
+      ],
+      "E": [
+        -2,
+        3
+      ],
+      "F": [
+        2,
+        3
+      ]
+    }
+  },
+  "shots": [
+    {
+      "id": "s01_teaser",
+      "text": "先看它从头到尾干一遍活。接到任务：把货送到 D。它先看一眼地图，搬上货出发。走到半路——注意，天上掉下来一块挡板，路断了。它看到结果，重新选路绕过去，把货送进终点。这趟活，干完了。",
+      "start": 0.0,
+      "end": 25.0,
+      "duration": 25.0,
+      "voice_duration": 22.481458333333332,
+      "title": "全景 · 完整跑一遍",
+      "index": 0
+    },
+    {
+      "id": "s02_agent",
+      "text": "这台机器叫智能体——像一位雇来的机器员工：能接活、自己想办法、把活干完。",
+      "start": 25.0,
+      "end": 36.519999999999996,
+      "duration": 11.52,
+      "voice_duration": 8.9825,
+      "title": "智能体（agent）",
+      "index": 1
+    },
+    {
+      "id": "s03_dock",
+      "text": "今天给它派个运输任务：把货送到终点 D。肚子里有什么，看完活儿再拆——先看它干活。",
+      "start": 36.519999999999996,
+      "end": 49.279999999999994,
+      "duration": 12.76,
+      "voice_duration": 10.23225,
+      "title": "派任务",
+      "index": 2
+    },
+    {
+      "id": "task",
+      "text": "任务给出了目标。具体怎么干，它自己定。",
+      "start": 49.279999999999994,
+      "end": 56.559999999999995,
+      "duration": 7.28,
+      "voice_duration": 4.7486875,
+      "title": "任务与目标",
+      "index": 3,
+      "step_range": [
+        0,
+        0
+      ]
+    },
+    {
+      "id": "read",
+      "text": "它怎么看路？问一句『查路』，答案回到眼前。",
+      "start": 56.559999999999995,
+      "end": 64.32,
+      "duration": 7.76,
+      "voice_duration": 5.227354166666666,
+      "title": "问路",
+      "index": 4,
+      "step_range": [
+        1,
+        3
+      ]
+    },
+    {
+      "id": "pickup",
+      "text": "出主意的不露面，动手的看得见。",
+      "start": 64.32,
+      "end": 70.55999999999999,
+      "duration": 6.24,
+      "voice_duration": 3.736375,
+      "title": "开工",
+      "index": 5,
+      "step_range": [
+        4,
+        6
+      ]
+    },
+    {
+      "id": "closure",
+      "text": "运输车到了 B。就在这时，前面的路被封住了——是我们封的，不是它干的。它还不知道。下一圈，会发生什么？",
+      "start": 70.55999999999999,
+      "end": 88.79999999999998,
+      "duration": 18.24,
+      "voice_duration": 12.734770833333334,
+      "title": "封路！",
+      "index": 6,
+      "step_range": [
+        7,
+        9
+      ]
+    },
+    {
+      "id": "feedback",
+      "text": "干完一步，先看结果——结果说：走不通。",
+      "start": 88.79999999999998,
+      "end": 96.03999999999998,
+      "duration": 7.24,
+      "voice_duration": 4.7264375,
+      "title": "坏消息到了",
+      "index": 7,
+      "step_range": [
+        10,
+        10
+      ]
+    },
+    {
+      "id": "reroute",
+      "text": "它重新想了想，选了另一条路：一段一段挪，继续送。",
+      "start": 96.03999999999998,
+      "end": 109.12,
+      "duration": 13.08,
+      "voice_duration": 5.981875,
+      "title": "改道",
+      "index": 8,
+      "step_range": [
+        11,
+        19
+      ]
+    },
+    {
+      "id": "boundary",
+      "text": "一次只挪一段——往哪儿挪，是它定的。",
+      "start": 109.11999999999998,
+      "end": 117.35999999999997,
+      "duration": 8.24,
+      "voice_duration": 4.483708333333333,
+      "title": "一次一段",
+      "index": 9,
+      "step_range": [
+        20,
+        22
+      ]
+    },
+    {
+      "id": "delivery",
+      "text": "货落了地。它说『送到了』——这句话不算数，验过才算。",
+      "start": 117.35999999999997,
+      "end": 126.35999999999997,
+      "duration": 9.0,
+      "voice_duration": 6.48525,
+      "title": "交活",
+      "index": 10,
+      "step_range": [
+        23,
+        25
+      ]
+    },
+    {
+      "id": "evidence",
+      "text": "最后查一眼：任务，完成。",
+      "start": 126.35999999999997,
+      "end": 131.87999999999997,
+      "duration": 5.52,
+      "voice_duration": 2.9820208333333333,
+      "title": "验货",
+      "index": 11,
+      "step_range": [
+        26,
+        27
+      ]
+    },
+    {
+      "id": "second",
+      "text": "再派个新活：蓝方块、黄方块，也归拢到终点。",
+      "start": 131.87999999999997,
+      "end": 140.16,
+      "duration": 8.28,
+      "voice_duration": 5.397208333333333,
+      "title": "新任务",
+      "index": 12,
+      "step_range": [
+        28,
+        31
+      ]
+    },
+    {
+      "id": "collect",
+      "text": "同一台机器，还是那几样工具——它又开工了。",
+      "start": 140.15999999999997,
+      "end": 157.52,
+      "duration": 17.36,
+      "voice_duration": 5.2242291666666665,
+      "title": "又开工了",
+      "index": 13,
+      "step_range": [
+        32,
+        45
+      ]
+    },
+    {
+      "id": "s12_replay",
+      "text": "封路了，它怎么知道、怎么改的道？回放一遍，给每个环节安上名字。",
+      "start": 157.51999999999998,
+      "end": 167.76,
+      "duration": 10.24,
+      "voice_duration": 7.720416666666667,
+      "title": "回放 · 安名字",
+      "index": 14
+    },
+    {
+      "id": "s13_context",
+      "text": "先看开头：你打的字进了它的便签——任务、说明、干过的记录，合起来，叫上下文。",
+      "start": 167.76,
+      "end": 181.0,
+      "duration": 13.24,
+      "voice_duration": 9.479791666666667,
+      "title": "上下文 context",
+      "index": 15
+    },
+    {
+      "id": "s14_model",
+      "text": "主意从哪来？它肚子里那位出主意的——大语言模型。第零课接话的模型，就是它。它看完便签，喊：查路！",
+      "start": 181.0,
+      "end": 196.76,
+      "duration": 15.76,
+      "voice_duration": 11.976979166666666,
+      "title": "大语言模型 LLM",
+      "index": 16
+    },
+    {
+      "id": "s15_tools",
+      "text": "查路、搬货，是它能用的工具——现成的程序功能，叫了就执行。这正是第零课说的『调用』。",
+      "start": 196.76,
+      "end": 209.76,
+      "duration": 13.0,
+      "voice_duration": 10.491166666666667,
+      "title": "工具 tool",
+      "index": 17
+    },
+    {
+      "id": "s16_obs",
+      "text": "工具还回来的结果，它会亲眼看——这一眼，叫观测。封路的消息，就是这么进来的。",
+      "start": 209.76,
+      "end": 221.76,
+      "duration": 12.0,
+      "voice_duration": 9.488229166666667,
+      "title": "观测 observation",
+      "index": 18
+    },
+    {
+      "id": "s17_loop",
+      "text": "便签进、主意出、工具干、观测回、便签再进——转圈的这套流程，叫控制循环。转圈的这一整台机器，就叫智能体。",
+      "start": 221.76,
+      "end": 237.28,
+      "duration": 15.52,
+      "voice_duration": 12.981125,
+      "title": "控制循环 control loop",
+      "index": 19
+    },
+    {
+      "id": "s18_family",
+      "text": "六个名字一台机：少了哪一环，它都转不起来。",
+      "start": 237.28,
+      "end": 245.04,
+      "duration": 7.76,
+      "voice_duration": 5.233604166666667,
+      "title": "六个名字一台机",
+      "index": 20
+    },
+    {
+      "id": "s19_multi",
+      "text": "同一台机器，能接不一样的活——能干什么，看它手里有什么工具。工具这一环，第 4 课专门拆开讲。",
+      "start": 245.04,
+      "end": 259.28,
+      "duration": 14.24,
+      "voice_duration": 11.735166666666666,
+      "title": "同一台机器",
+      "index": 21
+    },
+    {
+      "id": "s20_yourturn",
+      "text": "轮到你了：给它派一个运输目标，盯着看——它调了什么工具、观测回来了什么。",
+      "start": 259.28,
+      "end": 270.79999999999995,
+      "duration": 11.52,
+      "voice_duration": 8.997041666666666,
+      "title": "轮到你了",
+      "index": 22
+    },
+    {
+      "id": "s21_next",
+      "text": "下一课，掀盖子，点名。",
+      "start": 270.79999999999995,
+      "end": 276.4,
+      "duration": 5.6,
+      "voice_duration": 3.070104166666667,
+      "title": "下一课",
+      "index": 23
+    }
+  ],
+  "events": [
+    {
+      "time": 49.68,
+      "step": 0,
+      "tool": "dialogue.submit",
+      "args": {
+        "text": "把货物从 A 运到 D。"
+      },
+      "state": {
+        "blocked_edges": [],
+        "carrier": "A",
+        "carrying": "",
+        "crates": {
+          "蓝方块": "E",
+          "货物": "A",
+          "黄方块": "F"
+        },
+        "destination": "D",
+        "edges": [
+          [
+            "A",
+            "B"
+          ],
+          [
+            "B",
+            "C"
+          ],
+          [
+            "C",
+            "D"
+          ],
+          [
+            "B",
+            "E"
+          ],
+          [
+            "E",
+            "F"
+          ],
+          [
+            "F",
+            "C"
+          ]
+        ],
+        "nodes": {
+          "A": [
+            -4,
+            0
+          ],
+          "B": [
+            -2,
+            0
+          ],
+          "C": [
+            2,
+            0
+          ],
+          "D": [
+            4,
+            0
+          ],
+          "E": [
+            -2,
+            3
+          ],
+          "F": [
+            2,
+            3
+          ]
+        }
+      }
+    },
+    {
+      "time": 57.835,
+      "step": 1,
+      "tool": "model.generate",
+      "args": {
+        "contextMessages": 2.0,
+        "costMs": 29820.0,
+        "model": "deepseek-flash",
+        "response": {
+          "args": {},
+          "tool": "observe"
+        },
+        "tokens": 255.0
+      },
+      "state": {
+        "blocked_edges": [],
+        "carrier": "A",
+        "carrying": "",
+        "crates": {
+          "蓝方块": "E",
+          "货物": "A",
+          "黄方块": "F"
+        },
+        "destination": "D",
+        "edges": [
+          [
+            "A",
+            "B"
+          ],
+          [
+            "B",
+            "C"
+          ],
+          [
+            "C",
+            "D"
+          ],
+          [
+            "B",
+            "E"
+          ],
+          [
+            "E",
+            "F"
+          ],
+          [
+            "F",
+            "C"
+          ]
+        ],
+        "nodes": {
+          "A": [
+            -4,
+            0
+          ],
+          "B": [
+            -2,
+            0
+          ],
+          "C": [
+            2,
+            0
+          ],
+          "D": [
+            4,
+            0
+          ],
+          "E": [
+            -2,
+            3
+          ],
+          "F": [
+            2,
+            3
+          ]
+        }
+      }
+    },
+    {
+      "time": 58.711,
+      "step": 2,
+      "tool": "observe",
+      "args": {},
+      "state": {
+        "blocked_edges": [],
+        "carrier": "A",
+        "carrying": "",
+        "crates": {
+          "蓝方块": "E",
+          "货物": "A",
+          "黄方块": "F"
+        },
+        "destination": "D",
+        "edges": [
+          [
+            "A",
+            "B"
+          ],
+          [
+            "B",
+            "C"
+          ],
+          [
+            "C",
+            "D"
+          ],
+          [
+            "B",
+            "E"
+          ],
+          [
+            "E",
+            "F"
+          ],
+          [
+            "F",
+            "C"
+          ]
+        ],
+        "nodes": {
+          "A": [
+            -4,
+            0
+          ],
+          "B": [
+            -2,
+            0
+          ],
+          "C": [
+            2,
+            0
+          ],
+          "D": [
+            4,
+            0
+          ],
+          "E": [
+            -2,
+            3
+          ],
+          "F": [
+            2,
+            3
+          ]
+        }
+      }
+    },
+    {
+      "time": 59.586,
+      "step": 3,
+      "tool": "tool.observation",
+      "args": {
+        "callStep": 2
+      },
+      "state": {
+        "blocked_edges": [],
+        "carrier": "A",
+        "carrying": "",
+        "crates": {
+          "蓝方块": "E",
+          "货物": "A",
+          "黄方块": "F"
+        },
+        "destination": "D",
+        "edges": [
+          [
+            "A",
+            "B"
+          ],
+          [
+            "B",
+            "C"
+          ],
+          [
+            "C",
+            "D"
+          ],
+          [
+            "B",
+            "E"
+          ],
+          [
+            "E",
+            "F"
+          ],
+          [
+            "F",
+            "C"
+          ]
+        ],
+        "nodes": {
+          "A": [
+            -4,
+            0
+          ],
+          "B": [
+            -2,
+            0
+          ],
+          "C": [
+            2,
+            0
+          ],
+          "D": [
+            4,
+            0
+          ],
+          "E": [
+            -2,
+            3
+          ],
+          "F": [
+            2,
+            3
+          ]
+        }
+      }
+    },
+    {
+      "time": 64.72,
+      "step": 4,
+      "tool": "model.generate",
+      "args": {
+        "contextMessages": 4.0,
+        "costMs": 547.0,
+        "model": "deepseek-flash",
+        "response": {
+          "args": {
+            "crate": "货物"
+          },
+          "tool": "pickup"
+        },
+        "tokens": 466.0
+      },
+      "state": {
+        "blocked_edges": [],
+        "carrier": "A",
+        "carrying": "",
+        "crates": {
+          "蓝方块": "E",
+          "货物": "A",
+          "黄方块": "F"
+        },
+        "destination": "D",
+        "edges": [
+          [
+            "A",
+            "B"
+          ],
+          [
+            "B",
+            "C"
+          ],
+          [
+            "C",
+            "D"
+          ],
+          [
+            "B",
+            "E"
+          ],
+          [
+            "E",
+            "F"
+          ],
+          [
+            "F",
+            "C"
+          ]
+        ],
+        "nodes": {
+          "A": [
+            -4,
+            0
+          ],
+          "B": [
+            -2,
+            0
+          ],
+          "C": [
+            2,
+            0
+          ],
+          "D": [
+            4,
+            0
+          ],
+          "E": [
+            -2,
+            3
+          ],
+          "F": [
+            2,
+            3
+          ]
+        }
+      }
+    },
+    {
+      "time": 65.943,
+      "step": 5,
+      "tool": "pickup",
+      "args": {
+        "crate": "货物"
+      },
+      "state": {
+        "blocked_edges": [],
+        "carrier": "A",
+        "carrying": "货物",
+        "crates": {
+          "蓝方块": "E",
+          "货物": "A",
+          "黄方块": "F"
+        },
+        "destination": "D",
+        "edges": [
+          [
+            "A",
+            "B"
+          ],
+          [
+            "B",
+            "C"
+          ],
+          [
+            "C",
+            "D"
+          ],
+          [
+            "B",
+            "E"
+          ],
+          [
+            "E",
+            "F"
+          ],
+          [
+            "F",
+            "C"
+          ]
+        ],
+        "nodes": {
+          "A": [
+            -4,
+            0
+          ],
+          "B": [
+            -2,
+            0
+          ],
+          "C": [
+            2,
+            0
+          ],
+          "D": [
+            4,
+            0
+          ],
+          "E": [
+            -2,
+            3
+          ],
+          "F": [
+            2,
+            3
+          ]
+        }
+      }
+    },
+    {
+      "time": 67.002,
+      "step": 6,
+      "tool": "tool.observation",
+      "args": {
+        "callStep": 5
+      },
+      "state": {
+        "blocked_edges": [],
+        "carrier": "A",
+        "carrying": "货物",
+        "crates": {
+          "蓝方块": "E",
+          "货物": "A",
+          "黄方块": "F"
+        },
+        "destination": "D",
+        "edges": [
+          [
+            "A",
+            "B"
+          ],
+          [
+            "B",
+            "C"
+          ],
+          [
+            "C",
+            "D"
+          ],
+          [
+            "B",
+            "E"
+          ],
+          [
+            "E",
+            "F"
+          ],
+          [
+            "F",
+            "C"
+          ]
+        ],
+        "nodes": {
+          "A": [
+            -4,
+            0
+          ],
+          "B": [
+            -2,
+            0
+          ],
+          "C": [
+            2,
+            0
+          ],
+          "D": [
+            4,
+            0
+          ],
+          "E": [
+            -2,
+            3
+          ],
+          "F": [
+            2,
+            3
+          ]
+        }
+      }
+    },
+    {
+      "time": 71.575,
+      "step": 7,
+      "tool": "model.generate",
+      "args": {
+        "contextMessages": 6.0,
+        "costMs": 465.0,
+        "model": "deepseek-flash",
+        "response": {
+          "args": {
+            "node": "B"
+          },
+          "tool": "move"
+        },
+        "tokens": 619.0
+      },
+      "state": {
+        "blocked_edges": [],
+        "carrier": "A",
+        "carrying": "货物",
+        "crates": {
+          "蓝方块": "E",
+          "货物": "A",
+          "黄方块": "F"
+        },
+        "destination": "D",
+        "edges": [
+          [
+            "A",
+            "B"
+          ],
+          [
+            "B",
+            "C"
+          ],
+          [
+            "C",
+            "D"
+          ],
+          [
+            "B",
+            "E"
+          ],
+          [
+            "E",
+            "F"
+          ],
+          [
+            "F",
+            "C"
+          ]
+        ],
+        "nodes": {
+          "A": [
+            -4,
+            0
+          ],
+          "B": [
+            -2,
+            0
+          ],
+          "C": [
+            2,
+            0
+          ],
+          "D": [
+            4,
+            0
+          ],
+          "E": [
+            -2,
+            3
+          ],
+          "F": [
+            2,
+            3
+          ]
+        }
+      }
+    },
+    {
+      "time": 72.375,
+      "step": 8,
+      "tool": "move",
+      "args": {
+        "node": "B"
+      },
+      "state": {
+        "blocked_edges": [],
+        "carrier": "B",
+        "carrying": "货物",
+        "crates": {
+          "蓝方块": "E",
+          "货物": "B",
+          "黄方块": "F"
+        },
+        "destination": "D",
+        "edges": [
+          [
+            "A",
+            "B"
+          ],
+          [
+            "B",
+            "C"
+          ],
+          [
+            "C",
+            "D"
+          ],
+          [
+            "B",
+            "E"
+          ],
+          [
+            "E",
+            "F"
+          ],
+          [
+            "F",
+            "C"
+          ]
+        ],
+        "nodes": {
+          "A": [
+            -4,
+            0
+          ],
+          "B": [
+            -2,
+            0
+          ],
+          "C": [
+            2,
+            0
+          ],
+          "D": [
+            4,
+            0
+          ],
+          "E": [
+            -2,
+            3
+          ],
+          "F": [
+            2,
+            3
+          ]
+        }
+      }
+    },
+    {
+      "time": 75.227,
+      "step": 9,
+      "tool": "environment.close_road",
+      "args": {
+        "edge": [
+          "B",
+          "C"
+        ]
+      },
+      "state": {
+        "blocked_edges": [
+          [
+            "B",
+            "C"
+          ]
+        ],
+        "carrier": "B",
+        "carrying": "货物",
+        "crates": {
+          "蓝方块": "E",
+          "货物": "B",
+          "黄方块": "F"
+        },
+        "destination": "D",
+        "edges": [
+          [
+            "A",
+            "B"
+          ],
+          [
+            "B",
+            "C"
+          ],
+          [
+            "C",
+            "D"
+          ],
+          [
+            "B",
+            "E"
+          ],
+          [
+            "E",
+            "F"
+          ],
+          [
+            "F",
+            "C"
+          ]
+        ],
+        "nodes": {
+          "A": [
+            -4,
+            0
+          ],
+          "B": [
+            -2,
+            0
+          ],
+          "C": [
+            2,
+            0
+          ],
+          "D": [
+            4,
+            0
+          ],
+          "E": [
+            -2,
+            3
+          ],
+          "F": [
+            2,
+            3
+          ]
+        }
+      }
+    },
+    {
+      "time": 90.377,
+      "step": 10,
+      "tool": "tool.observation",
+      "args": {
+        "callStep": 8
+      },
+      "state": {
+        "blocked_edges": [
+          [
+            "B",
+            "C"
+          ]
+        ],
+        "carrier": "B",
+        "carrying": "货物",
+        "crates": {
+          "蓝方块": "E",
+          "货物": "B",
+          "黄方块": "F"
+        },
+        "destination": "D",
+        "edges": [
+          [
+            "A",
+            "B"
+          ],
+          [
+            "B",
+            "C"
+          ],
+          [
+            "C",
+            "D"
+          ],
+          [
+            "B",
+            "E"
+          ],
+          [
+            "E",
+            "F"
+          ],
+          [
+            "F",
+            "C"
+          ]
+        ],
+        "nodes": {
+          "A": [
+            -4,
+            0
+          ],
+          "B": [
+            -2,
+            0
+          ],
+          "C": [
+            2,
+            0
+          ],
+          "D": [
+            4,
+            0
+          ],
+          "E": [
+            -2,
+            3
+          ],
+          "F": [
+            2,
+            3
+          ]
+        }
+      }
+    },
+    {
+      "time": 96.505,
+      "step": 11,
+      "tool": "model.generate",
+      "args": {
+        "contextMessages": 8.0,
+        "costMs": 390.0,
+        "model": "deepseek-flash",
+        "response": {
+          "args": {
+            "node": "E"
+          },
+          "tool": "move"
+        },
+        "tokens": 815.0
+      },
+      "state": {
+        "blocked_edges": [
+          [
+            "B",
+            "C"
+          ]
+        ],
+        "carrier": "B",
+        "carrying": "货物",
+        "crates": {
+          "蓝方块": "E",
+          "货物": "B",
+          "黄方块": "F"
+        },
+        "destination": "D",
+        "edges": [
+          [
+            "A",
+            "B"
+          ],
+          [
+            "B",
+            "C"
+          ],
+          [
+            "C",
+            "D"
+          ],
+          [
+            "B",
+            "E"
+          ],
+          [
+            "E",
+            "F"
+          ],
+          [
+            "F",
+            "C"
+          ]
+        ],
+        "nodes": {
+          "A": [
+            -4,
+            0
+          ],
+          "B": [
+            -2,
+            0
+          ],
+          "C": [
+            2,
+            0
+          ],
+          "D": [
+            4,
+            0
+          ],
+          "E": [
+            -2,
+            3
+          ],
+          "F": [
+            2,
+            3
+          ]
+        }
+      }
+    },
+    {
+      "time": 97.305,
+      "step": 12,
+      "tool": "move",
+      "args": {
+        "node": "E"
+      },
+      "state": {
+        "blocked_edges": [
+          [
+            "B",
+            "C"
+          ]
+        ],
+        "carrier": "E",
+        "carrying": "货物",
+        "crates": {
+          "蓝方块": "E",
+          "货物": "E",
+          "黄方块": "F"
+        },
+        "destination": "D",
+        "edges": [
+          [
+            "A",
+            "B"
+          ],
+          [
+            "B",
+            "C"
+          ],
+          [
+            "C",
+            "D"
+          ],
+          [
+            "B",
+            "E"
+          ],
+          [
+            "E",
+            "F"
+          ],
+          [
+            "F",
+            "C"
+          ]
+        ],
+        "nodes": {
+          "A": [
+            -4,
+            0
+          ],
+          "B": [
+            -2,
+            0
+          ],
+          "C": [
+            2,
+            0
+          ],
+          "D": [
+            4,
+            0
+          ],
+          "E": [
+            -2,
+            3
+          ],
+          "F": [
+            2,
+            3
+          ]
+        }
+      }
+    },
+    {
+      "time": 99.305,
+      "step": 13,
+      "tool": "tool.observation",
+      "args": {
+        "callStep": 12
+      },
+      "state": {
+        "blocked_edges": [
+          [
+            "B",
+            "C"
+          ]
+        ],
+        "carrier": "E",
+        "carrying": "货物",
+        "crates": {
+          "蓝方块": "E",
+          "货物": "E",
+          "黄方块": "F"
+        },
+        "destination": "D",
+        "edges": [
+          [
+            "A",
+            "B"
+          ],
+          [
+            "B",
+            "C"
+          ],
+          [
+            "C",
+            "D"
+          ],
+          [
+            "B",
+            "E"
+          ],
+          [
+            "E",
+            "F"
+          ],
+          [
+            "F",
+            "C"
+          ]
+        ],
+        "nodes": {
+          "A": [
+            -4,
+            0
+          ],
+          "B": [
+            -2,
+            0
+          ],
+          "C": [
+            2,
+            0
+          ],
+          "D": [
+            4,
+            0
+          ],
+          "E": [
+            -2,
+            3
+          ],
+          "F": [
+            2,
+            3
+          ]
+        }
+      }
+    },
+    {
+      "time": 101.105,
+      "step": 14,
+      "tool": "model.generate",
+      "args": {
+        "contextMessages": 10.0,
+        "costMs": 600.0,
+        "model": "deepseek-flash",
+        "response": {
+          "args": {
+            "node": "F"
+          },
+          "tool": "move"
+        },
+        "tokens": 1000.0
+      },
+      "state": {
+        "blocked_edges": [
+          [
+            "B",
+            "C"
+          ]
+        ],
+        "carrier": "E",
+        "carrying": "货物",
+        "crates": {
+          "蓝方块": "E",
+          "货物": "E",
+          "黄方块": "F"
+        },
+        "destination": "D",
+        "edges": [
+          [
+            "A",
+            "B"
+          ],
+          [
+            "B",
+            "C"
+          ],
+          [
+            "C",
+            "D"
+          ],
+          [
+            "B",
+            "E"
+          ],
+          [
+            "E",
+            "F"
+          ],
+          [
+            "F",
+            "C"
+          ]
+        ],
+        "nodes": {
+          "A": [
+            -4,
+            0
+          ],
+          "B": [
+            -2,
+            0
+          ],
+          "C": [
+            2,
+            0
+          ],
+          "D": [
+            4,
+            0
+          ],
+          "E": [
+            -2,
+            3
+          ],
+          "F": [
+            2,
+            3
+          ]
+        }
+      }
+    },
+    {
+      "time": 101.905,
+      "step": 15,
+      "tool": "move",
+      "args": {
+        "node": "F"
+      },
+      "state": {
+        "blocked_edges": [
+          [
+            "B",
+            "C"
+          ]
+        ],
+        "carrier": "F",
+        "carrying": "货物",
+        "crates": {
+          "蓝方块": "E",
+          "货物": "F",
+          "黄方块": "F"
+        },
+        "destination": "D",
+        "edges": [
+          [
+            "A",
+            "B"
+          ],
+          [
+            "B",
+            "C"
+          ],
+          [
+            "C",
+            "D"
+          ],
+          [
+            "B",
+            "E"
+          ],
+          [
+            "E",
+            "F"
+          ],
+          [
+            "F",
+            "C"
+          ]
+        ],
+        "nodes": {
+          "A": [
+            -4,
+            0
+          ],
+          "B": [
+            -2,
+            0
+          ],
+          "C": [
+            2,
+            0
+          ],
+          "D": [
+            4,
+            0
+          ],
+          "E": [
+            -2,
+            3
+          ],
+          "F": [
+            2,
+            3
+          ]
+        }
+      }
+    },
+    {
+      "time": 103.905,
+      "step": 16,
+      "tool": "tool.observation",
+      "args": {
+        "callStep": 15
+      },
+      "state": {
+        "blocked_edges": [
+          [
+            "B",
+            "C"
+          ]
+        ],
+        "carrier": "F",
+        "carrying": "货物",
+        "crates": {
+          "蓝方块": "E",
+          "货物": "F",
+          "黄方块": "F"
+        },
+        "destination": "D",
+        "edges": [
+          [
+            "A",
+            "B"
+          ],
+          [
+            "B",
+            "C"
+          ],
+          [
+            "C",
+            "D"
+          ],
+          [
+            "B",
+            "E"
+          ],
+          [
+            "E",
+            "F"
+          ],
+          [
+            "F",
+            "C"
+          ]
+        ],
+        "nodes": {
+          "A": [
+            -4,
+            0
+          ],
+          "B": [
+            -2,
+            0
+          ],
+          "C": [
+            2,
+            0
+          ],
+          "D": [
+            4,
+            0
+          ],
+          "E": [
+            -2,
+            3
+          ],
+          "F": [
+            2,
+            3
+          ]
+        }
+      }
+    },
+    {
+      "time": 104.705,
+      "step": 17,
+      "tool": "model.generate",
+      "args": {
+        "contextMessages": 12.0,
+        "costMs": 641.0,
+        "model": "deepseek-flash",
+        "response": {
+          "args": {
+            "node": "C"
+          },
+          "tool": "move"
+        },
+        "tokens": 1188.0
+      },
+      "state": {
+        "blocked_edges": [
+          [
+            "B",
+            "C"
+          ]
+        ],
+        "carrier": "F",
+        "carrying": "货物",
+        "crates": {
+          "蓝方块": "E",
+          "货物": "F",
+          "黄方块": "F"
+        },
+        "destination": "D",
+        "edges": [
+          [
+            "A",
+            "B"
+          ],
+          [
+            "B",
+            "C"
+          ],
+          [
+            "C",
+            "D"
+          ],
+          [
+            "B",
+            "E"
+          ],
+          [
+            "E",
+            "F"
+          ],
+          [
+            "F",
+            "C"
+          ]
+        ],
+        "nodes": {
+          "A": [
+            -4,
+            0
+          ],
+          "B": [
+            -2,
+            0
+          ],
+          "C": [
+            2,
+            0
+          ],
+          "D": [
+            4,
+            0
+          ],
+          "E": [
+            -2,
+            3
+          ],
+          "F": [
+            2,
+            3
+          ]
+        }
+      }
+    },
+    {
+      "time": 105.505,
+      "step": 18,
+      "tool": "move",
+      "args": {
+        "node": "C"
+      },
+      "state": {
+        "blocked_edges": [
+          [
+            "B",
+            "C"
+          ]
+        ],
+        "carrier": "C",
+        "carrying": "货物",
+        "crates": {
+          "蓝方块": "E",
+          "货物": "C",
+          "黄方块": "F"
+        },
+        "destination": "D",
+        "edges": [
+          [
+            "A",
+            "B"
+          ],
+          [
+            "B",
+            "C"
+          ],
+          [
+            "C",
+            "D"
+          ],
+          [
+            "B",
+            "E"
+          ],
+          [
+            "E",
+            "F"
+          ],
+          [
+            "F",
+            "C"
+          ]
+        ],
+        "nodes": {
+          "A": [
+            -4,
+            0
+          ],
+          "B": [
+            -2,
+            0
+          ],
+          "C": [
+            2,
+            0
+          ],
+          "D": [
+            4,
+            0
+          ],
+          "E": [
+            -2,
+            3
+          ],
+          "F": [
+            2,
+            3
+          ]
+        }
+      }
+    },
+    {
+      "time": 107.505,
+      "step": 19,
+      "tool": "tool.observation",
+      "args": {
+        "callStep": 18
+      },
+      "state": {
+        "blocked_edges": [
+          [
+            "B",
+            "C"
+          ]
+        ],
+        "carrier": "C",
+        "carrying": "货物",
+        "crates": {
+          "蓝方块": "E",
+          "货物": "C",
+          "黄方块": "F"
+        },
+        "destination": "D",
+        "edges": [
+          [
+            "A",
+            "B"
+          ],
+          [
+            "B",
+            "C"
+          ],
+          [
+            "C",
+            "D"
+          ],
+          [
+            "B",
+            "E"
+          ],
+          [
+            "E",
+            "F"
+          ],
+          [
+            "F",
+            "C"
+          ]
+        ],
+        "nodes": {
+          "A": [
+            -4,
+            0
+          ],
+          "B": [
+            -2,
+            0
+          ],
+          "C": [
+            2,
+            0
+          ],
+          "D": [
+            4,
+            0
+          ],
+          "E": [
+            -2,
+            3
+          ],
+          "F": [
+            2,
+            3
+          ]
+        }
+      }
+    },
+    {
+      "time": 109.52,
+      "step": 20,
+      "tool": "model.generate",
+      "args": {
+        "contextMessages": 14.0,
+        "costMs": 681.0,
+        "model": "deepseek-flash",
+        "response": {
+          "args": {
+            "node": "D"
+          },
+          "tool": "move"
+        },
+        "tokens": 1371.0
+      },
+      "state": {
+        "blocked_edges": [
+          [
+            "B",
+            "C"
+          ]
+        ],
+        "carrier": "C",
+        "carrying": "货物",
+        "crates": {
+          "蓝方块": "E",
+          "货物": "C",
+          "黄方块": "F"
+        },
+        "destination": "D",
+        "edges": [
+          [
+            "A",
+            "B"
+          ],
+          [
+            "B",
+            "C"
+          ],
+          [
+            "C",
+            "D"
+          ],
+          [
+            "B",
+            "E"
+          ],
+          [
+            "E",
+            "F"
+          ],
+          [
+            "F",
+            "C"
+          ]
+        ],
+        "nodes": {
+          "A": [
+            -4,
+            0
+          ],
+          "B": [
+            -2,
+            0
+          ],
+          "C": [
+            2,
+            0
+          ],
+          "D": [
+            4,
+            0
+          ],
+          "E": [
+            -2,
+            3
+          ],
+          "F": [
+            2,
+            3
+          ]
+        }
+      }
+    },
+    {
+      "time": 110.32,
+      "step": 21,
+      "tool": "move",
+      "args": {
+        "node": "D"
+      },
+      "state": {
+        "blocked_edges": [
+          [
+            "B",
+            "C"
+          ]
+        ],
+        "carrier": "D",
+        "carrying": "货物",
+        "crates": {
+          "蓝方块": "E",
+          "货物": "D",
+          "黄方块": "F"
+        },
+        "destination": "D",
+        "edges": [
+          [
+            "A",
+            "B"
+          ],
+          [
+            "B",
+            "C"
+          ],
+          [
+            "C",
+            "D"
+          ],
+          [
+            "B",
+            "E"
+          ],
+          [
+            "E",
+            "F"
+          ],
+          [
+            "F",
+            "C"
+          ]
+        ],
+        "nodes": {
+          "A": [
+            -4,
+            0
+          ],
+          "B": [
+            -2,
+            0
+          ],
+          "C": [
+            2,
+            0
+          ],
+          "D": [
+            4,
+            0
+          ],
+          "E": [
+            -2,
+            3
+          ],
+          "F": [
+            2,
+            3
+          ]
+        }
+      }
+    },
+    {
+      "time": 112.32,
+      "step": 22,
+      "tool": "tool.observation",
+      "args": {
+        "callStep": 21
+      },
+      "state": {
+        "blocked_edges": [
+          [
+            "B",
+            "C"
+          ]
+        ],
+        "carrier": "D",
+        "carrying": "货物",
+        "crates": {
+          "蓝方块": "E",
+          "货物": "D",
+          "黄方块": "F"
+        },
+        "destination": "D",
+        "edges": [
+          [
+            "A",
+            "B"
+          ],
+          [
+            "B",
+            "C"
+          ],
+          [
+            "C",
+            "D"
+          ],
+          [
+            "B",
+            "E"
+          ],
+          [
+            "E",
+            "F"
+          ],
+          [
+            "F",
+            "C"
+          ]
+        ],
+        "nodes": {
+          "A": [
+            -4,
+            0
+          ],
+          "B": [
+            -2,
+            0
+          ],
+          "C": [
+            2,
+            0
+          ],
+          "D": [
+            4,
+            0
+          ],
+          "E": [
+            -2,
+            3
+          ],
+          "F": [
+            2,
+            3
+          ]
+        }
+      }
+    },
+    {
+      "time": 117.76,
+      "step": 23,
+      "tool": "model.generate",
+      "args": {
+        "contextMessages": 16.0,
+        "costMs": 409.0,
+        "model": "deepseek-flash",
+        "response": {
+          "args": {},
+          "tool": "drop"
+        },
+        "tokens": 1542.0
+      },
+      "state": {
+        "blocked_edges": [
+          [
+            "B",
+            "C"
+          ]
+        ],
+        "carrier": "D",
+        "carrying": "货物",
+        "crates": {
+          "蓝方块": "E",
+          "货物": "D",
+          "黄方块": "F"
+        },
+        "destination": "D",
+        "edges": [
+          [
+            "A",
+            "B"
+          ],
+          [
+            "B",
+            "C"
+          ],
+          [
+            "C",
+            "D"
+          ],
+          [
+            "B",
+            "E"
+          ],
+          [
+            "E",
+            "F"
+          ],
+          [
+            "F",
+            "C"
+          ]
+        ],
+        "nodes": {
+          "A": [
+            -4,
+            0
+          ],
+          "B": [
+            -2,
+            0
+          ],
+          "C": [
+            2,
+            0
+          ],
+          "D": [
+            4,
+            0
+          ],
+          "E": [
+            -2,
+            3
+          ],
+          "F": [
+            2,
+            3
+          ]
+        }
+      }
+    },
+    {
+      "time": 118.36,
+      "step": 24,
+      "tool": "drop",
+      "args": {},
+      "state": {
+        "blocked_edges": [
+          [
+            "B",
+            "C"
+          ]
+        ],
+        "carrier": "D",
+        "carrying": "",
+        "crates": {
+          "蓝方块": "E",
+          "货物": "D",
+          "黄方块": "F"
+        },
+        "destination": "D",
+        "edges": [
+          [
+            "A",
+            "B"
+          ],
+          [
+            "B",
+            "C"
+          ],
+          [
+            "C",
+            "D"
+          ],
+          [
+            "B",
+            "E"
+          ],
+          [
+            "E",
+            "F"
+          ],
+          [
+            "F",
+            "C"
+          ]
+        ],
+        "nodes": {
+          "A": [
+            -4,
+            0
+          ],
+          "B": [
+            -2,
+            0
+          ],
+          "C": [
+            2,
+            0
+          ],
+          "D": [
+            4,
+            0
+          ],
+          "E": [
+            -2,
+            3
+          ],
+          "F": [
+            2,
+            3
+          ]
+        }
+      }
+    },
+    {
+      "time": 120.81,
+      "step": 25,
+      "tool": "tool.observation",
+      "args": {
+        "callStep": 24
+      },
+      "state": {
+        "blocked_edges": [
+          [
+            "B",
+            "C"
+          ]
+        ],
+        "carrier": "D",
+        "carrying": "",
+        "crates": {
+          "蓝方块": "E",
+          "货物": "D",
+          "黄方块": "F"
+        },
+        "destination": "D",
+        "edges": [
+          [
+            "A",
+            "B"
+          ],
+          [
+            "B",
+            "C"
+          ],
+          [
+            "C",
+            "D"
+          ],
+          [
+            "B",
+            "E"
+          ],
+          [
+            "E",
+            "F"
+          ],
+          [
+            "F",
+            "C"
+          ]
+        ],
+        "nodes": {
+          "A": [
+            -4,
+            0
+          ],
+          "B": [
+            -2,
+            0
+          ],
+          "C": [
+            2,
+            0
+          ],
+          "D": [
+            4,
+            0
+          ],
+          "E": [
+            -2,
+            3
+          ],
+          "F": [
+            2,
+            3
+          ]
+        }
+      }
+    },
+    {
+      "time": 126.76,
+      "step": 26,
+      "tool": "model.generate",
+      "args": {
+        "contextMessages": 18.0,
+        "costMs": 1125.0,
+        "model": "deepseek-flash",
+        "response": {
+          "args": {
+            "text": "货物已从 A 运到 D 并卸货完成"
+          },
+          "tool": "finish"
+        },
+        "tokens": 1740.0
+      },
+      "state": {
+        "blocked_edges": [
+          [
+            "B",
+            "C"
+          ]
+        ],
+        "carrier": "D",
+        "carrying": "",
+        "crates": {
+          "蓝方块": "E",
+          "货物": "D",
+          "黄方块": "F"
+        },
+        "destination": "D",
+        "edges": [
+          [
+            "A",
+            "B"
+          ],
+          [
+            "B",
+            "C"
+          ],
+          [
+            "C",
+            "D"
+          ],
+          [
+            "B",
+            "E"
+          ],
+          [
+            "E",
+            "F"
+          ],
+          [
+            "F",
+            "C"
+          ]
+        ],
+        "nodes": {
+          "A": [
+            -4,
+            0
+          ],
+          "B": [
+            -2,
+            0
+          ],
+          "C": [
+            2,
+            0
+          ],
+          "D": [
+            4,
+            0
+          ],
+          "E": [
+            -2,
+            3
+          ],
+          "F": [
+            2,
+            3
+          ]
+        }
+      }
+    },
+    {
+      "time": 128.07,
+      "step": 27,
+      "tool": "dialogue.reply",
+      "args": {
+        "text": "货物已从 A 运到 D 并卸货完成"
+      },
+      "state": {
+        "blocked_edges": [
+          [
+            "B",
+            "C"
+          ]
+        ],
+        "carrier": "D",
+        "carrying": "",
+        "crates": {
+          "蓝方块": "E",
+          "货物": "D",
+          "黄方块": "F"
+        },
+        "destination": "D",
+        "edges": [
+          [
+            "A",
+            "B"
+          ],
+          [
+            "B",
+            "C"
+          ],
+          [
+            "C",
+            "D"
+          ],
+          [
+            "B",
+            "E"
+          ],
+          [
+            "E",
+            "F"
+          ],
+          [
+            "F",
+            "C"
+          ]
+        ],
+        "nodes": {
+          "A": [
+            -4,
+            0
+          ],
+          "B": [
+            -2,
+            0
+          ],
+          "C": [
+            2,
+            0
+          ],
+          "D": [
+            4,
+            0
+          ],
+          "E": [
+            -2,
+            3
+          ],
+          "F": [
+            2,
+            3
+          ]
+        }
+      }
+    },
+    {
+      "time": 132.83,
+      "step": 28,
+      "tool": "dialogue.submit",
+      "args": {
+        "text": "现在把散落在 E 和 F 的蓝方块、黄方块都整理到 D。"
+      },
+      "state": {
+        "blocked_edges": [
+          [
+            "B",
+            "C"
+          ]
+        ],
+        "carrier": "D",
+        "carrying": "",
+        "crates": {
+          "蓝方块": "E",
+          "货物": "D",
+          "黄方块": "F"
+        },
+        "destination": "D",
+        "edges": [
+          [
+            "A",
+            "B"
+          ],
+          [
+            "B",
+            "C"
+          ],
+          [
+            "C",
+            "D"
+          ],
+          [
+            "B",
+            "E"
+          ],
+          [
+            "E",
+            "F"
+          ],
+          [
+            "F",
+            "C"
+          ]
+        ],
+        "nodes": {
+          "A": [
+            -4,
+            0
+          ],
+          "B": [
+            -2,
+            0
+          ],
+          "C": [
+            2,
+            0
+          ],
+          "D": [
+            4,
+            0
+          ],
+          "E": [
+            -2,
+            3
+          ],
+          "F": [
+            2,
+            3
+          ]
+        }
+      }
+    },
+    {
+      "time": 133.947,
+      "step": 29,
+      "tool": "model.generate",
+      "args": {
+        "contextMessages": 20.0,
+        "costMs": 2825.0,
+        "model": "deepseek-flash",
+        "response": {
+          "args": {
+            "node": "C"
+          },
+          "tool": "move"
+        },
+        "tokens": 1907.0
+      },
+      "state": {
+        "blocked_edges": [
+          [
+            "B",
+            "C"
+          ]
+        ],
+        "carrier": "D",
+        "carrying": "",
+        "crates": {
+          "蓝方块": "E",
+          "货物": "D",
+          "黄方块": "F"
+        },
+        "destination": "D",
+        "edges": [
+          [
+            "A",
+            "B"
+          ],
+          [
+            "B",
+            "C"
+          ],
+          [
+            "C",
+            "D"
+          ],
+          [
+            "B",
+            "E"
+          ],
+          [
+            "E",
+            "F"
+          ],
+          [
+            "F",
+            "C"
+          ]
+        ],
+        "nodes": {
+          "A": [
+            -4,
+            0
+          ],
+          "B": [
+            -2,
+            0
+          ],
+          "C": [
+            2,
+            0
+          ],
+          "D": [
+            4,
+            0
+          ],
+          "E": [
+            -2,
+            3
+          ],
+          "F": [
+            2,
+            3
+          ]
+        }
+      }
+    },
+    {
+      "time": 134.747,
+      "step": 30,
+      "tool": "move",
+      "args": {
+        "node": "C"
+      },
+      "state": {
+        "blocked_edges": [
+          [
+            "B",
+            "C"
+          ]
+        ],
+        "carrier": "C",
+        "carrying": "",
+        "crates": {
+          "蓝方块": "E",
+          "货物": "D",
+          "黄方块": "F"
+        },
+        "destination": "D",
+        "edges": [
+          [
+            "A",
+            "B"
+          ],
+          [
+            "B",
+            "C"
+          ],
+          [
+            "C",
+            "D"
+          ],
+          [
+            "B",
+            "E"
+          ],
+          [
+            "E",
+            "F"
+          ],
+          [
+            "F",
+            "C"
+          ]
+        ],
+        "nodes": {
+          "A": [
+            -4,
+            0
+          ],
+          "B": [
+            -2,
+            0
+          ],
+          "C": [
+            2,
+            0
+          ],
+          "D": [
+            4,
+            0
+          ],
+          "E": [
+            -2,
+            3
+          ],
+          "F": [
+            2,
+            3
+          ]
+        }
+      }
+    },
+    {
+      "time": 136.747,
+      "step": 31,
+      "tool": "tool.observation",
+      "args": {
+        "callStep": 30
+      },
+      "state": {
+        "blocked_edges": [
+          [
+            "B",
+            "C"
+          ]
+        ],
+        "carrier": "C",
+        "carrying": "",
+        "crates": {
+          "蓝方块": "E",
+          "货物": "D",
+          "黄方块": "F"
+        },
+        "destination": "D",
+        "edges": [
+          [
+            "A",
+            "B"
+          ],
+          [
+            "B",
+            "C"
+          ],
+          [
+            "C",
+            "D"
+          ],
+          [
+            "B",
+            "E"
+          ],
+          [
+            "E",
+            "F"
+          ],
+          [
+            "F",
+            "C"
+          ]
+        ],
+        "nodes": {
+          "A": [
+            -4,
+            0
+          ],
+          "B": [
+            -2,
+            0
+          ],
+          "C": [
+            2,
+            0
+          ],
+          "D": [
+            4,
+            0
+          ],
+          "E": [
+            -2,
+            3
+          ],
+          "F": [
+            2,
+            3
+          ]
+        }
+      }
+    },
+    {
+      "time": 140.883,
+      "step": 32,
+      "tool": "model.generate",
+      "args": {
+        "contextMessages": 22.0,
+        "costMs": 1832.0,
+        "model": "deepseek-flash",
+        "response": {
+          "args": {
+            "node": "F"
+          },
+          "tool": "move"
+        },
+        "tokens": 2112.0
+      },
+      "state": {
+        "blocked_edges": [
+          [
+            "B",
+            "C"
+          ]
+        ],
+        "carrier": "C",
+        "carrying": "",
+        "crates": {
+          "蓝方块": "E",
+          "货物": "D",
+          "黄方块": "F"
+        },
+        "destination": "D",
+        "edges": [
+          [
+            "A",
+            "B"
+          ],
+          [
+            "B",
+            "C"
+          ],
+          [
+            "C",
+            "D"
+          ],
+          [
+            "B",
+            "E"
+          ],
+          [
+            "E",
+            "F"
+          ],
+          [
+            "F",
+            "C"
+          ]
+        ],
+        "nodes": {
+          "A": [
+            -4,
+            0
+          ],
+          "B": [
+            -2,
+            0
+          ],
+          "C": [
+            2,
+            0
+          ],
+          "D": [
+            4,
+            0
+          ],
+          "E": [
+            -2,
+            3
+          ],
+          "F": [
+            2,
+            3
+          ]
+        }
+      }
+    },
+    {
+      "time": 141.683,
+      "step": 33,
+      "tool": "move",
+      "args": {
+        "node": "F"
+      },
+      "state": {
+        "blocked_edges": [
+          [
+            "B",
+            "C"
+          ]
+        ],
+        "carrier": "F",
+        "carrying": "",
+        "crates": {
+          "蓝方块": "E",
+          "货物": "D",
+          "黄方块": "F"
+        },
+        "destination": "D",
+        "edges": [
+          [
+            "A",
+            "B"
+          ],
+          [
+            "B",
+            "C"
+          ],
+          [
+            "C",
+            "D"
+          ],
+          [
+            "B",
+            "E"
+          ],
+          [
+            "E",
+            "F"
+          ],
+          [
+            "F",
+            "C"
+          ]
+        ],
+        "nodes": {
+          "A": [
+            -4,
+            0
+          ],
+          "B": [
+            -2,
+            0
+          ],
+          "C": [
+            2,
+            0
+          ],
+          "D": [
+            4,
+            0
+          ],
+          "E": [
+            -2,
+            3
+          ],
+          "F": [
+            2,
+            3
+          ]
+        }
+      }
+    },
+    {
+      "time": 143.683,
+      "step": 34,
+      "tool": "tool.observation",
+      "args": {
+        "callStep": 33
+      },
+      "state": {
+        "blocked_edges": [
+          [
+            "B",
+            "C"
+          ]
+        ],
+        "carrier": "F",
+        "carrying": "",
+        "crates": {
+          "蓝方块": "E",
+          "货物": "D",
+          "黄方块": "F"
+        },
+        "destination": "D",
+        "edges": [
+          [
+            "A",
+            "B"
+          ],
+          [
+            "B",
+            "C"
+          ],
+          [
+            "C",
+            "D"
+          ],
+          [
+            "B",
+            "E"
+          ],
+          [
+            "E",
+            "F"
+          ],
+          [
+            "F",
+            "C"
+          ]
+        ],
+        "nodes": {
+          "A": [
+            -4,
+            0
+          ],
+          "B": [
+            -2,
+            0
+          ],
+          "C": [
+            2,
+            0
+          ],
+          "D": [
+            4,
+            0
+          ],
+          "E": [
+            -2,
+            3
+          ],
+          "F": [
+            2,
+            3
+          ]
+        }
+      }
+    },
+    {
+      "time": 145.483,
+      "step": 35,
+      "tool": "model.generate",
+      "args": {
+        "contextMessages": 24.0,
+        "costMs": 475.0,
+        "model": "deepseek-flash",
+        "response": {
+          "args": {
+            "crate": "黄方块"
+          },
+          "tool": "pickup"
+        },
+        "tokens": 2145.0
+      },
+      "state": {
+        "blocked_edges": [
+          [
+            "B",
+            "C"
+          ]
+        ],
+        "carrier": "F",
+        "carrying": "",
+        "crates": {
+          "蓝方块": "E",
+          "货物": "D",
+          "黄方块": "F"
+        },
+        "destination": "D",
+        "edges": [
+          [
+            "A",
+            "B"
+          ],
+          [
+            "B",
+            "C"
+          ],
+          [
+            "C",
+            "D"
+          ],
+          [
+            "B",
+            "E"
+          ],
+          [
+            "E",
+            "F"
+          ],
+          [
+            "F",
+            "C"
+          ]
+        ],
+        "nodes": {
+          "A": [
+            -4,
+            0
+          ],
+          "B": [
+            -2,
+            0
+          ],
+          "C": [
+            2,
+            0
+          ],
+          "D": [
+            4,
+            0
+          ],
+          "E": [
+            -2,
+            3
+          ],
+          "F": [
+            2,
+            3
+          ]
+        }
+      }
+    },
+    {
+      "time": 146.283,
+      "step": 36,
+      "tool": "pickup",
+      "args": {
+        "crate": "黄方块"
+      },
+      "state": {
+        "blocked_edges": [
+          [
+            "B",
+            "C"
+          ]
+        ],
+        "carrier": "F",
+        "carrying": "黄方块",
+        "crates": {
+          "蓝方块": "E",
+          "货物": "D",
+          "黄方块": "F"
+        },
+        "destination": "D",
+        "edges": [
+          [
+            "A",
+            "B"
+          ],
+          [
+            "B",
+            "C"
+          ],
+          [
+            "C",
+            "D"
+          ],
+          [
+            "B",
+            "E"
+          ],
+          [
+            "E",
+            "F"
+          ],
+          [
+            "F",
+            "C"
+          ]
+        ],
+        "nodes": {
+          "A": [
+            -4,
+            0
+          ],
+          "B": [
+            -2,
+            0
+          ],
+          "C": [
+            2,
+            0
+          ],
+          "D": [
+            4,
+            0
+          ],
+          "E": [
+            -2,
+            3
+          ],
+          "F": [
+            2,
+            3
+          ]
+        }
+      }
+    },
+    {
+      "time": 147.083,
+      "step": 37,
+      "tool": "tool.observation",
+      "args": {
+        "callStep": 36
+      },
+      "state": {
+        "blocked_edges": [
+          [
+            "B",
+            "C"
+          ]
+        ],
+        "carrier": "F",
+        "carrying": "黄方块",
+        "crates": {
+          "蓝方块": "E",
+          "货物": "D",
+          "黄方块": "F"
+        },
+        "destination": "D",
+        "edges": [
+          [
+            "A",
+            "B"
+          ],
+          [
+            "B",
+            "C"
+          ],
+          [
+            "C",
+            "D"
+          ],
+          [
+            "B",
+            "E"
+          ],
+          [
+            "E",
+            "F"
+          ],
+          [
+            "F",
+            "C"
+          ]
+        ],
+        "nodes": {
+          "A": [
+            -4,
+            0
+          ],
+          "B": [
+            -2,
+            0
+          ],
+          "C": [
+            2,
+            0
+          ],
+          "D": [
+            4,
+            0
+          ],
+          "E": [
+            -2,
+            3
+          ],
+          "F": [
+            2,
+            3
+          ]
+        }
+      }
+    },
+    {
+      "time": 147.883,
+      "step": 38,
+      "tool": "model.generate",
+      "args": {
+        "contextMessages": 26.0,
+        "costMs": 866.0,
+        "model": "deepseek-flash",
+        "response": {
+          "args": {
+            "node": "C"
+          },
+          "tool": "move"
+        },
+        "tokens": 2358.0
+      },
+      "state": {
+        "blocked_edges": [
+          [
+            "B",
+            "C"
+          ]
+        ],
+        "carrier": "F",
+        "carrying": "黄方块",
+        "crates": {
+          "蓝方块": "E",
+          "货物": "D",
+          "黄方块": "F"
+        },
+        "destination": "D",
+        "edges": [
+          [
+            "A",
+            "B"
+          ],
+          [
+            "B",
+            "C"
+          ],
+          [
+            "C",
+            "D"
+          ],
+          [
+            "B",
+            "E"
+          ],
+          [
+            "E",
+            "F"
+          ],
+          [
+            "F",
+            "C"
+          ]
+        ],
+        "nodes": {
+          "A": [
+            -4,
+            0
+          ],
+          "B": [
+            -2,
+            0
+          ],
+          "C": [
+            2,
+            0
+          ],
+          "D": [
+            4,
+            0
+          ],
+          "E": [
+            -2,
+            3
+          ],
+          "F": [
+            2,
+            3
+          ]
+        }
+      }
+    },
+    {
+      "time": 148.683,
+      "step": 39,
+      "tool": "move",
+      "args": {
+        "node": "C"
+      },
+      "state": {
+        "blocked_edges": [
+          [
+            "B",
+            "C"
+          ]
+        ],
+        "carrier": "C",
+        "carrying": "黄方块",
+        "crates": {
+          "蓝方块": "E",
+          "货物": "D",
+          "黄方块": "C"
+        },
+        "destination": "D",
+        "edges": [
+          [
+            "A",
+            "B"
+          ],
+          [
+            "B",
+            "C"
+          ],
+          [
+            "C",
+            "D"
+          ],
+          [
+            "B",
+            "E"
+          ],
+          [
+            "E",
+            "F"
+          ],
+          [
+            "F",
+            "C"
+          ]
+        ],
+        "nodes": {
+          "A": [
+            -4,
+            0
+          ],
+          "B": [
+            -2,
+            0
+          ],
+          "C": [
+            2,
+            0
+          ],
+          "D": [
+            4,
+            0
+          ],
+          "E": [
+            -2,
+            3
+          ],
+          "F": [
+            2,
+            3
+          ]
+        }
+      }
+    },
+    {
+      "time": 150.683,
+      "step": 40,
+      "tool": "tool.observation",
+      "args": {
+        "callStep": 39
+      },
+      "state": {
+        "blocked_edges": [
+          [
+            "B",
+            "C"
+          ]
+        ],
+        "carrier": "C",
+        "carrying": "黄方块",
+        "crates": {
+          "蓝方块": "E",
+          "货物": "D",
+          "黄方块": "C"
+        },
+        "destination": "D",
+        "edges": [
+          [
+            "A",
+            "B"
+          ],
+          [
+            "B",
+            "C"
+          ],
+          [
+            "C",
+            "D"
+          ],
+          [
+            "B",
+            "E"
+          ],
+          [
+            "E",
+            "F"
+          ],
+          [
+            "F",
+            "C"
+          ]
+        ],
+        "nodes": {
+          "A": [
+            -4,
+            0
+          ],
+          "B": [
+            -2,
+            0
+          ],
+          "C": [
+            2,
+            0
+          ],
+          "D": [
+            4,
+            0
+          ],
+          "E": [
+            -2,
+            3
+          ],
+          "F": [
+            2,
+            3
+          ]
+        }
+      }
+    },
+    {
+      "time": 151.483,
+      "step": 41,
+      "tool": "model.generate",
+      "args": {
+        "contextMessages": 28.0,
+        "costMs": 1111.0,
+        "model": "deepseek-flash",
+        "response": {
+          "args": {
+            "node": "D"
+          },
+          "tool": "move"
+        },
+        "tokens": 2546.0
+      },
+      "state": {
+        "blocked_edges": [
+          [
+            "B",
+            "C"
+          ]
+        ],
+        "carrier": "C",
+        "carrying": "黄方块",
+        "crates": {
+          "蓝方块": "E",
+          "货物": "D",
+          "黄方块": "C"
+        },
+        "destination": "D",
+        "edges": [
+          [
+            "A",
+            "B"
+          ],
+          [
+            "B",
+            "C"
+          ],
+          [
+            "C",
+            "D"
+          ],
+          [
+            "B",
+            "E"
+          ],
+          [
+            "E",
+            "F"
+          ],
+          [
+            "F",
+            "C"
+          ]
+        ],
+        "nodes": {
+          "A": [
+            -4,
+            0
+          ],
+          "B": [
+            -2,
+            0
+          ],
+          "C": [
+            2,
+            0
+          ],
+          "D": [
+            4,
+            0
+          ],
+          "E": [
+            -2,
+            3
+          ],
+          "F": [
+            2,
+            3
+          ]
+        }
+      }
+    },
+    {
+      "time": 152.283,
+      "step": 42,
+      "tool": "move",
+      "args": {
+        "node": "D"
+      },
+      "state": {
+        "blocked_edges": [
+          [
+            "B",
+            "C"
+          ]
+        ],
+        "carrier": "D",
+        "carrying": "黄方块",
+        "crates": {
+          "蓝方块": "E",
+          "货物": "D",
+          "黄方块": "D"
+        },
+        "destination": "D",
+        "edges": [
+          [
+            "A",
+            "B"
+          ],
+          [
+            "B",
+            "C"
+          ],
+          [
+            "C",
+            "D"
+          ],
+          [
+            "B",
+            "E"
+          ],
+          [
+            "E",
+            "F"
+          ],
+          [
+            "F",
+            "C"
+          ]
+        ],
+        "nodes": {
+          "A": [
+            -4,
+            0
+          ],
+          "B": [
+            -2,
+            0
+          ],
+          "C": [
+            2,
+            0
+          ],
+          "D": [
+            4,
+            0
+          ],
+          "E": [
+            -2,
+            3
+          ],
+          "F": [
+            2,
+            3
+          ]
+        }
+      }
+    },
+    {
+      "time": 154.283,
+      "step": 43,
+      "tool": "tool.observation",
+      "args": {
+        "callStep": 42
+      },
+      "state": {
+        "blocked_edges": [
+          [
+            "B",
+            "C"
+          ]
+        ],
+        "carrier": "D",
+        "carrying": "黄方块",
+        "crates": {
+          "蓝方块": "E",
+          "货物": "D",
+          "黄方块": "D"
+        },
+        "destination": "D",
+        "edges": [
+          [
+            "A",
+            "B"
+          ],
+          [
+            "B",
+            "C"
+          ],
+          [
+            "C",
+            "D"
+          ],
+          [
+            "B",
+            "E"
+          ],
+          [
+            "E",
+            "F"
+          ],
+          [
+            "F",
+            "C"
+          ]
+        ],
+        "nodes": {
+          "A": [
+            -4,
+            0
+          ],
+          "B": [
+            -2,
+            0
+          ],
+          "C": [
+            2,
+            0
+          ],
+          "D": [
+            4,
+            0
+          ],
+          "E": [
+            -2,
+            3
+          ],
+          "F": [
+            2,
+            3
+          ]
+        }
+      }
+    },
+    {
+      "time": 155.083,
+      "step": 44,
+      "tool": "model.generate",
+      "args": {
+        "contextMessages": 30.0,
+        "costMs": 533.0,
+        "model": "deepseek-flash",
+        "response": {
+          "args": {},
+          "tool": "drop"
+        },
+        "tokens": 2706.0
+      },
+      "state": {
+        "blocked_edges": [
+          [
+            "B",
+            "C"
+          ]
+        ],
+        "carrier": "D",
+        "carrying": "黄方块",
+        "crates": {
+          "蓝方块": "E",
+          "货物": "D",
+          "黄方块": "D"
+        },
+        "destination": "D",
+        "edges": [
+          [
+            "A",
+            "B"
+          ],
+          [
+            "B",
+            "C"
+          ],
+          [
+            "C",
+            "D"
+          ],
+          [
+            "B",
+            "E"
+          ],
+          [
+            "E",
+            "F"
+          ],
+          [
+            "F",
+            "C"
+          ]
+        ],
+        "nodes": {
+          "A": [
+            -4,
+            0
+          ],
+          "B": [
+            -2,
+            0
+          ],
+          "C": [
+            2,
+            0
+          ],
+          "D": [
+            4,
+            0
+          ],
+          "E": [
+            -2,
+            3
+          ],
+          "F": [
+            2,
+            3
+          ]
+        }
+      }
+    },
+    {
+      "time": 155.883,
+      "step": 45,
+      "tool": "drop",
+      "args": {},
+      "state": {
+        "blocked_edges": [
+          [
+            "B",
+            "C"
+          ]
+        ],
+        "carrier": "D",
+        "carrying": "",
+        "crates": {
+          "蓝方块": "E",
+          "货物": "D",
+          "黄方块": "D"
+        },
+        "destination": "D",
+        "edges": [
+          [
+            "A",
+            "B"
+          ],
+          [
+            "B",
+            "C"
+          ],
+          [
+            "C",
+            "D"
+          ],
+          [
+            "B",
+            "E"
+          ],
+          [
+            "E",
+            "F"
+          ],
+          [
+            "F",
+            "C"
+          ]
+        ],
+        "nodes": {
+          "A": [
+            -4,
+            0
+          ],
+          "B": [
+            -2,
+            0
+          ],
+          "C": [
+            2,
+            0
+          ],
+          "D": [
+            4,
+            0
+          ],
+          "E": [
+            -2,
+            3
+          ],
+          "F": [
+            2,
+            3
+          ]
+        }
+      }
+    }
+  ]
+}

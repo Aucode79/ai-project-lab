@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+<!-- 第一课《Agent 怎样完成一个任务？》动效场景（v4 样片：开头重制——不介绍四件组件，
+     只讲 Agent 总体「是什么 / 肚子里一台机器 / 给个真任务看第一步」）。
+     分镜真源：data/w01_shots.json（line 逐字）；时间线与底板路径由
+     tools/production/render_frames.py 注入 window.__DATA__（data/w01_shots.json +
+     layers/w01/narration.json）。本文件不写台词，只写画面与运动。
+     协议：window.DURATION = 总秒数；window.seek(t) 把画面摆到第 t 秒——全部状态由 t
+     推出，不用 CSS 动画、不用 rAF，逐帧截图才可复现。
+     红线：全片不出现组件中文名（镜 4 的四件组件只作无名牌插图拼成一台整机）。 -->
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<style>
+:root {
+  --paper: #f7f0d8; --paper2: #fffdf2; --bg: #fdfcf9;
+  --ink: #263b40; --mut: #8ca3a6; --shell: #b9cbcb;
+  --action: #ef743b; --signal: #24b9cf; --core: #f2c43d;
+  --success: #68ab5d; --error: #db6268; --loop: #9261c5; --memory: #4279d4;
+  --chamfer: 22px;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html, body { width: 1920px; height: 1080px; overflow: hidden; background: #000; }
+body { font-family: "Microsoft YaHei", "SimHei", "Noto Sans CJK SC", sans-serif;
+  color: var(--ink); -webkit-font-smoothing: antialiased; }
+#stage { position: relative; width: 1920px; height: 1080px; background: var(--paper); }
+#grid { position: absolute; inset: 0; opacity: .5;
+  background-image: linear-gradient(rgba(38,59,64,.055) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(38,59,64,.055) 1px, transparent 1px);
+  background-size: 48px 48px; }
+#vignette { position: absolute; inset: 0; pointer-events: none;
+  background: radial-gradient(120% 90% at 50% 45%, transparent 55%, rgba(38,59,64,.14) 100%); }
+.shot { position: absolute; inset: 0; opacity: 0; }
+.card { background: var(--paper2); border: 3px solid var(--ink);
+  box-shadow: 12px 12px 0 rgba(38,59,64,.16);
+  clip-path: polygon(0 0, calc(100% - var(--chamfer)) 0, 100% var(--chamfer), 100% 100%, 0 100%); }
+.chip { display: inline-block; padding: 12px 26px; border: 3px solid var(--ink);
+  font-weight: 700; background: var(--core);
+  clip-path: polygon(0 0, calc(100% - 14px) 0, 100% 14px, 100% 100%, 0 100%); }
+.plate { position: absolute; filter: drop-shadow(0 18px 22px rgba(38,59,64,.22)); }
+.plate img { width: 100%; height: 100%; object-fit: contain; display: block; }
+.glow { position: absolute; border-radius: 50%; pointer-events: none;
+  background: radial-gradient(closest-side, rgba(242,196,61,.55), rgba(242,196,61,0) 72%); }
+.w { display: inline-block; white-space: pre; }
+.w.on { color: var(--ink); }
+.w.off { color: rgba(38,59,64,.26); }
+
+/* ---------- 固定版式 HUD（大纲 §7.2） ---------- */
+#hud { position: absolute; inset: 0; opacity: 0; pointer-events: none; }
+#badge { position: absolute; top: 40px; left: 48px; font-size: 26px; padding: 9px 22px; }
+#demo { position: absolute; top: 96px; left: 50px; font-size: 20px; font-weight: 700;
+  color: var(--mut); letter-spacing: 1px; }
+#prog { position: absolute; top: 56px; right: 48px; width: 420px; height: 14px;
+  background: rgba(38,59,64,.16); border-radius: 999px; overflow: hidden; }
+#prog i { position: absolute; left: 0; top: 0; bottom: 0; width: 0;
+  background: var(--signal); border-radius: 999px; }
+#seg { position: absolute; top: 84px; right: 48px; font-size: 22px; color: var(--mut); font-weight: 700; }
+#sub { position: absolute; left: 50%; bottom: 54px; transform: translateX(-50%);
+  width: max-content; max-width: 1760px; text-align: center; font-weight: 700; line-height: 1.4;
+  color: var(--ink); }
+#sub > span { background: rgba(253,252,249,.9); padding: 12px 30px; border-radius: 6px;
+  box-decoration-break: clone; -webkit-box-decoration-break: clone;
+  border-left: 6px solid var(--core); }
+
+/* ---------- 镜头 1 · 课题卡（沿用 v3 版式与文案） ---------- */
+#s1 .title { position: absolute; left: 120px; top: 400px; font-size: 104px; font-weight: 900;
+  letter-spacing: 2px; }
+#s1 .title b { color: var(--action); font-weight: 900; }
+#s1 .kicker { position: absolute; left: 126px; top: 300px; font-size: 30px; }
+#s1 .rule { position: absolute; left: 126px; top: 560px; height: 10px; width: 0;
+  background: var(--ink); }
+#s1 .hint { position: absolute; left: 126px; top: 600px; font-size: 30px; color: var(--mut);
+  font-weight: 700; }
+
+/* ---------- 镜头 2 · 你给目标 + 三个能力图标逐个点亮 ---------- */
+#s2 .goal { position: absolute; left: 170px; top: 428px; width: 460px;
+  padding: 44px 40px 46px; text-align: center; }
+#s2 .goal .lab { font-size: 62px; font-weight: 900; }
+#s2 .goal .sub { margin-top: 16px; font-size: 26px; font-weight: 700; color: var(--mut); }
+#s2 .arrow { position: absolute; left: 650px; top: 512px; width: 80px; height: 12px;
+  background: var(--ink); transform-origin: left center; }
+#s2 .arrow i { position: absolute; right: -18px; top: -11px; width: 0; height: 0;
+  border-top: 17px solid transparent; border-bottom: 17px solid transparent;
+  border-left: 24px solid var(--ink); opacity: 0; }
+#s2 .abils { position: absolute; left: 760px; top: 356px; width: 1080px; height: 344px;
+  display: flex; gap: 34px; }
+.abil { flex: 1; position: relative; display: flex; flex-direction: column;
+  align-items: center; justify-content: center; padding: 28px 18px 30px;
+  background: var(--paper2); border: 3px solid var(--shell); border-radius: 12px; }
+.abil .ico { width: 118px; height: 118px; margin-bottom: 16px; color: var(--shell); }
+.abil .ico svg { width: 100%; height: 100%; fill: none; stroke: currentColor;
+  stroke-width: 5; stroke-linecap: round; stroke-linejoin: round; }
+.abil .nm { font-size: 52px; font-weight: 900; color: var(--mut); }
+.abil .cap { margin-top: 8px; font-size: 26px; font-weight: 700; color: var(--mut); }
+.abil.lit { border-color: var(--ink); box-shadow: 12px 12px 0 rgba(38,59,64,.16); }
+.abil.lit .ico { color: var(--accent, var(--ink)); }
+.abil.lit .nm, .abil.lit .cap { color: var(--ink); }
+.abil .spark { position: absolute; right: 18px; top: 16px; font-size: 30px; font-weight: 900;
+  color: var(--accent, var(--ink)); opacity: 0; }
+
+/* ---------- 镜头 3 · 只会说 vs 还会动手 ---------- */
+#s3 .col { position: absolute; top: 236px; width: 680px; min-height: 500px;
+  padding: 34px 38px 84px; }
+#s3 .col.left { left: 200px; border: 3px solid var(--shell); border-radius: 16px;
+  background: rgba(255,253,242,.72); }
+#s3 .col.right { left: 1040px; width: 680px; border: 3px solid var(--ink); border-radius: 16px;
+  background: var(--paper2); box-shadow: 12px 12px 0 rgba(38,59,64,.16); }
+#s3 .bubble { padding: 18px 30px; margin-bottom: 18px; border-radius: 18px;
+  background: #e9eef2; border: 2px solid var(--shell); font-size: 30px; font-weight: 700;
+  color: var(--mut); width: max-content; max-width: 92%; }
+#s3 .bubble.r { margin-left: auto; }
+#s3 .who { display: block; font-size: 24px; font-weight: 900; color: var(--mut);
+  letter-spacing: 2px; margin-bottom: 18px; }
+#s3 .vs { position: absolute; left: 890px; top: 470px; width: 140px; text-align: center;
+  font-size: 54px; font-weight: 900; color: var(--ink); }
+#s3 .vs::before, #s3 .vs::after { content: ""; display: block; width: 4px; height: 46px;
+  background: var(--shell); margin: 0 auto; }
+#s3 .tag { position: absolute; left: 50%; bottom: 22px; transform: translateX(-50%);
+  font-size: 32px; font-weight: 900; padding: 10px 32px; border-radius: 999px; white-space: nowrap; }
+#s3 .tag.off { background: #e9eef2; color: var(--mut); border: 3px solid var(--shell); }
+#s3 .tag.on { background: var(--success); color: #fff; border: 3px solid var(--ink); }
+#s3 .taskmini { position: absolute; left: 46px; bottom: 126px; padding: 18px 28px;
+  font-size: 30px; font-weight: 900; background: var(--core); border: 3px solid var(--ink);
+  border-radius: 8px; }
+#s3 .agent { position: absolute; right: 46px; bottom: 116px; width: 190px; height: 190px;
+  color: var(--signal); }
+#s3 .agent svg { width: 100%; height: 100%; fill: none; stroke: currentColor;
+  stroke-width: 4.5; stroke-linecap: round; stroke-linejoin: round; }
+
+/* ---------- 镜头 4 · 四件组件拼成一台整机 + 循环箭头 ---------- */
+#s4 .mimg { position: absolute; width: 400px;
+  filter: drop-shadow(0 18px 22px rgba(38,59,64,.22)); }
+#s4 .mimg img { width: 100%; height: auto; display: block; }
+#s4 .core { position: absolute; left: 480px; top: 130px; width: 960px; height: 900px;
+  border-radius: 50%; opacity: 0;
+  background: radial-gradient(closest-side, rgba(242,196,61,.34), rgba(242,196,61,0) 74%); }
+#s4 .loop { position: absolute; left: 0; top: 78px; width: 1920px; height: 220px; }
+#s4 .node { position: absolute; top: 66px; width: 300px; text-align: center; }
+#s4 .node .box { display: inline-block; padding: 14px 34px; font-size: 38px; font-weight: 900;
+  border: 3px solid var(--shell); border-radius: 10px; background: var(--paper2); color: var(--mut); }
+#s4 .node.lit .box { border-color: var(--ink); color: var(--ink);
+  box-shadow: 0 0 0 7px rgba(146,97,197,.20); }
+#s4 .arw { position: absolute; top: 74px; font-size: 42px; font-weight: 900; color: var(--mut); }
+#s4 .rtn { position: absolute; left: 450px; top: 0; width: 1080px; height: 66px;
+  border: 4px solid var(--loop); border-bottom: none; border-radius: 60px 60px 0 0; opacity: .45; }
+#s4 .dot { position: absolute; left: 0; top: 62px; width: 24px; height: 24px; border-radius: 50%;
+  background: var(--loop); box-shadow: 0 0 16px 5px rgba(146,97,197,.55); opacity: 0; }
+#s4 .rdot { position: absolute; left: 0; top: 6px; width: 20px; height: 20px; border-radius: 50%;
+  background: var(--loop); box-shadow: 0 0 14px 4px rgba(146,97,197,.5); opacity: 0; }
+
+/* ---------- 镜头 5–8 · 任务道具（report.txt / out.txt，复用 v3 抓出实现）+ 行动卡 ---------- */
+#props { position: absolute; inset: 0; opacity: 0; pointer-events: none; }
+#props .panel { position: absolute; left: 190px; top: 286px; width: 720px; padding: 28px 38px 34px; }
+#props .panel h, #props .outcard h { display: block; font-size: 30px; font-weight: 900;
+  color: var(--memory); border-bottom: 3px solid var(--ink); padding-bottom: 10px; margin-bottom: 16px; }
+#props .panel .ln { font-size: 28px; line-height: 1.9; font-weight: 700; white-space: nowrap; }
+#props .panel .ln u { text-decoration: none; color: var(--error); font-weight: 900;
+  display: inline-block; opacity: .22; }
+#props .panel .ln i { font-style: normal; color: var(--mut); margin-right: 14px; font-size: 22px; }
+#props .outcard { position: absolute; left: 1300px; top: 388px; width: 440px; padding: 26px 32px 34px; }
+#props .outcard .cell { display: block; margin-top: 22px; width: 120px; height: 78px;
+  border: 3px dashed var(--shell); background: rgba(255,253,242,.6); }
+#props .link { position: absolute; left: 930px; top: 470px; width: 350px; height: 12px;
+  background: var(--ink); transform-origin: left center; transform: scaleX(0); }
+#props .link i { position: absolute; right: -18px; top: -11px; width: 0; height: 0;
+  border-top: 17px solid transparent; border-bottom: 17px solid transparent;
+  border-left: 24px solid var(--ink); opacity: 0; }
+#props .chip.count { position: absolute; left: 200px; top: 770px; font-size: 46px; font-weight: 900;
+  color: var(--error); border: 5px solid var(--error); border-radius: 10px;
+  padding: 16px 34px; background: rgba(255,253,242,.92); box-shadow: 10px 10px 0 rgba(38,59,64,.12);
+  opacity: 0; }
+#acard { position: absolute; left: 640px; top: 726px; width: 640px; padding: 30px 40px 34px;
+  opacity: 0; }
+#acard .acno { font-size: 26px; font-weight: 900; letter-spacing: 4px; color: var(--mut); }
+#acard .acmain { font-size: 52px; font-weight: 900; margin-top: 6px; }
+#acard .acrow { margin-top: 18px; display: flex; align-items: center; gap: 14px;
+  font-size: 32px; font-weight: 900; }
+#acard .acrow .lb { color: var(--ink); }
+#acard .neq { font-size: 36px; color: var(--error); opacity: 0; margin: 0 6px; }
+.ck { display: inline-block; width: 58px; height: 58px; border-radius: 50%; position: relative; }
+.ck::after { content: "\2713"; position: absolute; inset: 0; text-align: center;
+  line-height: 46px; font-size: 34px; font-weight: 900; }
+.ck.hollow { border: 5px solid var(--loop); }
+.ck.hollow::after { color: var(--loop); }
+.ck.solid { border: 5px solid var(--success); background: var(--success); opacity: 0; }
+.ck.solid::after { color: #fff; }
+#acard .stamp { position: absolute; right: -26px; top: -30px; padding: 12px 28px;
+  font-size: 40px; font-weight: 900; color: var(--error); border: 5px solid var(--error);
+  border-radius: 10px; background: rgba(255,253,242,.96); transform: rotate(-8deg);
+  opacity: 0; box-shadow: 8px 8px 0 rgba(38,59,64,.12); }
+</style>
+</head>
+<body>
+<div id="stage">
+  <div id="grid"></div>
+
+  <!-- 1 · 课题卡 -->
+  <div class="shot" id="s1">
+    <div class="kicker chip">组件工坊 · 第 1 课</div>
+    <div class="title" id="s1t"></div>
+    <div class="rule" id="s1r"></div>
+    <div class="hint" id="s1h">5 分钟 · 看懂一次完整的运行</div>
+  </div>
+
+  <!-- 2 · 你给目标 → 三个能力图标（纯 HTML 动效） -->
+  <div class="shot" id="s2">
+    <div class="card goal" id="s2goal">
+      <div class="lab">你给目标</div>
+      <div class="sub">一句话就行</div>
+    </div>
+    <div class="arrow" id="s2arrow"><i></i></div>
+    <div class="abils" id="s2abils"></div>
+  </div>
+
+  <!-- 3 · 只会说（聊天）vs 还会动手（Agent） -->
+  <div class="shot" id="s3">
+    <div class="col left" id="s3l">
+      <span class="who">会聊天的 AI</span>
+      <div class="bubble">在的，有什么能帮你的？</div>
+      <div class="bubble r">这个我会说，做不了…</div>
+      <div class="bubble">要不你再说一遍？</div>
+      <div class="tag off">只会说</div>
+    </div>
+    <div class="vs" id="s3vs">vs</div>
+    <div class="col right" id="s3r">
+      <span class="who">AGENT</span>
+      <div class="taskmini" id="s3task">任务：读报告</div>
+      <div class="agent">
+        <svg viewBox="0 0 64 64">
+          <rect x="13" y="20" width="34" height="28" rx="9"/>
+          <path d="M32 20v-7"/><circle cx="32" cy="10" r="3"/>
+          <circle cx="25" cy="33" r="2.6"/><circle cx="39" cy="33" r="2.6"/>
+          <path d="M26 42h12"/>
+          <path d="M47 30h11"/><path d="M53 30v-6"/>
+        </svg>
+      </div>
+      <div class="tag on" id="s3tag">还会动手</div>
+    </div>
+  </div>
+
+  <!-- 4 · 四件组件拼成一台整机（无名牌）+ 循环箭头 -->
+  <div class="shot" id="s4">
+    <div class="core"></div>
+    <div class="loop">
+      <div class="rtn"></div>
+      <div class="node" data-n="0" style="left:300px"><span class="box">想</span></div>
+      <div class="node" data-n="1" style="left:660px"><span class="box">做</span></div>
+      <div class="node" data-n="2" style="left:1020px"><span class="box">看结果</span></div>
+      <div class="node" data-n="3" style="left:1380px"><span class="box">再想</span></div>
+      <div class="arw" data-a="0" style="left:612px">→</div>
+      <div class="arw" data-a="1" style="left:972px">→</div>
+      <div class="arw" data-a="2" style="left:1332px">→</div>
+      <div class="dot"></div>
+      <div class="rdot"></div>
+    </div>
+    <div id="s4machine"></div>
+  </div>
+
+  <!-- 5–8 · 任务道具（持久层，按镜切换） -->
+  <div id="props">
+    <div class="card panel" id="pPanel"><h>report.txt</h><div id="pLines"></div></div>
+    <div class="link" id="pLink"><i></i></div>
+    <div class="card outcard" id="pOut"><h>out.txt</h><span class="cell" id="pCell"></span></div>
+    <div class="chip count" id="pCount"></div>
+    <div class="card" id="acard">
+      <div class="acno">第一步</div>
+      <div class="acmain">读报告</div>
+      <div class="acrow">
+        <span class="ck hollow"></span><span class="lb">想</span>
+        <span class="neq" id="aNeq">≠</span>
+        <span class="ck solid" id="aSolid"></span><span class="lb" id="aLbDo" style="opacity:0">做</span>
+      </div>
+      <div class="stamp" id="aStamp">想 ≠ 做</div>
+    </div>
+  </div>
+  <!-- 5–8 的空壳镜头占位（画面由 #props 持久层负责） -->
+  <div class="shot" id="s5"></div>
+  <div class="shot" id="s6"></div>
+  <div class="shot" id="s7"></div>
+  <div class="shot" id="s8"></div>
+
+  <div id="vignette"></div>
+  <div id="hud">
+    <div class="chip" id="badge">组件工坊 · 第 1 课</div>
+    <div id="demo">教学演示 · 预设动画</div>
+    <div id="prog"><i></i></div>
+    <div id="seg"></div>
+    <div id="sub"><span id="subtxt"></span></div>
+  </div>
+</div>
+
+<script>
+const D = window.__DATA__ || { plates: {}, shots: [] };
+const $ = (sel, root) => (root || document).querySelector(sel);
+const $$ = (sel, root) => Array.from((root || document).querySelectorAll(sel));
+const clamp = (v, a, b) => Math.min(b, Math.max(a, v));
+const inv = (a, b, v) => b === a ? 1 : clamp((v - a) / (b - a), 0, 1);
+const ease = (a, b, v) => { const x = inv(a, b, v); return x < .5 ? 2 * x * x : 1 - Math.pow(-2 * x + 2, 2) / 2; };
+const mix = (a, b, k) => a + (b - a) * k;
+
+/* 时间线：注入的实测秒位优先，缺省回退名义秒位（浏览器直接打开也能看） */
+const SHOTS = (D.shots && D.shots.length ? D.shots : [
+  { id: "s1", start: 0, end: 4 }, { id: "s2", start: 4, end: 13 },
+  { id: "s3", start: 13, end: 21 }, { id: "s4", start: 21, end: 33 },
+  { id: "s5", start: 33, end: 37 }, { id: "s6", start: 37, end: 46 },
+  { id: "s7", start: 46, end: 54 }, { id: "s8", start: 54, end: 60 }]);
+const TOTAL = SHOTS.length ? SHOTS[SHOTS.length - 1].end : 60;
+window.DURATION = TOTAL;
+const SEG = { s1: "Agent 是什么", s2: "Agent 是什么", s3: "Agent 是什么",
+  s4: "肚子里一台机器", s5: "给个真任务", s6: "给个真任务", s7: "给个真任务", s8: "给个真任务" };
+
+const COPY = { title: "Agent 怎样完成一个任务？" };
+
+/* 词级 cue → 镜头内归一化位：按旁白实测字序定位关键词（浏览器直开无 cue 时回退 null）。
+   与 build_narration.speak_text 同口径：剥引号、破折号折成逗号、去空白（cue 不含空白）。 */
+function cueAt(shot, needle) {
+  if (!shot || !(shot.cues || []).length) return null;
+  /* cue 文本的拼接 == 剥掉标点/空白后的台词（实测口径），故按无标点串定位才对齐字序 */
+  const norm = (shot.line || "").replace(/[「」『』“”"]/g, "").replace(/——/g, "，")
+    .replace(/[，。：；、？！…—\s]/g, "");
+  const pos = norm.indexOf(needle);
+  if (pos < 0) return null;
+  let acc = 0;
+  for (const c of shot.cues) {
+    const len = (c.text || "").length;
+    if (pos < acc + len) return clamp(c.t / Math.max(0.001, shot.end - shot.start), 0, 1);
+    acc += len;
+  }
+  return null;
+}
+const shotById = id => (D.shots || []).find(s => s.id === id);
+
+/* 逐字点亮用：把一行字拆成可高亮的字（标点不参与点亮，始终可见） */
+function splitChars(el, text, allSayable) {
+  el.textContent = "";
+  const spoken = [];
+  for (const ch of text) {
+    const s = document.createElement("span");
+    const sayable = allSayable || !/[，。：；、？！…—\s「」『』（）()·]/.test(ch);
+    s.className = sayable ? "w off" : "w on";
+    s.textContent = ch;
+    el.appendChild(s);
+    if (sayable) spoken.push(s);
+  }
+  return spoken;
+}
+function lightChars(spoken, n) {
+  for (let i = 0; i < spoken.length; i++)
+    spoken[i].className = "w " + (i < n ? "on" : "off");
+}
+
+/* ---------- 建 DOM ---------- */
+const s1t = splitChars($("#s1t"), COPY.title);
+const subtxt = $("#subtxt");
+
+/* 镜 2 · 三个能力图标（想 / 动手 / 检查），accent 各一色 */
+const ABILS = [
+  { nm: "想", cap: "先想步骤", accent: "var(--loop)", at: "想步骤", fb: 0.44,
+    svg: '<svg viewBox="0 0 64 64"><circle cx="32" cy="26" r="16"/><path d="M25 46h14M28 53h8"/><path d="M27 26h10M32 21v10"/></svg>' },
+  { nm: "动手", cap: "真去动手", accent: "var(--action)", at: "动手", fb: 0.64,
+    svg: '<svg viewBox="0 0 64 64"><path d="M14 52 40 26"/><path d="M34 12 52 30 44 38 26 20z"/></svg>' },
+  { nm: "检查", cap: "看结果", accent: "var(--signal)", at: "检查", fb: 0.82,
+    svg: '<svg viewBox="0 0 64 64"><circle cx="28" cy="28" r="16"/><path d="M40 40 54 54"/><path d="M21 28l6 6 10-12"/></svg>' }
+];
+$("#s2abils").innerHTML = ABILS.map(a =>
+  `<div class="abil" style="--accent:${a.accent}">
+     <div class="ico">${a.svg}</div><div class="nm">${a.nm}</div>
+     <div class="cap">${a.cap}</div><div class="spark">✓</div>
+   </div>`).join("");
+const s2abils = $$("#s2abils .abil");
+const s2 = shotById("s2");
+const s2goalAt = cueAt(s2, "目标");
+ABILS.forEach(a => { a.at = cueAt(s2, a.at); });
+
+/* 镜 3 · 「动手」cue 决定右卡抓取节拍 */
+const s3 = shotById("s3");
+const s3doAt = cueAt(s3, "动手");
+const s3bubbles = $$("#s3l .bubble");
+
+/* 镜 4 · 四件组件插图拼一台整机（无名牌、无编号；重叠一点让它们连成一件） */
+/* 四件按自然宽高（同一缩放）紧贴拼装：列 x=570/950（横向叠 20px），
+   上下两排按底对齐、底层上压 52px，连成一件而不是四件 */
+const MACHINE = [
+  { plate: "agent_model_well", left: 570, top: 235, dx: -560, dy: -180, rot: 10 },
+  { plate: "agent_tool_rack", left: 950, top: 289, dx: 560, dy: -180, rot: -10 },
+  { plate: "agent_execution_table", left: 570, top: 585, dx: -440, dy: 240, rot: -8 },
+  { plate: "agent_observation_tray", left: 950, top: 611, dx: 440, dy: 240, rot: 8 }
+];
+$("#s4machine").innerHTML = MACHINE.map(m =>
+  `<div class="mimg" style="left:${m.left}px;top:${m.top}px">
+     <img src="${D.plates[m.plate] || ""}" alt="">
+   </div>`).join("");
+MACHINE.forEach((m, i) => { m.el = $$("#s4machine .mimg")[i]; });
+const NODES = $$("#s4 .node"), ARWS = $$("#s4 .arw");
+const nodeX = i => 450 + i * 360;
+
+/* 镜 5–8 · 道具（report.txt / out.txt，复用 v3 抓出实现） */
+const REPORT = D.report_lines || [];
+$("#pLines").innerHTML = REPORT.map((ln, i) =>
+  `<div class="ln"><i>${i + 1}</i>${ln.replace("错误", "<u>错误</u>")}</div>`).join("");
+const pLines = $$("#pLines .ln");
+const pMarks = $$("#pLines u");
+$("#pCount").textContent = "错误 ×" + REPORT.filter(l => l.indexOf("错误") >= 0).length;
+const pPanel = $("#pPanel"), pOut = $("#pOut"), pLink = $("#pLink"),
+      pCell = $("#pCell"), pCount = $("#pCount"), acard = $("#acard");
+const s6 = shotById("s6");
+const s6errAt = cueAt(s6, "错误");
+const s7 = shotById("s7");
+const AC = { at: 0.5, ck: 0.72, stamp: 0.12, solid: 0.34 };
+if (s7) {
+  const a1 = cueAt(s7, "第一步");
+  if (a1 != null) AC.at = clamp(a1 - 0.12, 0.1, 0.7);
+  AC.ck = clamp(AC.at + 0.22, 0, 0.95);
+}
+const hollowCk = $(".ck.hollow", acard), solidCk = $("#aSolid"),
+      neq = $("#aNeq"), lbDo = $("#aLbDo"), stamp = $("#aStamp");
+
+/* ---------- 逐镜摆帧 ---------- */
+function showShot(shot, alpha) {
+  shot.style.opacity = alpha.toFixed(3);
+  shot.style.visibility = alpha <= 0.001 ? "hidden" : "visible";
+}
+
+function s1(t) {
+  $("#s1 .kicker").style.transform = `translateX(${mix(-90, 0, ease(0.06, 0.3, t))}px)`;
+  $("#s1 .kicker").style.opacity = ease(0.06, 0.24, t);
+  lightChars(s1t, Math.round(ease(0.16, 0.62, t) * s1t.length));
+  for (let i = 0; i < s1t.length; i++) {
+    const k = ease(0.16 + i * 0.012, 0.34 + i * 0.012, t);
+    s1t[i].style.transform = `translateY(${mix(34, 0, k)}px)`;
+  }
+  $("#s1r").style.width = (ease(0.55, 0.82, t) * 640) + "px";
+  $("#s1h").style.opacity = ease(0.7, 0.9, t);
+}
+
+function s2f(t) {
+  const gk = ease(0.03, 0.24, t);
+  const goal = $("#s2goal");
+  goal.style.opacity = gk;
+  goal.style.transform = `translateX(${mix(-460, 0, gk)}px) rotate(${mix(-5, 0, gk)}deg)`;
+  $("#s2arrow").style.transform = `scaleX(${ease(0.2, 0.34, t)})`;
+  $("#s2arrow i").style.opacity = ease(0.3, 0.4, t);
+  goal.style.transform += ` translateY(${Math.sin(t * 6) * 4}px)`;
+  s2abils.forEach((el, i) => {
+    const a = ABILS[i].at != null ? ABILS[i].at : ABILS[i].fb;
+    el.style.opacity = ease(a - 0.05, a + 0.05, t);
+    el.style.transform = `translateY(${mix(80, 0, ease(a, a + 0.14, t))}px)`;
+    const lit = t >= a - 0.02;
+    el.classList.toggle("lit", lit);
+    $(".spark", el).style.opacity = lit ? clamp((t - a) * 6, 0, 1) : 0;
+  });
+}
+
+function s3f(t) {
+  const lk = ease(0.03, 0.24, t);
+  const L = $("#s3l");
+  L.style.opacity = lk;
+  L.style.transform = `translateX(${mix(-360, 0, lk)}px)`;
+  s3bubbles.forEach((b, i) => {
+    const k = ease(0.1 + i * 0.09, 0.24 + i * 0.09, t);
+    b.style.opacity = k;
+    b.style.transform = `translateY(${mix(26, 0, k)}px)`;
+  });
+  $("#s3vs").style.opacity = ease(0.28, 0.42, t);
+  const rk = ease(0.36, 0.56, t);
+  const R = $("#s3r");
+  R.style.opacity = rk;
+  R.style.transform = `translateX(${mix(360, 0, rk)}px)`;
+  const d = s3doAt != null ? s3doAt : 0.62;
+  const grab = ease(d, d + 0.2, t);
+  const card = $("#s3task");
+  card.style.transform = `translateX(${mix(0, 300, grab)}px) rotate(${mix(0, 8, grab)}deg)`;
+  card.style.opacity = ease(0.5, 0.62, t);
+  const tg = ease(d + 0.04, d + 0.2, t);
+  const tag = $("#s3tag");
+  tag.style.opacity = tg;
+  tag.style.transform = `translateX(-50%) scale(${mix(0.6, 1, tg)})`;
+  $(".agent", R).style.transform = `translateX(${mix(-40, 0, grab)}px)`;
+}
+
+function s4f(t) {
+  MACHINE.forEach((m, i) => {
+    const a = ease(0.08 + i * 0.11, 0.3 + i * 0.11, t);
+    const vis = ease(0.05 + i * 0.11, 0.11 + i * 0.11, t);
+    m.el.style.opacity = vis;
+    m.el.style.transform =
+      `translate(${mix(m.dx, 0, a)}px, ${mix(m.dy, 0, a)}px) rotate(${mix(m.rot, 0, a)}deg) scale(${mix(0.72, 1, a)})`;
+  });
+  const core = $("#s4 .core");
+  core.style.opacity = ease(0.48, 0.7, t) * (0.75 + 0.25 * Math.sin(t * 6));
+  const assem = ease(0.44, 0.6, t);
+  const running = t > 0.46;
+  const frac = running ? ((t - 0.46) / 0.25) % 1 : 0;
+  const seg = Math.floor(frac * 3.999);
+  $$("#s4 .loop > *").forEach(el => { if (el.classList.contains("node") ||
+    el.classList.contains("arw") || el.classList.contains("rtn")) el.style.opacity = assem; });
+  NODES.forEach((nd, i) => nd.classList.toggle("lit", running && seg === i));
+  const px = mix(450, 1530, frac * 3.999 / 3);
+  const dot = $("#s4 .dot"), rdot = $("#s4 .rdot");
+  dot.style.opacity = running ? 1 : 0;
+  dot.style.transform = `translateX(${px - 12}px)`;
+  rdot.style.opacity = running ? 1 : 0;
+  rdot.style.transform = `translateX(${1530 - (1530 - 450) * (frac * 3.999 / 3) - 10}px)`;
+}
+
+/* 道具持久层：镜 5–8 的画面（report.txt 从右抓出、out.txt 从左浮现；镜 7/8 行动卡） */
+function propsRender(t, id) {
+  if (id === "s5") {
+    const a = ease(0.06, 0.5, t), b = ease(0.4, 0.86, t);
+    pPanel.style.opacity = ease(0.06, 0.34, t);
+    pPanel.style.transform = `translate(${mix(820, 0, a)}px, ${Math.sin(t * 6.2) * 5}px) rotate(${mix(3.5, -1, a)}deg)`;
+    pOut.style.opacity = ease(0.4, 0.68, t);
+    pOut.style.transform = `translate(${mix(-620, 0, b)}px, ${Math.sin(t * 6.2 + 1.2) * -5}px) rotate(${mix(-4, 1, b)}deg)`;
+    pLink.style.transform = "scaleX(0)";
+    $("#pLink i").style.opacity = 0;
+    pCount.style.opacity = 0;
+    pMarks.forEach(u => { u.style.opacity = .22; u.style.transform = "scale(1)"; });
+    pLines.forEach(ln => { ln.style.opacity = 1; ln.style.transform = "translateX(0)"; });
+    pOut.style.zIndex = 1;
+    setAcard(0, 0, 0, 0);
+    return;
+  }
+  if (id === "s6") {
+    const a = ease(0, 0.12, t);
+    pPanel.style.opacity = 1;
+    pPanel.style.transform = `translate(${mix(90, 0, a)}px, 0px) rotate(${mix(1, 0, a)}deg)`;
+    const b = ease(0, 0.14, t);
+    pOut.style.opacity = 1;
+    pOut.style.transform = `translate(${mix(-120, 0, b)}px, 0px) rotate(${mix(-1, 0, b)}deg)`;
+    pLines.forEach((ln, i) => {
+      const k = ease(0.05 + i * 0.05, 0.18 + i * 0.05, t);
+      ln.style.opacity = k;
+      ln.style.transform = `translateX(${mix(36, 0, k)}px)`;
+    });
+    const e = s6errAt != null ? s6errAt : 0.42;
+    pMarks.forEach((u, i) => {
+      const k = ease(e + i * 0.035, e + 0.1 + i * 0.035, t);
+      const pulse = clamp((t - e - i * 0.035) * 9, 0, 1);
+      u.style.opacity = mix(0.22, 1, k);
+      u.style.transform = `scale(${mix(1, 1.28, Math.sin(pulse * Math.PI))})`;
+    });
+    const ck = ease(e + 0.16, e + 0.3, t);
+    pCount.style.opacity = ck;
+    pCount.style.transform = `scale(${mix(0.5, 1.06, ck)}) rotate(${mix(-14, -4, ck)}deg)`;
+    const lk = ease(0.52, 0.72, t);
+    pLink.style.transform = `scaleX(${lk})`;
+    $("#pLink i").style.opacity = ease(0.62, 0.72, t);
+    const bt = t - 0.66, two = bt > 0 && bt < 0.5;
+    pCell.style.opacity = two ? (Math.sin(bt * 4 * Math.PI) > 0 ? 1 : 0.25) : 0.25;
+    setAcard(0, 0, 0, 0);
+    return;
+  }
+  /* s7 / s8：道具停驻（略收小、压暗），行动卡浮出 / 标「想 ≠ 做」 */
+  const dim = id === "s8" ? 0.55 : 1;
+  pPanel.style.opacity = dim;
+  pPanel.style.transform = "translate(0px,0px) rotate(0deg) scale(0.94)";
+  pOut.style.opacity = dim;
+  pOut.style.transform = "translate(0px,0px) rotate(0deg) scale(0.94)";
+  pCount.style.opacity = 0;
+  pCell.style.opacity = 0.25;
+  pLines.forEach(ln => { ln.style.opacity = 1; ln.style.transform = "translateX(0)"; });
+  pMarks.forEach(u => { u.style.opacity = 1; u.style.transform = "scale(1)"; });
+  const lk = 1;
+  pLink.style.transform = `scaleX(${lk})`;
+  $("#pLink i").style.opacity = 1;
+  if (id === "s7") {
+    const k = ease(AC.at, AC.at + 0.28, t);
+    acard.style.opacity = k;
+    acard.style.transform = `translateY(${mix(150, 0, k)}px)`;
+    acard.style.visibility = "visible";
+    setAcard(ease(AC.ck, AC.ck + 0.16, t), 0, 0, 0);
+  } else {
+    acard.style.opacity = 1;
+    acard.style.transform = "translateY(0px) scale(" + mix(1, 1.03, ease(0.5, 0.9, t)) + ")";
+    acard.style.visibility = "visible";
+    const pulse = 0.55 + 0.45 * Math.sin(t * 9);
+    const sk = ease(AC.solid, AC.solid + 0.18, t);
+    const stampK = ease(AC.stamp, AC.stamp + 0.24, t);
+    setAcard(1, sk, sk, stampK * (0.9 + 0.1 * pulse));
+    solidCk.style.opacity = String(sk * (0.55 + 0.45 * pulse));
+    stamp.style.transform = `rotate(-8deg) scale(${mix(1.6, 1, stampK)})`;
+  }
+}
+function setAcard(hollowOn, neqOn, doOn, stampOn) {
+  hollowCk.style.opacity = String(hollowOn);
+  neq.style.opacity = String(neqOn);
+  lbDo.style.opacity = String(doOn);
+  stamp.style.opacity = String(stampOn);
+}
+
+const RENDER = { s1, s2: s2f, s3: s3f, s4: s4f, s5: () => {}, s6: () => {}, s7: () => {}, s8: () => {} };
+const PROP_SHOTS = { s5: 1, s6: 1, s7: 1, s8: 1 };
+
+/* ---------- 字幕（词级 cue 驱动逐字点亮） ---------- */
+function subSize(len) {
+  return len <= 16 ? 48 : len <= 26 ? 42 : len <= 36 ? 36 : 32;
+}
+function subtitle(shot, local) {
+  const line = shot.line || "";
+  if (subtitle.line !== line) {
+    subtitle.line = line;
+    subtitle.spoken = splitChars(subtxt, line);
+    subtxt.style.fontSize = subSize(line.length) + "px";
+  }
+  const spoken = subtitle.spoken;
+  const cues = shot.cues || [];
+  if (!cues.length) { lightChars(spoken, Math.round(ease(0.1, 0.8, local) * spoken.length)); return; }
+  /* cue.t 是「本镜配音起点起的秒数」，传进来的 local 是镜头内归一化位——
+     先折回秒再比（v2 的坑：直接比会让字幕只亮前 1 秒的词、永不点完） */
+  const tSec = local * (shot.end - shot.start);
+  const cueEnd = (shot.audio_dur || 0) + 0.2;
+  let n = 0;
+  if (tSec >= cueEnd) n = spoken.length;
+  else {
+    let chars = 0;
+    for (const c of cues) { if (tSec >= c.t) chars += (c.text || "").length; else break; }
+    n = Math.round(clamp(chars / Math.max(1, cueChars(cues)) , 0, 1) * spoken.length);
+  }
+  lightChars(spoken, n);
+}
+function cueChars(cues) { let n = 0; for (const c of cues) n += (c.text || "").length; return n; }
+
+/* ---------- 主摆帧 ---------- */
+window.seek = function (t) {
+  let active = null;
+  for (const shot of SHOTS) {
+    const el = $("#" + shot.id);
+    if (!el) continue;
+    const dur = shot.end - shot.start;
+    const local = (t - shot.start) / dur;
+    if (t >= shot.start && t < shot.end + (shot.id === SHOTS[SHOTS.length - 1].id ? 0.001 : 0)) {
+      active = { shot, el, local: clamp(local, 0, 1) };
+      showShot(el, ease(0, 0.18 / dur, local));
+    } else {
+      showShot(el, 0);
+    }
+  }
+  if (active) { RENDER[active.shot.id](active.local); subtitle(active.shot, active.local); }
+
+  const inProps = !!(active && PROP_SHOTS[active.shot.id]);
+  $("#props").style.opacity = inProps ? 1 : 0;
+  if (inProps) propsRender(active.local, active.shot.id);
+  if (!(active && (active.shot.id === "s7" || active.shot.id === "s8")))
+    acard.style.visibility = "hidden";
+
+  const hudOn = t >= (SHOTS[1] ? SHOTS[1].start : 4);
+  $("#hud").style.opacity = hudOn ? 1 : 0;
+  $("#prog i").style.width = (clamp(t / TOTAL, 0, 1) * 420) + "px";
+  $("#seg").textContent = active ? (SEG[active.shot.id] || "") : "";
+};
+window.__ready = true;
+</script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+# 概念装置 · 角色铭牌（docs/10-契约/mini-codex.md §一 #2；L1 两件之一，spec §3.3/§4.3）。
+# 组件实现 game/scenes/levels/l1/components/nameplate.gd（场景 nameplate.tscn）；
+# 世界状态注册见 game/scripts/levels/l1/l1_flow.gd setup_world()——
+# defaults 与端口形状照抄，防漂移。亮不亮由步记录派生（identity_out=1 常亮）。
+assetId: conc_nameplate
+kind: parametric
+blockTypes: [text_]
+conceptIds: [c10.1]
+footprint: [2, 1]
+anchor: bottom-center
+ports:
+  - id: identity_out
+    kind: ANALOG
+    dir: out
+defaults:
+  display_name: "mini codex"
+  role: "接活与报数"
+scene: game/scenes/levels/l1/components/nameplate.tscn
+shots:
+  - shot: iso
+    action: idle
+    duration: 3.0
+    output: assets/conc_nameplate/iso_idle/
+  - shot: iso
+    action: run
+    duration: 4.0
+    output: assets/conc_nameplate/iso_run/
+  - shot: front
+    action: idle
+    duration: 2.0
+    output: assets/conc_nameplate/front_idle/
+  - shot: close
+    action: idle
+    duration: 2.5
+    output: assets/conc_nameplate/close_idle/

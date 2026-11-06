@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/asset_lib/base_container.gd" id="1_base_container"]
+
+[node name="BaseContainer" type="Node3D"]
+script = ExtResource("1_base_container")

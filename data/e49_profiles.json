@@ -1,0 +1,12 @@
+{
+  "episode": "e49",
+  "note": "图层用数值与文案（spec §8：data 限定为图层用的数值与公式数据；文案取大纲 E49 条目原文，不自造）",
+  "profile_fields": ["身份", "目标", "能力边界", "说话风格", "约束"],
+  "profile_fields_note": "大纲 E49 画面：一份 profile 卡片展开成字段",
+  "opening_line": "profile 决定智能体的身份、目标和行为边界",
+  "opening_line_note": "大纲 E49 口播①",
+  "voiceover_line": "第 49 集，智能体身份与角色 profile。",
+  "voiceover_line_note": "开场白：从大纲 E49 标题起一句，30 字内",
+  "consistency_decay": null,
+  "consistency_decay_note": "大纲 E49 画面：角色扮演一致性随时间衰减的曲线——数值待补（null）"
+}

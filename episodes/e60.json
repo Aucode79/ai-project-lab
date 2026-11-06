@@ -1,0 +1,21 @@
+{
+  "id": "e60",
+  "title": "程序填空与程序阅读拆解",
+  "duration": 8,
+  "marks": ["专项"],
+  "outlineRefs": ["例卷材料题 1、2"],
+  "examRefs": [],
+  "scenes": "compose/e60/",
+  "data": ["data/e60_reference_solutions.py"],
+  "voiceover": {
+    "script": "layers/e60/voiceover.txt",
+    "audio": "layers/e60/voiceover.mp3"
+  },
+  "quiz": { "source": "新例卷材料题 1（4 空）、材料题 2（3 空）" },
+  "assets": [],
+  "runs": [],
+  "motion": [],
+  "layers": [],
+  "timeline": [],
+  "demo_stub": ["examRefs", "scenes", "data", "voiceover", "assets", "layers", "timeline"]
+}

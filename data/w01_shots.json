@@ -1,0 +1,125 @@
+{
+  "id": "w01",
+  "note": "第一课《Agent 怎样完成一个任务？》样片 v4 的镜头时间线（v4 真源）。v4 重制开头：不再介绍四件组件，只讲 Agent 总体（是什么 / 怎么转 / 给个真任务看第一步），八镜台词逐字照抄本文件 line；start/end 是名义秒位，实测秒位由 tools/production/build_narration.py 按配音长度排布，写进 layers/w01/narration.json。画面/旁白改动先改分镜稿再改这里。2026-09-20 v4：八镜台词全新、配音全量重合成，画面 scenes/w01_intro/index.html 重做镜 2–8（课题卡沿用），产物 compose/w01/pilot_v4.mp4（不覆盖 pilot.mp4 / pilot_v2.mp4 / pilot_v3.mp4）。全片不出现组件中文名（点子井/干活台/回音盘/工具架等）。",
+  "fps": 25,
+  "canvas": [1920, 1080],
+  "total": 60.0,
+  "segments": [
+    { "id": "seg1", "name": "Agent 是什么", "start": 0.0, "end": 21.0 },
+    { "id": "seg2", "name": "肚子里一台机器", "start": 21.0, "end": 33.0 },
+    { "id": "seg3", "name": "给个真任务", "start": 33.0, "end": 60.0 }
+  ],
+  "shots": [
+    {
+      "id": "s1", "start": 0.0, "end": 4.0, "segment": "seg1", "technique": "A",
+      "screen": "纯色底课题卡：大字「Agent 怎样完成一个任务？」角标「组件工坊 · 第 1 课」（沿用 v3 既有版式与文案）",
+      "line": "这个视频咱来讲：Agent 是怎么干活的？"
+    },
+    {
+      "id": "s2", "start": 4.0, "end": 13.0, "segment": "seg1", "technique": "A",
+      "screen": "纯 HTML 动效：左「你给目标」卡拉出，右侧三个能力图标（想 / 动手 / 检查）随旁白逐个点亮",
+      "line": "先说 Agent 是什么：你给它一个目标，剩下的它自己想办法干完——想步骤、动手、检查，都不用你管。"
+    },
+    {
+      "id": "s3", "start": 13.0, "end": 21.0, "segment": "seg1", "technique": "A",
+      "screen": "对比布局（纯 HTML）：左「只会说」聊天气泡叠、右 Agent 小图标伸手抓走任务卡，中间 vs 分隔；旁白念到「动手」时右卡亮起",
+      "line": "你可能用过会聊天的 AI，它只会说。Agent 不一样：它还会动手，替你把活真干了。"
+    },
+    {
+      "id": "s4", "start": 21.0, "end": 33.0, "segment": "seg2", "technique": "E",
+      "screen": "四件部件透明底插图（agent_model_well / agent_execution_table / agent_tool_rack / agent_observation_tray；外形真源 component_catalog.gd，本课不出名牌不点名）依次飞入落位拼成一台整机（无名牌、无编号），上方循环箭头「想→做→看结果→再想」流动",
+      "line": "它里面长什么样？就这么一台机器：想一步，做一步，看一眼结果，再想下一步——一圈圈转，直到干完。"
+    },
+    {
+      "id": "s5", "start": 33.0, "end": 37.0, "segment": "seg3", "technique": "A",
+      "screen": "任务道具抓出：报告面板 report.txt 从右拉出、结果文件卡 out.txt 从左浮现（纯 HTML 卡片，复用 v3 的道具抓出实现）",
+      "line": "咱给它个真任务试试。"
+    },
+    {
+      "id": "s6", "start": 37.0, "end": 46.0, "segment": "seg3", "technique": "A",
+      "screen": "道具落位：两卡停稳、中间箭头点亮，报告逐行浮现、旁白念到「错误」时三处红字依次点亮，out.txt 空格待填",
+      "line": "数一数这份报告里，『错误』出现了几次；数完，把答案写进结果文件。就这么多，别的它自己定。"
+    },
+    {
+      "id": "s7", "start": 46.0, "end": 54.0, "segment": "seg3", "technique": "C",
+      "screen": "道具停驻，「第一步：读报告」行动卡从下方浮出（空心勾 = 还没做）",
+      "line": "它能行吗？咱们跟着它一步一步看。它先想了想：第一步，读报告。"
+    },
+    {
+      "id": "s8", "start": 54.0, "end": 60.0, "segment": "seg3", "technique": "C",
+      "screen": "行动卡标「想 ≠ 做」状态章：空心勾保留（只想了），实心勾呼吸待做，收在悬念上",
+      "line": "注意——它只是想了，还没做。什么时候做？马上。"
+    }
+  ],
+  "plates_note": "3D 插入画面：由 tools/production/prep_plates.py --episode w01 从捕获产物加工（capture.sh 的 OUT_ROOT 改道 + 工坊 --shot 静帧），src 是中间产物、out 是 HTML 引用的底板。v4 只引用四件组件的 iso 底板（镜 4 拼整机）；mode=spin 的慢旋序列与 studio_wide 全景 v4 起不再被场景引用，条目保留只为底板可再生（raw 目录在则可复跑 prep_plates.py）。",
+  "plates": {
+    "studio_wide": {
+      "src": "game/shots/production/w01/studio_page0.png",
+      "mode": "crop169",
+      "trim_top": 0.22,
+      "trim_top_note": "先切掉顶部 22%——那块是工坊自己的操作提示字砖（点按阅读/长按搬运…），留着会和视频的字幕条抢读；再居中裁 16:9 正好框住四件样件。v4 起场景不再引用本底板，保留只为可再生。",
+      "out": "game/shots/production/w01/plate/studio_page0.png"
+    },
+    "agent_task_dock": {
+      "src": "game/shots/production/w01/agent_task_dock_iso",
+      "mode": "trim",
+      "out": "game/shots/production/w01/plate/agent_task_dock.png"
+    },
+    "agent_model_well": {
+      "src": "game/shots/production/w01/agent_model_well_iso",
+      "mode": "trim",
+      "out": "game/shots/production/w01/plate/agent_model_well.png"
+    },
+    "agent_tool_rack": {
+      "src": "game/shots/production/w01/agent_tool_rack_iso",
+      "mode": "trim",
+      "out": "game/shots/production/w01/plate/agent_tool_rack.png"
+    },
+    "agent_execution_table": {
+      "src": "game/shots/production/w01/agent_execution_table_iso",
+      "mode": "trim",
+      "out": "game/shots/production/w01/plate/agent_execution_table.png"
+    },
+    "agent_observation_tray": {
+      "src": "game/shots/production/w01/agent_observation_tray_iso",
+      "mode": "trim",
+      "out": "game/shots/production/w01/plate/agent_observation_tray.png"
+    },
+    "agent_model_well_spin": {
+      "src": "game/shots/production/w01/agent_model_well_spin",
+      "mode": "spin",
+      "stride": 2,
+      "max_side": 760,
+      "out": "game/shots/production/w01/plate/spin/agent_model_well"
+    },
+    "agent_execution_table_spin": {
+      "src": "game/shots/production/w01/agent_execution_table_spin",
+      "mode": "spin",
+      "stride": 2,
+      "max_side": 760,
+      "out": "game/shots/production/w01/plate/spin/agent_execution_table"
+    },
+    "agent_tool_rack_spin": {
+      "src": "game/shots/production/w01/agent_tool_rack_spin",
+      "mode": "spin",
+      "stride": 2,
+      "max_side": 760,
+      "out": "game/shots/production/w01/plate/spin/agent_tool_rack"
+    },
+    "agent_observation_tray_spin": {
+      "src": "game/shots/production/w01/agent_observation_tray_spin",
+      "mode": "spin",
+      "stride": 2,
+      "max_side": 760,
+      "out": "game/shots/production/w01/plate/spin/agent_observation_tray"
+    }
+  },
+  "report_lines": [
+    "模块A 启动正常",
+    "模块B 报告 错误：超时",
+    "模块B 报告 错误：重试后成功",
+    "模块C 数据校验 错误：校验和不匹配",
+    "模块C 自检通过"
+  ],
+  "report_lines_source": "game/scripts/levels/l2/l2_flow.gd:52（分镜稿 §1 原文，「错误」3 次在第 2/3/4 行）"
+}

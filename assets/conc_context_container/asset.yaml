@@ -1,0 +1,41 @@
+# 概念装置 · 上下文容器（docs/10-契约/mini-codex.md §一 #4；L3 两件之一）。
+# 把该读的读进来，按窗口预算（capacity）裁剪：装入的文件码成一摞，占用有刻度段。
+# 世界状态注册见 game/scripts/levels/l3/l3_flow.gd setup_world()——
+# assetId/defaults/端口形状照抄运行时注册，防漂移。
+# blockTypes 理由：容器——承载上下文窗口的内容清单（容量上限内一摞文件 +
+# 占用刻度段），清单即表；可操作装配归家族一 code_block。
+# 注：运行时另有数组参数 files（默认 []，装进窗口的文件名列表），
+# 资产库 defaults 只收标量，未记；files 以关卡步记录（world.set_param）为准。
+assetId: conc_context_container
+kind: parametric
+blockTypes: [code_block, table_]
+conceptIds: [c10.2]
+footprint: [2, 2]
+anchor: bottom-center
+ports:
+  - id: load_in
+    kind: ANALOG
+    dir: in
+  - id: fill_out
+    kind: ANALOG
+    dir: out
+defaults:
+  capacity: 8
+scene: game/scenes/levels/l3/components/context_container.tscn
+shots:
+  - shot: iso
+    action: idle
+    duration: 3.0
+    output: assets/conc_context_container/iso_idle/
+  - shot: iso
+    action: run
+    duration: 5.0
+    output: assets/conc_context_container/iso_run/
+  - shot: front
+    action: idle
+    duration: 2.0
+    output: assets/conc_context_container/front_idle/
+  - shot: close
+    action: run
+    duration: 4.0
+    output: assets/conc_context_container/close_run/

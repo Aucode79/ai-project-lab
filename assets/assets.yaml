@@ -1,0 +1,153 @@
+# 主索引：三层资产库（base_/mach_/conc_）全部资产的汇总表（spec §4.3 / §8）。
+# 2026-09-14 追加：L2–L5 关卡组件十二件正式落库——L2 三件用关卡作用域注册 id
+# （l2_*，见各关 setup_world 的 register_asset，assetId 与运行时一致防漂移）。
+# 单件真相在 assets/{assetId}/asset.yaml；本表与单件的对账由
+# tools/validate_assets.py 强制（字段与端口数逐一比对，防漂移）。
+# ports 列为端口数量。
+assets:
+  - assetId: base_block
+    kind: parametric
+    blockTypes: [code_block]
+    footprint: [1, 1]
+    ports: 2
+  - assetId: base_track
+    kind: parametric
+    blockTypes: [code_block]
+    footprint: [4, 1]
+    ports: 2
+  - assetId: base_container
+    kind: parametric
+    blockTypes: [code_block]
+    footprint: [2, 2]
+    ports: 2
+  - assetId: base_gate
+    kind: parametric
+    blockTypes: [code_block]
+    footprint: [2, 1]
+    ports: 3
+  - assetId: base_slot
+    kind: parametric
+    blockTypes: [code_block]
+    footprint: [1, 1]
+    ports: 1
+  - assetId: base_wire
+    kind: parametric
+    blockTypes: [code_block]
+    footprint: [2, 1]
+    ports: 2
+  - assetId: base_label
+    kind: parametric
+    blockTypes: [text_]
+    footprint: [2, 1]
+    ports: 0
+  - assetId: mach_conveyor
+    kind: parametric
+    blockTypes: [code_block]
+    footprint: [4, 1]
+    ports: 3
+  - assetId: mach_splitter
+    kind: parametric
+    blockTypes: [code_block]
+    footprint: [2, 2]
+    ports: 3
+  - assetId: mach_stacker
+    kind: parametric
+    blockTypes: [code_block, table_]
+    footprint: [2, 2]
+    ports: 2
+  - assetId: mach_counter
+    kind: parametric
+    blockTypes: [code_block, timeline_]
+    footprint: [1, 1]
+    ports: 3
+  - assetId: mach_verify_gate
+    kind: parametric
+    blockTypes: [code_block, flow_]
+    footprint: [3, 2]
+    ports: 4
+  - assetId: conc_task_board
+    kind: parametric
+    blockTypes: [code_block, text_]
+    footprint: [3, 1]
+    ports: 2
+  - assetId: conc_nameplate
+    kind: parametric
+    blockTypes: [text_]
+    footprint: [2, 1]
+    ports: 1
+  # ---- L2 三件（文件柜/扫描器/机械臂，l2_flow.gd register_asset）----
+  - assetId: l2_file_cabinet
+    kind: parametric
+    blockTypes: [code_block, table_]
+    footprint: [6, 1]
+    ports: 0
+  - assetId: l2_scanner
+    kind: parametric
+    blockTypes: [code_block]
+    footprint: [1, 1]
+    ports: 1
+  - assetId: l2_arm
+    kind: parametric
+    blockTypes: [code_block]
+    footprint: [2, 2]
+    ports: 1
+  # ---- L3 两件（上下文容器/记忆柜，l3_flow.gd register_asset）----
+  - assetId: conc_context_container
+    kind: parametric
+    blockTypes: [code_block, table_]
+    footprint: [2, 2]
+    ports: 2
+  - assetId: conc_memory_cabinet
+    kind: parametric
+    blockTypes: [code_block, table_]
+    footprint: [2, 1]
+    ports: 2
+  # ---- L4 三件（思考机/计划板/工具带，l4_flow.gd register_asset）----
+  - assetId: conc_thinker
+    kind: parametric
+    blockTypes: [code_block, flow_, dialogue_]
+    footprint: [2, 1]
+    ports: 2
+  - assetId: conc_plan_board
+    kind: parametric
+    blockTypes: [code_block, flow_]
+    footprint: [3, 1]
+    ports: 2
+  - assetId: conc_tool_belt
+    kind: parametric
+    blockTypes: [code_block]
+    footprint: [3, 1]
+    ports: 1
+  # ---- L5 四件（执行器/校验门/旁路/回廊，l5_flow.gd register_asset）----
+  - assetId: conc_runner
+    kind: parametric
+    blockTypes: [code_block, flow_, output_]
+    footprint: [2, 1]
+    ports: 4
+  - assetId: conc_verify_gate
+    kind: parametric
+    blockTypes: [code_block, flow_]
+    footprint: [2, 3]
+    ports: 3
+  - assetId: conc_bypass
+    kind: parametric
+    blockTypes: [code_block, flow_]
+    footprint: [2, 1]
+    ports: 1
+  - assetId: conc_loop_gallery
+    kind: parametric
+    blockTypes: [code_block, flow_]
+    footprint: [3, 2]
+    ports: 4
+  # ---- chart_ 展示方块（效率对比图表，L1 score 段喂两次 run 的实测 ops）----
+  - assetId: conc_ops_chart
+    kind: exhibit
+    blockTypes: [chart_]
+    footprint: [2, 1]
+    ports: 0
+  # ---- player_ 播放器方块（幕布，五关视频交付面；spec §9.3 验收 6 台账补齐）----
+  - assetId: player_screen
+    kind: exhibit
+    blockTypes: [player_]
+    footprint: [4, 3]
+    ports: 0

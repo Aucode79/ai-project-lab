@@ -1,0 +1,33 @@
+# 基础件 · 通用方块（token 载体，spec §3.3/§4.3）
+assetId: base_block
+kind: parametric
+blockTypes: [code_block]
+conceptIds: []
+footprint: [1, 1]
+anchor: bottom-center
+ports:
+  - id: in
+    kind: BOOL
+    dir: in
+  - id: out
+    kind: BOOL
+    dir: out
+defaults:
+  color_index: 3
+shots:
+  - shot: iso
+    action: idle
+    duration: 3.0
+    output: assets/base_block/iso_idle/
+  - shot: iso
+    action: run
+    duration: 4.0
+    output: assets/base_block/iso_run/
+  - shot: front
+    action: idle
+    duration: 2.0
+    output: assets/base_block/front_idle/
+  - shot: top
+    action: idle
+    duration: 2.0
+    output: assets/base_block/top_idle/

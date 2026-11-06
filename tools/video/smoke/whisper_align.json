@@ -1,0 +1,255 @@
+{
+  "audio": "D:\\ai-project-lab\\tools\\video\\smoke\\whisper_input.wav",
+  "audio_duration_s": 5.832,
+  "model": "large-v3",
+  "model_cache": "D:\\ai-project-lab\\tools\\video\\models\\whisper",
+  "faster_whisper_version": "1.2.1",
+  "ctranslate2_version": "4.8.2",
+  "device": "cuda",
+  "compute_type": "float16",
+  "cuda_device_count": 1,
+  "language": "zh",
+  "language_probability": 0.9971,
+  "transcribe_seconds": 3.0,
+  "full_text": "人工智能正在改变世界,编程教育也迎来了新的可能。",
+  "segments": [
+    {
+      "id": 1,
+      "start": 0.0,
+      "end": 4.98,
+      "text": "人工智能正在改变世界,编程教育也迎来了新的可能。",
+      "words": [
+        {
+          "word": "人",
+          "start": 0.0,
+          "end": 0.24,
+          "probability": 0.9941
+        },
+        {
+          "word": "工",
+          "start": 0.24,
+          "end": 0.42,
+          "probability": 1.0
+        },
+        {
+          "word": "智",
+          "start": 0.42,
+          "end": 0.68,
+          "probability": 1.0
+        },
+        {
+          "word": "能",
+          "start": 0.68,
+          "end": 0.9,
+          "probability": 0.998
+        },
+        {
+          "word": "正",
+          "start": 0.9,
+          "end": 1.28,
+          "probability": 0.9937
+        },
+        {
+          "word": "在",
+          "start": 1.28,
+          "end": 1.46,
+          "probability": 0.999
+        },
+        {
+          "word": "改",
+          "start": 1.46,
+          "end": 1.64,
+          "probability": 0.9995
+        },
+        {
+          "word": "变",
+          "start": 1.64,
+          "end": 1.86,
+          "probability": 0.9954
+        },
+        {
+          "word": "世界,",
+          "start": 1.86,
+          "end": 2.14,
+          "probability": 0.9995
+        },
+        {
+          "word": "编",
+          "start": 2.4,
+          "end": 2.88,
+          "probability": 0.99
+        },
+        {
+          "word": "程",
+          "start": 2.88,
+          "end": 3.0,
+          "probability": 0.9839
+        },
+        {
+          "word": "教",
+          "start": 3.0,
+          "end": 3.26,
+          "probability": 0.999
+        },
+        {
+          "word": "育",
+          "start": 3.26,
+          "end": 3.54,
+          "probability": 0.9998
+        },
+        {
+          "word": "也",
+          "start": 3.54,
+          "end": 3.86,
+          "probability": 0.9937
+        },
+        {
+          "word": "迎",
+          "start": 3.86,
+          "end": 4.04,
+          "probability": 1.0
+        },
+        {
+          "word": "来了",
+          "start": 4.04,
+          "end": 4.26,
+          "probability": 0.9995
+        },
+        {
+          "word": "新",
+          "start": 4.26,
+          "end": 4.5,
+          "probability": 1.0
+        },
+        {
+          "word": "的",
+          "start": 4.5,
+          "end": 4.7,
+          "probability": 1.0
+        },
+        {
+          "word": "可能。",
+          "start": 4.7,
+          "end": 4.98,
+          "probability": 0.9995
+        }
+      ]
+    }
+  ],
+  "words": [
+    {
+      "word": "人",
+      "start": 0.0,
+      "end": 0.24,
+      "probability": 0.9941
+    },
+    {
+      "word": "工",
+      "start": 0.24,
+      "end": 0.42,
+      "probability": 1.0
+    },
+    {
+      "word": "智",
+      "start": 0.42,
+      "end": 0.68,
+      "probability": 1.0
+    },
+    {
+      "word": "能",
+      "start": 0.68,
+      "end": 0.9,
+      "probability": 0.998
+    },
+    {
+      "word": "正",
+      "start": 0.9,
+      "end": 1.28,
+      "probability": 0.9937
+    },
+    {
+      "word": "在",
+      "start": 1.28,
+      "end": 1.46,
+      "probability": 0.999
+    },
+    {
+      "word": "改",
+      "start": 1.46,
+      "end": 1.64,
+      "probability": 0.9995
+    },
+    {
+      "word": "变",
+      "start": 1.64,
+      "end": 1.86,
+      "probability": 0.9954
+    },
+    {
+      "word": "世界,",
+      "start": 1.86,
+      "end": 2.14,
+      "probability": 0.9995
+    },
+    {
+      "word": "编",
+      "start": 2.4,
+      "end": 2.88,
+      "probability": 0.99
+    },
+    {
+      "word": "程",
+      "start": 2.88,
+      "end": 3.0,
+      "probability": 0.9839
+    },
+    {
+      "word": "教",
+      "start": 3.0,
+      "end": 3.26,
+      "probability": 0.999
+    },
+    {
+      "word": "育",
+      "start": 3.26,
+      "end": 3.54,
+      "probability": 0.9998
+    },
+    {
+      "word": "也",
+      "start": 3.54,
+      "end": 3.86,
+      "probability": 0.9937
+    },
+    {
+      "word": "迎",
+      "start": 3.86,
+      "end": 4.04,
+      "probability": 1.0
+    },
+    {
+      "word": "来了",
+      "start": 4.04,
+      "end": 4.26,
+      "probability": 0.9995
+    },
+    {
+      "word": "新",
+      "start": 4.26,
+      "end": 4.5,
+      "probability": 1.0
+    },
+    {
+      "word": "的",
+      "start": 4.5,
+      "end": 4.7,
+      "probability": 1.0
+    },
+    {
+      "word": "可能。",
+      "start": 4.7,
+      "end": 4.98,
+      "probability": 0.9995
+    }
+  ]
+}

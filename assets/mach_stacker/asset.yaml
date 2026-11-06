@@ -1,0 +1,29 @@
+# 机械 · 堆叠架（码放 token 方块；堆叠刚体走睡眠态保稳，bench 纪律）
+assetId: mach_stacker
+kind: parametric
+blockTypes: [code_block, table_]
+conceptIds: []
+footprint: [2, 2]
+anchor: bottom-center
+ports:
+  - id: intake
+    kind: BOOL
+    dir: in
+  - id: release
+    kind: BOOL
+    dir: out
+defaults:
+  stack_height: 3
+shots:
+  - shot: iso
+    action: idle
+    duration: 3.0
+    output: assets/mach_stacker/iso_idle/
+  - shot: iso
+    action: run
+    duration: 4.0
+    output: assets/mach_stacker/iso_run/
+  - shot: top
+    action: run
+    duration: 3.0
+    output: assets/mach_stacker/top_run/

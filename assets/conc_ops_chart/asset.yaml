@@ -1,0 +1,37 @@
+# 概念装置 · 效率对比图表（家族二 chart_ 方块；docs/10-契约/方块体系.md §五 #1 透明展柜）。
+# 真实数据驱动、非装饰：L1 评分后把两次 world.run（stage_run / stage_tune）的
+# 实测 ops 喂进来（l1_flow.gd _refresh_ops_chart → l1_scene.refresh_ops_chart），
+# 柱体高度按值比例立起——数据来自步记录，不手摆。
+# kind 判定：无旋钮、只读展示（bars 只被 flow 单向写入，学员无可调参数）→ exhibit。
+# conceptIds 挂 c10.3（智能体工具使用）：柱子度量的正是 world.run 工具调用的
+# 开销量（ops），与 conc_runner 同概念；mini-codex §4.1 多维评分的"效率"维度
+# 的可视落点。
+assetId: conc_ops_chart
+kind: exhibit
+blockTypes: [chart_]
+conceptIds: [c10.3]
+footprint: [2, 1]
+anchor: bottom-center
+ports: []
+defaults:
+  max_height: 1.2
+  title: "两次 run 的 ops 对比"
+  bars: ""
+scene: game/scenes/blocks/ops_chart.tscn
+shots:
+  - shot: iso
+    action: idle
+    duration: 3.0
+    output: assets/conc_ops_chart/iso_idle/
+  - shot: iso
+    action: run
+    duration: 5.0
+    output: assets/conc_ops_chart/iso_run/
+  - shot: front
+    action: idle
+    duration: 2.0
+    output: assets/conc_ops_chart/front_idle/
+  - shot: close
+    action: run
+    duration: 4.0
+    output: assets/conc_ops_chart/close_run/

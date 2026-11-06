@@ -1,0 +1,27 @@
+# 播放器方块（家族二 player_，方块体系 §五 #10"幕布"：微课成片本身；spec §9.3 验收 6 台账补齐）。
+# 组件实现 game/scenes/blocks/player_block.gd（场景 player_block.tscn）；
+# L1 场景实例化 + 运行时注册为 player_screen（game/scripts/levels/l1/）。
+# 求助屏（help_screen）同为幕布族但与播放器分成两块（一事一物）。
+assetId: player_screen
+kind: exhibit
+blockTypes: [player_]
+conceptIds: [c10.1]
+footprint: [4, 3]
+anchor: bottom-center
+ports: []
+defaults:
+  screen_title: "L1 · E49 占位视频"
+scene: game/scenes/blocks/player_block.tscn
+shots:
+  - shot: iso
+    action: idle
+    duration: 3.0
+    output: assets/player_screen/iso_idle/
+  - shot: front
+    action: idle
+    duration: 3.0
+    output: assets/player_screen/front_idle/
+  - shot: front
+    action: run
+    duration: 4.0
+    output: assets/player_screen/front_run/

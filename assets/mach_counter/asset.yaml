@@ -1,0 +1,37 @@
+# 机械 · 计数器（tick 进、count 出——ANALOG 端口的例子；溢出走 overflow）
+assetId: mach_counter
+kind: parametric
+blockTypes: [code_block, timeline_]
+conceptIds: []
+footprint: [1, 1]
+anchor: bottom-center
+ports:
+  - id: tick
+    kind: BOOL
+    dir: in
+  - id: count
+    kind: ANALOG
+    dir: out
+  - id: overflow
+    kind: BOOL
+    dir: out
+defaults:
+  count_start: 0
+  digit_count: 3
+shots:
+  - shot: iso
+    action: idle
+    duration: 3.0
+    output: assets/mach_counter/iso_idle/
+  - shot: iso
+    action: run
+    duration: 4.0
+    output: assets/mach_counter/iso_run/
+  - shot: close
+    action: run
+    duration: 3.0
+    output: assets/mach_counter/close_run/
+  - shot: iso
+    action: fail
+    duration: 3.0
+    output: assets/mach_counter/iso_fail/

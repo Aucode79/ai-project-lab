@@ -1,0 +1,35 @@
+# 概念装置 · 文件柜（docs/10-契约/mini-codex.md §一 #8；L2 三件之一，spec §3.3/§4.3）。
+# 组件实现 game/scenes/levels/l2/components/file_cabinet.gd（场景 file_cabinet.tscn）；
+# 世界状态注册见 game/scripts/levels/l2/l2_flow.gd setup_world()——
+# assetId/端口形状照抄运行时注册 id（l2_file_cabinet），防漂移。
+# blockTypes 理由：容器——承载文件表，每格一行（name/permission/content），格子即表行。
+# 注：运行时 files 为数组参数（CELL_FILES 六格文件表，含作用域声明），
+# 资产库 defaults 只收标量，此处记六格文件名串（顺序同 CELL_FILES），
+# 每格内容与 permission 以关卡世界初始化声明为准（mini-codex §2.2）。
+assetId: l2_file_cabinet
+kind: parametric
+blockTypes: [code_block, table_]
+conceptIds: [c10.3]
+footprint: [6, 1]
+anchor: bottom-center
+ports: []
+defaults:
+  files: "report.txt,data.csv,notes.md,secret.txt,out.txt,config.yaml"
+scene: game/scenes/levels/l2/components/file_cabinet.tscn
+shots:
+  - shot: iso
+    action: idle
+    duration: 3.0
+    output: assets/l2_file_cabinet/iso_idle/
+  - shot: iso
+    action: run
+    duration: 5.0
+    output: assets/l2_file_cabinet/iso_run/
+  - shot: front
+    action: idle
+    duration: 2.0
+    output: assets/l2_file_cabinet/front_idle/
+  - shot: close
+    action: run
+    duration: 4.0
+    output: assets/l2_file_cabinet/close_run/

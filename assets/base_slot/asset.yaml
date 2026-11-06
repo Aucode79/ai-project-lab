@@ -1,0 +1,27 @@
+# 基础件 · 插槽（接口签名的空间化）
+assetId: base_slot
+kind: parametric
+blockTypes: [code_block]
+conceptIds: []
+footprint: [1, 1]
+anchor: bottom-center
+ports:
+  - id: slot
+    kind: BOOL
+    dir: io
+defaults:
+  accepted_kind: "code_block"
+  slot_width: 0.5
+shots:
+  - shot: iso
+    action: idle
+    duration: 3.0
+    output: assets/base_slot/iso_idle/
+  - shot: iso
+    action: run
+    duration: 4.0
+    output: assets/base_slot/iso_run/
+  - shot: close
+    action: run
+    duration: 3.0
+    output: assets/base_slot/close_run/

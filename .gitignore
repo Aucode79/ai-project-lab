@@ -1,0 +1,97 @@
+# Python
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+
+# 视频管线本机环境：Windows venv 与 whisper 模型缓存（数 GB、平台相关，不入库）
+tools/video/.venv-win/
+tools/video/models/
+
+# 本地配置与数据
+.env
+data/
+*.log
+
+# Godot 便携引擎与编辑器缓存
+tools/godot/
+game/.godot/
+# 自包含模式运行数据（app_userdata 与 Vulkan 管线缓存，随机器生成）
+game/Godot/
+
+# Blender 便携引擎（headless 渲染 / glTF 冒烟取证见 tools/video/smoke/）
+tools/blender/
+
+# Godot 逐文件产物：--import 会为每个脚本生成 *.uid、为每个导入资源生成 *.import。
+# 跑 tools/bootstrap.sh 必然触发（登记 voxel 扩展要 --import），故忽略之：既避免工作区被弄脏，
+# 也避免干扰 tools/run_tests.sh --changed 的"有没有改动"判断。
+# 注意：HEAD 里仍有 38 个 *.uid / 15 个 *.import 属历史遗留子集（已跟踪的文件不受本行影响）；
+# 统一口径（全忽略 vs 全提交——官方建议提交 .uid）另议：本仓没有任何 uid:// 引用，两者皆可。
+*.uid
+*.import
+
+# godot_voxel GDExtension 二进制（51MB，用 tools/install_voxel.sh 获取）
+game/addons/zylann.voxel/bin/
+
+# 临时下载目录
+.tmp/
+
+# 截图产物
+game/shots/
+
+# 运行时步记录与基准产物（脚本身档，产物不入库）
+game/runs/
+game/bench/out/
+
+# --- 微课生产管线产物（再生成命令见 tools/production/README.md）---
+episodes/*/media/
+assets/*/iso_*/
+assets/*/front_*/
+assets/*/top_*/
+assets/*/close_*/
+assets/*/vista_*/
+compose/*/*.mp4
+compose/*/*.part.mp4
+compose/*/frames/
+layers/*/*.png
+layers/*/*.mp3
+layers/*/*.wav
+layers/*/*.json
+
+# 既有 data/ 整目录忽略收口：集源数据（episodes 引用）放行，运行时数据仍忽略
+!data/
+data/*
+!data/e*.json
+!data/w*.json
+
+# 本机会话插件残留（zcode video-agent-kit 指针，非项目文件）
+.video_agent/
+.mimosa/
+
+# 本机工具缓存（zcode 会话计划 / v2c 扫描产物，非项目文件）
+.v2c/
+.zcode/
+
+# 第一课 Blender 产物；旁白源、真实运行记录与验收清单保留。
+tools/video/lesson01/frames/
+tools/video/lesson01/voice/
+tools/video/lesson01/voice_edit/
+tools/video/lesson01/*.wav
+tools/video/lesson01/*.mp4
+tools/video/lesson01/*.jpg
+tools/video/lesson01/*.blend*
+
+# Agent Lab 用户草稿与文件对象；初始程序由 lab_preset.py 生成
+game/agent-lab/
+tools/video/.venv-manim/
+tools/video/media/
+tools/video/lesson01/segments2d/
+tools/video/lesson01/concat2d.txt
+tools/video/lesson01/stills/
+tools/video/lesson01/teaser_cand/
+tools/video/lesson01/teaser_tmp/
+tools/video/lesson01/samples/
+/media/
+tools/video/ffmpeg-*-win64-gpl/
+tools/video/lesson01/segments3d/
+!game/shots/video3d/agent-lab/machine_map.json

@@ -1,0 +1,21 @@
+{
+  "id": "e40",
+  "title": "提示工程：目的、范围与局限",
+  "duration": 6,
+  "marks": ["必修"],
+  "outlineRefs": ["八-提示工程【1】"],
+  "examRefs": ["概念", "简答"],
+  "scenes": "compose/e40/",
+  "data": ["data/e40_length_curve.json"],
+  "voiceover": {
+    "script": "layers/e40/voiceover.txt",
+    "audio": "layers/e40/voiceover.mp3"
+  },
+  "quiz": { "source": "样题库·八-提示工程" },
+  "assets": [],
+  "runs": [],
+  "motion": [],
+  "layers": [],
+  "timeline": [],
+  "demo_stub": ["scenes", "data", "voiceover", "assets", "layers", "timeline"]
+}

@@ -1,0 +1,21 @@
+{
+  "id": "e50",
+  "title": "记忆机制：显式与隐式",
+  "duration": 7,
+  "marks": ["拓展"],
+  "outlineRefs": ["十-智能体记忆机制【2】"],
+  "examRefs": ["概念", "实现"],
+  "scenes": "compose/e50/",
+  "data": ["data/e50_memory_log.json"],
+  "voiceover": {
+    "script": "layers/e50/voiceover.txt",
+    "audio": "layers/e50/voiceover.mp3"
+  },
+  "quiz": null,
+  "assets": [],
+  "runs": [],
+  "motion": [],
+  "layers": [],
+  "timeline": [],
+  "demo_stub": ["scenes", "data", "voiceover", "assets", "layers", "timeline"]
+}

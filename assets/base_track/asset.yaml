@@ -1,0 +1,33 @@
+# 基础件 · 轨道/滑道（token 的静态导向件）
+assetId: base_track
+kind: parametric
+blockTypes: [code_block]
+conceptIds: []
+footprint: [4, 1]
+anchor: bottom-center
+ports:
+  - id: entry
+    kind: BOOL
+    dir: in
+  - id: exit
+    kind: BOOL
+    dir: out
+defaults:
+  length: 4.0
+shots:
+  - shot: iso
+    action: idle
+    duration: 3.0
+    output: assets/base_track/iso_idle/
+  - shot: iso
+    action: run
+    duration: 4.0
+    output: assets/base_track/iso_run/
+  - shot: front
+    action: idle
+    duration: 2.0
+    output: assets/base_track/front_idle/
+  - shot: vista
+    action: idle
+    duration: 5.0
+    output: assets/base_track/vista_idle/

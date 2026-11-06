@@ -1,0 +1,30 @@
+# 基础件 · 连线段（两端口之间的信号线；ANALOG 变体加粗一档）
+assetId: base_wire
+kind: parametric
+blockTypes: [code_block]
+conceptIds: []
+footprint: [2, 1]
+anchor: bottom-center
+ports:
+  - id: a
+    kind: BOOL
+    dir: io
+  - id: b
+    kind: BOOL
+    dir: io
+defaults:
+  length: 1.0
+  carries_analog: false
+shots:
+  - shot: iso
+    action: idle
+    duration: 3.0
+    output: assets/base_wire/iso_idle/
+  - shot: iso
+    action: run
+    duration: 4.0
+    output: assets/base_wire/iso_run/
+  - shot: close
+    action: idle
+    duration: 2.0
+    output: assets/base_wire/close_idle/

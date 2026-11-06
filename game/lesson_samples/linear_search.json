@@ -1,0 +1,444 @@
+{
+  "formatVersion": "python-preview/1",
+  "displayOnly": true,
+  "sourceFile": "res://lesson_samples/linear_search.py",
+  "source": "def find_index(values, target):\n    result = -1\n    for index, value in enumerate(values):\n        if value == target:\n            result = index\n            break\n    return result\n",
+  "entry": "program",
+  "modules": {
+    "expression_3": {
+      "kind": "expression",
+      "label": "-1",
+      "inputs": [],
+      "entry": "return_5",
+      "nodes": [
+        {
+          "id": "const_4",
+          "op": "const",
+          "params": {
+            "value": -1
+          },
+          "sourceText": "-1"
+        },
+        {
+          "id": "return_5",
+          "op": "return"
+        }
+      ],
+      "edges": [
+        {
+          "from": "const_4.value",
+          "to": "return_5.value"
+        }
+      ]
+    },
+    "condition_13": {
+      "kind": "expression",
+      "label": "value == target",
+      "inputs": [
+        "target",
+        "value"
+      ],
+      "entry": "return_17",
+      "nodes": [
+        {
+          "id": "input_14",
+          "op": "input",
+          "params": {
+            "name": "target"
+          },
+          "sourceText": "target"
+        },
+        {
+          "id": "input_15",
+          "op": "input",
+          "params": {
+            "name": "value"
+          },
+          "sourceText": "value"
+        },
+        {
+          "id": "eq_16",
+          "op": "eq",
+          "sourceText": "value == target"
+        },
+        {
+          "id": "return_17",
+          "op": "return"
+        }
+      ],
+      "edges": [
+        {
+          "from": "input_15.value",
+          "to": "eq_16.a"
+        },
+        {
+          "from": "input_14.value",
+          "to": "eq_16.b"
+        },
+        {
+          "from": "eq_16.value",
+          "to": "return_17.value"
+        }
+      ]
+    },
+    "expression_19": {
+      "kind": "expression",
+      "label": "index",
+      "inputs": [
+        "index"
+      ],
+      "entry": "return_21",
+      "nodes": [
+        {
+          "id": "input_20",
+          "op": "input",
+          "params": {
+            "name": "index"
+          },
+          "sourceText": "index"
+        },
+        {
+          "id": "return_21",
+          "op": "return"
+        }
+      ],
+      "edges": [
+        {
+          "from": "input_20.value",
+          "to": "return_21.value"
+        }
+      ]
+    },
+    "loop_body_8": {
+      "kind": "scope",
+      "language": "python",
+      "label": "loop_body_8",
+      "inputs": [
+        "index",
+        "value",
+        "target",
+        "values"
+      ],
+      "scope": {
+        "symbols": [
+          {
+            "name": "index",
+            "kind": "parameter"
+          },
+          {
+            "name": "value",
+            "kind": "parameter"
+          },
+          {
+            "name": "target",
+            "kind": "parameter"
+          },
+          {
+            "name": "values",
+            "kind": "parameter"
+          }
+        ]
+      },
+      "entry": "branch_18",
+      "nodes": [
+        {
+          "id": "input_9",
+          "op": "input",
+          "params": {
+            "name": "index"
+          },
+          "sourceText": "index"
+        },
+        {
+          "id": "input_10",
+          "op": "input",
+          "params": {
+            "name": "value"
+          },
+          "sourceText": "value"
+        },
+        {
+          "id": "input_11",
+          "op": "input",
+          "params": {
+            "name": "target"
+          },
+          "sourceText": "target"
+        },
+        {
+          "id": "input_12",
+          "op": "input",
+          "params": {
+            "name": "values"
+          },
+          "sourceText": "values"
+        },
+        {
+          "id": "branch_18",
+          "op": "branch",
+          "module": "condition_13",
+          "params": {
+            "visualExtent": [
+              2.75,
+              1.25,
+              2.25
+            ]
+          },
+          "sourceText": "if value == target:"
+        },
+        {
+          "id": "statement_22",
+          "op": "statement",
+          "module": "expression_19",
+          "params": {
+            "kind": "assign",
+            "target": "result"
+          },
+          "sourceText": "result = index"
+        },
+        {
+          "id": "break_23",
+          "op": "break",
+          "sourceText": "break"
+        },
+        {
+          "id": "continue_24",
+          "op": "continue"
+        }
+      ],
+      "edges": [
+        {
+          "from": "input_11.value",
+          "to": "branch_18.target"
+        },
+        {
+          "from": "input_10.value",
+          "to": "branch_18.value"
+        },
+        {
+          "from": "input_9.value",
+          "to": "statement_22.index"
+        },
+        {
+          "from": "statement_22.next",
+          "to": "break_23.exec"
+        },
+        {
+          "from": "branch_18.then",
+          "to": "statement_22.exec"
+        },
+        {
+          "from": "branch_18.else",
+          "to": "continue_24.exec"
+        }
+      ]
+    },
+    "expression_return_26": {
+      "kind": "expression",
+      "label": "result",
+      "inputs": [
+        "result"
+      ],
+      "entry": "return_28",
+      "nodes": [
+        {
+          "id": "input_27",
+          "op": "input",
+          "params": {
+            "name": "result"
+          },
+          "sourceText": "result"
+        },
+        {
+          "id": "return_28",
+          "op": "return"
+        }
+      ],
+      "edges": [
+        {
+          "from": "input_27.value",
+          "to": "return_28.value"
+        }
+      ]
+    },
+    "find_index": {
+      "kind": "function",
+      "language": "python",
+      "label": "find_index",
+      "inputs": [
+        "values",
+        "target"
+      ],
+      "scope": {
+        "symbols": [
+          {
+            "name": "values",
+            "kind": "parameter"
+          },
+          {
+            "name": "target",
+            "kind": "parameter"
+          }
+        ]
+      },
+      "entry": "statement_6",
+      "nodes": [
+        {
+          "id": "input_1",
+          "op": "input",
+          "params": {
+            "name": "values",
+            "previewValue": [
+              4,
+              2,
+              7,
+              2
+            ]
+          },
+          "sourceText": "values"
+        },
+        {
+          "id": "input_2",
+          "op": "input",
+          "params": {
+            "name": "target",
+            "previewValue": 2
+          },
+          "sourceText": "target"
+        },
+        {
+          "id": "statement_6",
+          "op": "statement",
+          "module": "expression_3",
+          "params": {
+            "kind": "assign",
+            "target": "result"
+          },
+          "sourceText": "result = -1"
+        },
+        {
+          "id": "for_25",
+          "op": "for",
+          "module": "loop_body_8",
+          "params": {
+            "visualInputs": [
+              "target",
+              "values"
+            ],
+            "target": "index, value",
+            "iter": "enumerate(values)",
+            "visualExtent": [
+              2.75,
+              1.25,
+              2.25
+            ]
+          },
+          "sourceText": "for index, value in enumerate(values):"
+        },
+        {
+          "id": "return_29",
+          "op": "return",
+          "module": "expression_return_26",
+          "sourceText": "return result"
+        }
+      ],
+      "edges": [
+        {
+          "from": "input_2.value",
+          "to": "for_25.target"
+        },
+        {
+          "from": "input_1.value",
+          "to": "for_25.values"
+        },
+        {
+          "from": "statement_6.next",
+          "to": "for_25.exec"
+        },
+        {
+          "from": "for_25.value",
+          "to": "return_29.result"
+        },
+        {
+          "from": "for_25.next",
+          "to": "return_29.exec"
+        }
+      ]
+    },
+    "program": {
+      "kind": "program",
+      "label": "Python 样例",
+      "inputs": [],
+      "entry": "find_index",
+      "nodes": [
+        {
+          "id": "input_30",
+          "op": "input",
+          "params": {
+            "name": "values",
+            "previewValue": [
+              4,
+              2,
+              7,
+              2
+            ]
+          },
+          "sourceText": "values"
+        },
+        {
+          "id": "input_31",
+          "op": "input",
+          "params": {
+            "name": "target",
+            "previewValue": 2
+          },
+          "sourceText": "target"
+        },
+        {
+          "id": "find_index",
+          "op": "call",
+          "module": "find_index",
+          "params": {
+            "visualExtent": [
+              6.0,
+              1.5,
+              4.5
+            ]
+          },
+          "sourceText": "def find_index(values, target):"
+        }
+      ],
+      "edges": [
+        {
+          "from": "input_30.value",
+          "to": "find_index.values"
+        },
+        {
+          "from": "input_31.value",
+          "to": "find_index.target"
+        }
+      ]
+    }
+  },
+  "machineLayout": {
+    "program": {
+      "positions": {
+        "input_30": [
+          -5.0,
+          0.0,
+          -1.5
+        ],
+        "input_31": [
+          -5.0,
+          0.0,
+          1.5
+        ],
+        "find_index": [
+          1.0,
+          0.0,
+          0.0
+        ]
+      }
+    }
+  }
+}

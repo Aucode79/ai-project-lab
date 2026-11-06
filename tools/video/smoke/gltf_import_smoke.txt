@@ -1,0 +1,17 @@
+INFO Draco is available, use library at D:\ai-project-lab\tools\blender\blender-5.2.2-windows-x64\5.2\scripts\addons_core\io_scene_gltf2\bf_intern_draco_bridge.dll
+INFO MeshOptimizer is available, use library at D:\ai-project-lab\tools\blender\blender-5.2.2-windows-x64\5.2\scripts\addons_core\io_scene_gltf2\bf_intern_meshopt_bridge.dll
+22:01:08 | INFO: Starting glTF 2.0 export
+22:01:08 | INFO: Extracting primitive: Cube
+22:01:08 | INFO: Primitives created: 1
+22:01:08 | INFO: Finished glTF 2.0 export in 0.03767967224121094 s
+
+EXPORT: {'FINISHED'}
+22:01:08 | INFO: Data are loaded, start creating Blender stuff
+22:01:08 | INFO: Blender create Mesh node Cube
+22:01:08 | INFO: glTF import finished in 0.00s
+IMPORT: {'FINISHED'}
+IMPORTED_OBJECTS: ['Cube']
+GLTF_SMOKE_OK
+Blender 5.2.2 LTS (hash d13f752e3b9c built 2026-09-15 01:37:04)
+
+Blender quit

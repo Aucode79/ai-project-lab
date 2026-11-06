@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/asset_lib/mach_splitter.gd" id="1_mach_splitter"]
+
+[node name="MachSplitter" type="Node3D"]
+script = ExtResource("1_mach_splitter")

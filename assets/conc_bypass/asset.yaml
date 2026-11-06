@@ -1,0 +1,39 @@
+# 概念装置 · 旁路（docs/10-契约/mini-codex.md §一 #11；L5 四件之一）。
+# 失败走岔路重试：旁路管道 + 重试计数器（recover，不占主控制流）。
+# 世界状态注册见 game/scripts/levels/l5/l5_flow.gd setup_world()——
+# assetId/defaults/端口形状照抄运行时注册，防漂移。
+# blockTypes 理由：流程机械——失败岔路（编译器投影 block=recover），
+# 拒绝后的重试回流，故家族一之外加 flow_。
+# 注：block 是编译器投影参数照抄；max_retries 为本关 tune 段可调参数（3→2）。
+assetId: conc_bypass
+kind: parametric
+blockTypes: [code_block, flow_]
+conceptIds: [c10.3]
+footprint: [2, 1]
+anchor: bottom-center
+ports:
+  - id: in
+    kind: ANALOG
+    dir: in
+defaults:
+  block: "recover"
+  max_retries: 3
+  retry_count: 0
+scene: game/scenes/levels/l5/components/bypass.tscn
+shots:
+  - shot: iso
+    action: idle
+    duration: 3.0
+    output: assets/conc_bypass/iso_idle/
+  - shot: iso
+    action: run
+    duration: 5.0
+    output: assets/conc_bypass/iso_run/
+  - shot: front
+    action: idle
+    duration: 2.0
+    output: assets/conc_bypass/front_idle/
+  - shot: close
+    action: run
+    duration: 4.0
+    output: assets/conc_bypass/close_run/

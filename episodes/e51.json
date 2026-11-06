@@ -1,0 +1,21 @@
+{
+  "id": "e51",
+  "title": "工具使用与调用优化",
+  "duration": 8,
+  "marks": ["加考"],
+  "outlineRefs": ["十-智能体工具使用【2】"],
+  "examRefs": ["概念", "实现"],
+  "scenes": "compose/e51/",
+  "data": ["data/e51_schemas.json"],
+  "voiceover": {
+    "script": "layers/e51/voiceover.txt",
+    "audio": "layers/e51/voiceover.mp3"
+  },
+  "quiz": { "source": "新例卷材料题 1（四空全覆盖）；样题库·十-智能体工具使用" },
+  "assets": [],
+  "runs": [],
+  "motion": [],
+  "layers": [],
+  "timeline": [],
+  "demo_stub": ["scenes", "data", "voiceover", "assets", "layers", "timeline"]
+}

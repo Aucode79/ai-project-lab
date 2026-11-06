@@ -1,0 +1,6 @@
+faster-whisper==1.2.1
+ctranslate2==4.8.2
+nvidia-cudnn-cu12
+nvidia-cublas-cu12
+soundfile
+av==14.2.0

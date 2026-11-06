@@ -1,0 +1,33 @@
+{
+  "id": "e49",
+  "title": "智能体身份与角色 profile",
+  "duration": 6,
+  "marks": ["必修"],
+  "outlineRefs": ["十-智能体身份与角色（profile）设置【1】"],
+  "examRefs": ["概念", "实现"],
+  "scenes": "compose/e49/",
+  "data": ["data/e49_profiles.json"],
+  "voiceover": {
+    "script": "layers/e49/voiceover.txt",
+    "audio": "layers/e49/voiceover.mp3"
+  },
+  "quiz": { "source": "样题库·十-智能体身份与角色（profile）设置" },
+  "assets": [
+    { "clipRef": "conc_task_board#iso:idle", "duration": 3.0, "reused": false }
+  ],
+  "runs": [],
+  "motion": [],
+  "layers": [
+    "layers/e49/title.png",
+    "layers/e49/progress.png",
+    "layers/e49/subtitle.png"
+  ],
+  "timeline": [
+    { "t": 0.0, "track": "asset", "ref": "conc_task_board#iso:idle" },
+    { "t": 0.0, "track": "layer", "ref": "layers/e49/title.png" },
+    { "t": 0.0, "track": "layer", "ref": "layers/e49/progress.png" },
+    { "t": 0.2, "track": "audio", "ref": "layers/e49/voiceover.mp3" },
+    { "t": 0.5, "track": "layer", "ref": "layers/e49/subtitle.png" }
+  ],
+  "demo_stub": []
+}

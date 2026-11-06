@@ -1,0 +1,37 @@
+# 基础件 · 闸门（可开关的通断件）
+assetId: base_gate
+kind: parametric
+blockTypes: [code_block]
+conceptIds: []
+footprint: [2, 1]
+anchor: bottom-center
+ports:
+  - id: in
+    kind: BOOL
+    dir: in
+  - id: out
+    kind: BOOL
+    dir: out
+  - id: control
+    kind: BOOL
+    dir: in
+defaults:
+  door_width: 1.0
+  open_by_default: false
+shots:
+  - shot: iso
+    action: idle
+    duration: 3.0
+    output: assets/base_gate/iso_idle/
+  - shot: iso
+    action: run
+    duration: 4.0
+    output: assets/base_gate/iso_run/
+  - shot: close
+    action: open
+    duration: 2.0
+    output: assets/base_gate/close_open/
+  - shot: close
+    action: close
+    duration: 2.0
+    output: assets/base_gate/close_close/

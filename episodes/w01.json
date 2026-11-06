@@ -1,0 +1,33 @@
+{
+  "id": "w01",
+  "title": "Agent 怎样完成一个任务？",
+  "duration": 5,
+  "marks": ["微课"],
+  "outlineRefs": ["组件工坊教学线 · 第 1 课（docs/50-课程/第一课-Agent怎样完成一个任务.md）"],
+  "examRefs": [],
+  "scenes": "compose/w01/",
+  "data": ["data/w01_shots.json"],
+  "voiceover": {
+    "script": "layers/w01/voiceover.txt",
+    "audio": "layers/w01/narration.wav"
+  },
+  "quiz": { "source": "docs/50-课程/第一课-Agent怎样完成一个任务.md §4（三道阶梯练习 + 重看锚点）" },
+  "assets": [],
+  "runs": [],
+  "motion": [],
+  "layers": [
+    "layers/w01/narration.wav",
+    "layers/w01/w01.srt"
+  ],
+  "timeline": [
+    { "t": 0.0, "track": "shot", "ref": "s1 课题卡" },
+    { "t": 4.442, "track": "shot", "ref": "s2 工坊全景推入" },
+    { "t": 10.742, "track": "shot", "ref": "s3 核心句钉住 + 报告面板" },
+    { "t": 16.816, "track": "shot", "ref": "s4 任务落进任务座" },
+    { "t": 24.498, "track": "shot", "ref": "s5 镜头拉开 · 认识 Agent" },
+    { "t": 33.404, "track": "shot", "ref": "s6 组件卡①模型井" },
+    { "t": 42.718, "track": "shot", "ref": "s7 组件卡②执行台+工具架" },
+    { "t": 52.896, "track": "shot", "ref": "s8 组件卡③观察槽" }
+  ],
+  "demo_stub": []
+}

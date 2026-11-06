@@ -1,0 +1,26 @@
+{
+  "model": "deepseek-flash",
+  "messages": [
+    {
+      "role": "system",
+      "content": "你是沙盒中的运输智能体。根据用户目标选择操作。每轮只输出一个 JSON 对象，\n格式 {\"tool\":\"工具名\",\"args\":{...}}，不加 Markdown、不输出思维过程。\n工具：observe {} 读取地图与状态；move {\"node\":\"节点名\"} 只移动一条相邻道路，\n不会自动寻路；pickup {\"crate\":\"方块名\"} 在当前位置装一个方块；drop {} 卸货；\nfinish {\"text\":\"简短结果\"} 结束。先观测，再行动。工具返回的 state 是最新观测。\n道路可能在执行期间变化，以最新 blocked_edges 为准。禁止穿越封路；自行根据地图选择相邻节点。\ncarrier 是运输车的位置；crates 是各方块位置；carrying 是正在装载的方块。\n抵达目标后必须 drop，之后 observe 检查；只有状态符合任务才可声称完成。"
+    },
+    {
+      "role": "user",
+      "content": "读取当前环境，用一句话说明货物是否已到 D。"
+    },
+    {
+      "role": "assistant",
+      "content": "{\"tool\":\"observe\",\"args\":{}}"
+    },
+    {
+      "role": "user",
+      "content": "工具返回的观测：{\"ok\": true, \"state\": {\"blocked_edges\": [[\"B\", \"C\"]], \"carrier\": \"D\", \"carrying\": \"\", \"crates\": {\"蓝方块\": \"D\", \"货物\": \"D\", \"黄方块\": \"D\"}, \"destination\": \"D\", \"edges\": [[\"A\", \"B\"], [\"B\", \"C\"], [\"C\", \"D\"], [\"B\", \"E\"], [\"E\", \"F\"], [\"F\", \"C\"]], \"nodes\": {\"A\": [-4, 0], \"B\": [-2, 0], \"C\": [2, 0], \"D\": [4, 0], \"E\": [-2, 3], \"F\": [2, 3]}}}"
+    }
+  ],
+  "temperature": 0.1,
+  "max_tokens": 512,
+  "response_format": {
+    "type": "json_object"
+  }
+}

@@ -1,0 +1,37 @@
+# 概念装置 · 任务牌（docs/10-契约/mini-codex.md §一 #1；L1 两件之一，spec §3.3/§4.3）。
+# 组件实现 game/scenes/levels/l1/components/task_board.gd（场景 task_board.tscn）；
+# 世界状态注册见 game/scripts/levels/l1/l1_flow.gd setup_world()——
+# defaults 与端口形状照抄，防漂移。四态由步记录派生，组件不另做状态机。
+assetId: conc_task_board
+kind: parametric
+blockTypes: [code_block, text_]
+conceptIds: [c10.1]
+footprint: [3, 1]
+anchor: bottom-center
+ports:
+  - id: task_in
+    kind: ANALOG
+    dir: in
+  - id: task_out
+    kind: ANALOG
+    dir: out
+defaults:
+  task_text: ""
+scene: game/scenes/levels/l1/components/task_board.tscn
+shots:
+  - shot: iso
+    action: idle
+    duration: 3.0
+    output: assets/conc_task_board/iso_idle/
+  - shot: iso
+    action: run
+    duration: 5.0
+    output: assets/conc_task_board/iso_run/
+  - shot: front
+    action: idle
+    duration: 2.0
+    output: assets/conc_task_board/front_idle/
+  - shot: close
+    action: run
+    duration: 4.0
+    output: assets/conc_task_board/close_run/

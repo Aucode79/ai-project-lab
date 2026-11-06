@@ -1,0 +1,39 @@
+# 概念装置 · 计划板（docs/10-契约/mini-codex.md §一 #3；L4 三件之一）。
+# 排程板：把活拆成有序步骤，当前步骤有指针（@step_out 逐步推进）。
+# 世界状态注册见 game/scripts/levels/l4/l4_flow.gd setup_world()——
+# assetId/defaults/端口形状照抄运行时注册，防漂移。
+# blockTypes 理由：流程机械——控制流的调度面，承载步骤序列与推进指针
+# （计划 JSON 上板、指针随执行走），故家族一之外加 flow_。
+assetId: conc_plan_board
+kind: parametric
+blockTypes: [code_block, flow_]
+conceptIds: [c8.1]
+footprint: [3, 1]
+anchor: bottom-center
+ports:
+  - id: plan_in
+    kind: ANALOG
+    dir: in
+  - id: step_out
+    kind: ANALOG
+    dir: out
+defaults:
+  plan_text: "[]"
+scene: game/scenes/levels/l4/components/plan_board.tscn
+shots:
+  - shot: iso
+    action: idle
+    duration: 3.0
+    output: assets/conc_plan_board/iso_idle/
+  - shot: iso
+    action: run
+    duration: 5.0
+    output: assets/conc_plan_board/iso_run/
+  - shot: front
+    action: idle
+    duration: 2.0
+    output: assets/conc_plan_board/front_idle/
+  - shot: close
+    action: run
+    duration: 4.0
+    output: assets/conc_plan_board/close_run/

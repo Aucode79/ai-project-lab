@@ -1,0 +1,32 @@
+# 机械 · 分流器（一路进两路出；分岔/扇出拓扑的空间化）
+assetId: mach_splitter
+kind: parametric
+blockTypes: [code_block]
+conceptIds: []
+footprint: [2, 2]
+anchor: bottom-center
+ports:
+  - id: feed
+    kind: BOOL
+    dir: in
+  - id: out_a
+    kind: BOOL
+    dir: out
+  - id: out_b
+    kind: BOOL
+    dir: out
+defaults:
+  split_ratio: 0.5
+shots:
+  - shot: iso
+    action: idle
+    duration: 3.0
+    output: assets/mach_splitter/iso_idle/
+  - shot: iso
+    action: run
+    duration: 4.0
+    output: assets/mach_splitter/iso_run/
+  - shot: top
+    action: run
+    duration: 3.0
+    output: assets/mach_splitter/top_run/

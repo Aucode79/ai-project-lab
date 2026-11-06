@@ -1,0 +1,1877 @@
+{
+  "version": 1,
+  "source": "research/lmcc/教学大纲-青少年组.md",
+  "generator": "tools/build_outline_index.py",
+  "conceptIdRule": "c{章号}.{章内序号}：章号=附录 A 条目「章节-条目」的中文章号；章内序号=附录 A 行在该章内的出现顺序（照抄官方大纲原文顺序）",
+  "counts": {
+    "episodes": 63,
+    "concepts": 77,
+    "episodeConceptLinks": 83
+  },
+  "episodes": [
+    {
+      "id": "e01",
+      "title": "这张卷子怎么考",
+      "unit": "U0 考试契约",
+      "marker": "前置",
+      "syllabusRef": "无"
+    },
+    {
+      "id": "e02",
+      "title": "五类题型与考纲标注的用法",
+      "unit": "U0 考试契约",
+      "marker": "前置",
+      "syllabusRef": "无"
+    },
+    {
+      "id": "e03",
+      "title": "智能、人工智能、机器学习、模型、训练",
+      "unit": "U1 人工智能基础概念",
+      "marker": "必修",
+      "syllabusRef": "一-人工智能相关概念定义【1】；一-人工智能常见应用领域【1】"
+    },
+    {
+      "id": "e04",
+      "title": "机器学习流程与数据工程",
+      "unit": "U1 人工智能基础概念",
+      "marker": "必修",
+      "syllabusRef": "一-机器学习流程及经典模型【1】"
+    },
+    {
+      "id": "e05",
+      "title": "验证及评测：交叉验证与过拟合",
+      "unit": "U1 人工智能基础概念",
+      "marker": "必修",
+      "syllabusRef": "一-验证及评测【1】"
+    },
+    {
+      "id": "e06",
+      "title": "精确率、召回率与 ROC（计算）",
+      "unit": "U1 人工智能基础概念",
+      "marker": "必修",
+      "syllabusRef": "一-验证及评测【1】"
+    },
+    {
+      "id": "e07",
+      "title": "语言的定义、特点与应用",
+      "unit": "U2 大模型基础概念",
+      "marker": "必修",
+      "syllabusRef": "二-自然语言的基础概念【1】"
+    },
+    {
+      "id": "e08",
+      "title": "大语言模型的定义与两种范式",
+      "unit": "U2 大模型基础概念",
+      "marker": "必修",
+      "syllabusRef": "二-基本定义【1】"
+    },
+    {
+      "id": "e09",
+      "title": "四代语言模型发展史与关键里程碑",
+      "unit": "U2 大模型基础概念",
+      "marker": "必修",
+      "syllabusRef": "二-发展历程与现状【1】"
+    },
+    {
+      "id": "e10",
+      "title": "扩展法则与涌现能力（拓展）",
+      "unit": "U2 大模型基础概念",
+      "marker": "拓展",
+      "syllabusRef": "二-扩展法则【2】；二-大模型代表能力【2】"
+    },
+    {
+      "id": "e11",
+      "title": "注意力机制：QKV 与 softmax",
+      "unit": "U3 模型架构",
+      "marker": "必修",
+      "syllabusRef": "三-注意力机制【1】"
+    },
+    {
+      "id": "e12",
+      "title": "自注意力、交叉注意力与位置编码（拓展）",
+      "unit": "U3 模型架构",
+      "marker": "拓展",
+      "syllabusRef": "三-注意力机制【1】扩展知识点；三-Transformer 模型的基本结构组成【1】扩展知识点"
+    },
+    {
+      "id": "e13",
+      "title": "三类主流架构与任务对应",
+      "unit": "U3 模型架构",
+      "marker": "必修",
+      "syllabusRef": "三-主流架构【1】"
+    },
+    {
+      "id": "e14",
+      "title": "Transformer 基本结构六件套（拓展）",
+      "unit": "U3 模型架构",
+      "marker": "拓展",
+      "syllabusRef": "三-Transformer 模型的基本结构组成【1】"
+    },
+    {
+      "id": "e15",
+      "title": "详细配置、MoE、长上下文与高效注意力（拓展）",
+      "unit": "U3 模型架构",
+      "marker": "拓展",
+      "syllabusRef": "三-Transformer 模型的详细配置【2】；三-混合专家模型（MoE）【3】；三-长上下文模型【3】；三-高效注意力架构【3】"
+    },
+    {
+      "id": "e16",
+      "title": "极大似然与回归分析",
+      "unit": "U4 预训练技术",
+      "marker": "必修",
+      "syllabusRef": "四-回归分析【1】"
+    },
+    {
+      "id": "e17",
+      "title": "监督、无监督与自监督",
+      "unit": "U4 预训练技术",
+      "marker": "必修",
+      "syllabusRef": "四-监督学习【1】；四-自监督学习【1】"
+    },
+    {
+      "id": "e18",
+      "title": "预训练任务：下一个词元预测与掩码预测",
+      "unit": "U4 预训练技术",
+      "marker": "必修",
+      "syllabusRef": "四-预训练任务【1】"
+    },
+    {
+      "id": "e19",
+      "title": "对比学习与表示学习（拓展）",
+      "unit": "U4 预训练技术",
+      "marker": "拓展",
+      "syllabusRef": "四-自监督学习【1】扩展知识点"
+    },
+    {
+      "id": "e20",
+      "title": "Batch 与 Batch Size（计算）",
+      "unit": "U4 预训练技术",
+      "marker": "必修",
+      "syllabusRef": "四-优化设置：基于批次数据的训练方法【1】"
+    },
+    {
+      "id": "e21",
+      "title": "学习率、优化器与稳定训练技术（拓展）",
+      "unit": "U4 预训练技术",
+      "marker": "拓展",
+      "syllabusRef": "四-优化设置：学习率【2】；四-优化设置：优化器【2】；四-稳定优化技术【3】"
+    },
+    {
+      "id": "e22",
+      "title": "参数量计算（拓展，计算专项）",
+      "unit": "U4 预训练技术",
+      "marker": "拓展",
+      "syllabusRef": "四-参数量计算【2】"
+    },
+    {
+      "id": "e23",
+      "title": "训练运算量、时间与显存（拓展，计算专项）",
+      "unit": "U4 预训练技术",
+      "marker": "拓展",
+      "syllabusRef": "四-训练运算量及时间计算【3】；四-训练显存计算【3】"
+    },
+    {
+      "id": "e24",
+      "title": "并行训练、训练精度与高效训练（拓展）",
+      "unit": "U4 预训练技术",
+      "marker": "拓展",
+      "syllabusRef": "四-并行训练【3】；四-训练精度【3】；四-高效训练技术【3】"
+    },
+    {
+      "id": "e25",
+      "title": "指令微调与指令遵循",
+      "unit": "U5 指令微调",
+      "marker": "必修",
+      "syllabusRef": "五-指令微调【1】；五-模型解码【1】"
+    },
+    {
+      "id": "e26",
+      "title": "指令数据：格式、合成与筛选",
+      "unit": "U5 指令微调",
+      "marker": "必修",
+      "syllabusRef": "五-指令数据集的构建【1】"
+    },
+    {
+      "id": "e27",
+      "title": "指令进化与数据组织策略（拓展）",
+      "unit": "U5 指令微调",
+      "marker": "拓展",
+      "syllabusRef": "五-指令数据构建提升方法【2】；五-数据组织策略【2】"
+    },
+    {
+      "id": "e28",
+      "title": "微调优化设置与多阶段混合训练（拓展）",
+      "unit": "U5 指令微调",
+      "marker": "拓展",
+      "syllabusRef": "五-微调优化设置【2】"
+    },
+    {
+      "id": "e29",
+      "title": "LoRA 与参数高效微调",
+      "unit": "U5 指令微调",
+      "marker": "拓展",
+      "syllabusRef": "五-参数高效微调方法【3】"
+    },
+    {
+      "id": "e30",
+      "title": "对齐背景、标准与偏好数据收集",
+      "unit": "U6 人类对齐",
+      "marker": "必修",
+      "syllabusRef": "六-人类对齐的背景与标准【1】；六-人类偏好与反馈数据收集【2】"
+    },
+    {
+      "id": "e31",
+      "title": "DPO：跳过奖励模型的对齐（拓展）",
+      "unit": "U6 人类对齐",
+      "marker": "拓展",
+      "syllabusRef": "六-非强化学习训练的对齐方法【2】"
+    },
+    {
+      "id": "e32",
+      "title": "奖励模型训练的三种损失（拓展）",
+      "unit": "U6 人类对齐",
+      "marker": "拓展",
+      "syllabusRef": "六-奖励模型训练【2】"
+    },
+    {
+      "id": "e33",
+      "title": "幻觉：分类、起因与缓解（加考）",
+      "unit": "U6 人类对齐",
+      "marker": "加考",
+      "syllabusRef": "六-幻象【3】"
+    },
+    {
+      "id": "e34",
+      "title": "贪心搜索与束搜索",
+      "unit": "U7 解码与部署",
+      "marker": "必修",
+      "syllabusRef": "七-解码方法【1】"
+    },
+    {
+      "id": "e35",
+      "title": "温度、top-k 与 top-p 采样（加考）",
+      "unit": "U7 解码与部署",
+      "marker": "加考",
+      "syllabusRef": "七-随机采样及改进策略【2】"
+    },
+    {
+      "id": "e36",
+      "title": "解码加速与早退机制（加考）",
+      "unit": "U7 解码与部署",
+      "marker": "加考",
+      "syllabusRef": "七-解码加速算法与实践【3】，含例卷标注的「早退机制」"
+    },
+    {
+      "id": "e37",
+      "title": "量化与低资源部署（加考，计算）",
+      "unit": "U7 解码与部署",
+      "marker": "加考",
+      "syllabusRef": "七-低资源部署策略【3】"
+    },
+    {
+      "id": "e38",
+      "title": "蒸馏与剪枝（拓展）",
+      "unit": "U7 解码与部署",
+      "marker": "拓展",
+      "syllabusRef": "七-模型压缩方法：蒸馏、剪枝、量化【3】"
+    },
+    {
+      "id": "e39",
+      "title": "资源管理与推理吞吐（加考，计算）",
+      "unit": "U7 解码与部署",
+      "marker": "加考",
+      "syllabusRef": "七-资源管理与性能优化【3】"
+    },
+    {
+      "id": "e40",
+      "title": "提示工程：目的、范围与局限",
+      "unit": "U8 提示学习",
+      "marker": "必修",
+      "syllabusRef": "八-提示工程【1】"
+    },
+    {
+      "id": "e41",
+      "title": "提示设计方法与模型 API",
+      "unit": "U8 提示学习",
+      "marker": "必修",
+      "syllabusRef": "八-人工提示设计【1】"
+    },
+    {
+      "id": "e42",
+      "title": "上下文学习（拓展）",
+      "unit": "U8 提示学习",
+      "marker": "拓展",
+      "syllabusRef": "八-上下文学习【2】"
+    },
+    {
+      "id": "e43",
+      "title": "思维链提示（拓展）",
+      "unit": "U8 提示学习",
+      "marker": "拓展",
+      "syllabusRef": "八-思维链提示【3】"
+    },
+    {
+      "id": "e44",
+      "title": "检索增强 RAG（加考）",
+      "unit": "U8 提示学习",
+      "marker": "加考",
+      "syllabusRef": "八-检索增强【2】"
+    },
+    {
+      "id": "e45",
+      "title": "推理的基本方法与范畴",
+      "unit": "U9 复杂推理",
+      "marker": "必修",
+      "syllabusRef": "九-认知推理【1】"
+    },
+    {
+      "id": "e46",
+      "title": "长思维链与测试时扩展",
+      "unit": "U9 复杂推理",
+      "marker": "必修",
+      "syllabusRef": "九-长思维链模型【1】"
+    },
+    {
+      "id": "e47",
+      "title": "推理模型训练：SFT 与 RL 两条路（拓展）",
+      "unit": "U9 复杂推理",
+      "marker": "拓展",
+      "syllabusRef": "九-基于监督微调的推理模型训练【2】；九-基于强化学习的推理模型训练【3】"
+    },
+    {
+      "id": "e48",
+      "title": "搜索式推理：自洽与思维树（拓展）",
+      "unit": "U9 复杂推理",
+      "marker": "拓展",
+      "syllabusRef": "九-基于搜索的大模型推理【3】"
+    },
+    {
+      "id": "e49",
+      "title": "智能体身份与角色 profile",
+      "unit": "U10 智能体",
+      "marker": "必修",
+      "syllabusRef": "十-智能体身份与角色（profile）设置【1】"
+    },
+    {
+      "id": "e50",
+      "title": "记忆机制：显式与隐式（拓展）",
+      "unit": "U10 智能体",
+      "marker": "拓展",
+      "syllabusRef": "十-智能体记忆机制【2】"
+    },
+    {
+      "id": "e51",
+      "title": "工具使用与调用优化（加考）",
+      "unit": "U10 智能体",
+      "marker": "加考",
+      "syllabusRef": "十-智能体工具使用【2】"
+    },
+    {
+      "id": "e52",
+      "title": "多智能体结构与典型应用（拓展）",
+      "unit": "U10 智能体",
+      "marker": "拓展",
+      "syllabusRef": "十-多智能体通信结构【3】；十-多智能体组件优化【3】；十-智能体-人协作【3】；十-智能体交互环境【3】；十-智能体典型应用【2】"
+    },
+    {
+      "id": "e53",
+      "title": "评测流程与数据集划分",
+      "unit": "U11 模型评测",
+      "marker": "必修",
+      "syllabusRef": "十一-评测流程【1】"
+    },
+    {
+      "id": "e54",
+      "title": "评测指标全家桶与 NDCG（计算）",
+      "unit": "U11 模型评测",
+      "marker": "必修",
+      "syllabusRef": "十一-评测指标【1】"
+    },
+    {
+      "id": "e55",
+      "title": "评测范式与公开评测集",
+      "unit": "U11 模型评测",
+      "marker": "必修",
+      "syllabusRef": "十一-评测范式与方法【1】；十一-公开综合评测集【2】"
+    },
+    {
+      "id": "e56",
+      "title": "语言、知识与复杂推理能力评测（拓展）",
+      "unit": "U11 模型评测",
+      "marker": "拓展",
+      "syllabusRef": "十一-语言能力评测【2】；十一-知识利用能力评测【2】；十一-复杂推理评测【2】"
+    },
+    {
+      "id": "e57",
+      "title": "其他评测：对齐、环境交互、工具与鲁棒性（拓展）",
+      "unit": "U11 模型评测",
+      "marker": "拓展",
+      "syllabusRef": "十一-其他评测【3】"
+    },
+    {
+      "id": "e58",
+      "title": "模型偏见：来源、检测与缓解",
+      "unit": "U12 模型伦理与安全",
+      "marker": "必修",
+      "syllabusRef": "十二-模型偏见【1】"
+    },
+    {
+      "id": "e59",
+      "title": "隐私保护与数据安全（拓展）",
+      "unit": "U12 模型伦理与安全",
+      "marker": "拓展",
+      "syllabusRef": "十二-隐私保护【2】；十二-数据安全【3】"
+    },
+    {
+      "id": "e60",
+      "title": "程序填空与程序阅读拆解",
+      "unit": "U13 专项与模考",
+      "marker": "专项",
+      "syllabusRef": "例卷材料题 1、2"
+    },
+    {
+      "id": "e61",
+      "title": "论文阅读拆解：思维链忠实性",
+      "unit": "U13 专项与模考",
+      "marker": "专项",
+      "syllabusRef": "例卷材料题 3"
+    },
+    {
+      "id": "e62",
+      "title": "全真模考与讲评（上）：60 分单选",
+      "unit": "U13 专项与模考",
+      "marker": "专项",
+      "syllabusRef": "全"
+    },
+    {
+      "id": "e63",
+      "title": "全真模考与讲评（下）：40 分材料题",
+      "unit": "U13 专项与模考",
+      "marker": "专项",
+      "syllabusRef": "全"
+    }
+  ],
+  "concepts": [
+    {
+      "conceptId": "c1.1",
+      "label": "一-人工智能相关概念定义",
+      "chapter": 1,
+      "chapterLabel": "一",
+      "item": "人工智能相关概念定义",
+      "globalNo": 1,
+      "marker": "必修",
+      "difficulty": 1,
+      "examTypes": [
+        "概念"
+      ],
+      "episode": "e03",
+      "episodes": [
+        "e03"
+      ]
+    },
+    {
+      "conceptId": "c1.2",
+      "label": "一-机器学习流程及经典模型",
+      "chapter": 1,
+      "chapterLabel": "一",
+      "item": "机器学习流程及经典模型",
+      "globalNo": 2,
+      "marker": "必修",
+      "difficulty": 1,
+      "examTypes": [
+        "概念"
+      ],
+      "episode": "e04",
+      "episodes": [
+        "e04"
+      ]
+    },
+    {
+      "conceptId": "c1.3",
+      "label": "一-验证及评测",
+      "chapter": 1,
+      "chapterLabel": "一",
+      "item": "验证及评测",
+      "globalNo": 3,
+      "marker": "必修",
+      "difficulty": 1,
+      "examTypes": [
+        "概念"
+      ],
+      "episode": "e05",
+      "episodes": [
+        "e05",
+        "e06"
+      ]
+    },
+    {
+      "conceptId": "c1.4",
+      "label": "一-人工智能常见应用领域",
+      "chapter": 1,
+      "chapterLabel": "一",
+      "item": "人工智能常见应用领域",
+      "globalNo": 4,
+      "marker": "必修",
+      "difficulty": 1,
+      "examTypes": [
+        "概念"
+      ],
+      "episode": "e03",
+      "episodes": [
+        "e03"
+      ]
+    },
+    {
+      "conceptId": "c2.1",
+      "label": "二-自然语言的基础概念",
+      "chapter": 2,
+      "chapterLabel": "二",
+      "item": "自然语言的基础概念",
+      "globalNo": 5,
+      "marker": "必修",
+      "difficulty": 1,
+      "examTypes": [
+        "概念",
+        "简答题"
+      ],
+      "episode": "e07",
+      "episodes": [
+        "e07"
+      ]
+    },
+    {
+      "conceptId": "c2.2",
+      "label": "二-基本定义",
+      "chapter": 2,
+      "chapterLabel": "二",
+      "item": "基本定义",
+      "globalNo": 6,
+      "marker": "必修",
+      "difficulty": 1,
+      "examTypes": [
+        "概念",
+        "简答题"
+      ],
+      "episode": "e08",
+      "episodes": [
+        "e08"
+      ]
+    },
+    {
+      "conceptId": "c2.3",
+      "label": "二-发展历程与现状",
+      "chapter": 2,
+      "chapterLabel": "二",
+      "item": "发展历程与现状",
+      "globalNo": 7,
+      "marker": "必修",
+      "difficulty": 1,
+      "examTypes": [
+        "概念",
+        "简答题"
+      ],
+      "episode": "e09",
+      "episodes": [
+        "e09"
+      ]
+    },
+    {
+      "conceptId": "c2.4",
+      "label": "二-扩展法则",
+      "chapter": 2,
+      "chapterLabel": "二",
+      "item": "扩展法则",
+      "globalNo": 8,
+      "marker": "拓展",
+      "difficulty": 2,
+      "examTypes": [
+        "概念",
+        "计算题"
+      ],
+      "episode": "e10",
+      "episodes": [
+        "e10"
+      ]
+    },
+    {
+      "conceptId": "c2.5",
+      "label": "二-大模型代表能力",
+      "chapter": 2,
+      "chapterLabel": "二",
+      "item": "大模型代表能力",
+      "globalNo": 9,
+      "marker": "拓展",
+      "difficulty": 2,
+      "examTypes": [
+        "概念",
+        "案例分析",
+        "API 调用"
+      ],
+      "episode": "e10",
+      "episodes": [
+        "e10"
+      ]
+    },
+    {
+      "conceptId": "c3.1",
+      "label": "三-注意力机制",
+      "chapter": 3,
+      "chapterLabel": "三",
+      "item": "注意力机制",
+      "globalNo": 10,
+      "marker": "必修",
+      "difficulty": 1,
+      "examTypes": [
+        "概念",
+        "计算"
+      ],
+      "episode": "e11",
+      "episodes": [
+        "e11",
+        "e12"
+      ]
+    },
+    {
+      "conceptId": "c3.2",
+      "label": "三-主流架构",
+      "chapter": 3,
+      "chapterLabel": "三",
+      "item": "主流架构",
+      "globalNo": 11,
+      "marker": "必修",
+      "difficulty": 1,
+      "examTypes": [
+        "概念",
+        "架构对比分析"
+      ],
+      "episode": "e13",
+      "episodes": [
+        "e13"
+      ]
+    },
+    {
+      "conceptId": "c3.3",
+      "label": "三-Transformer 模型的基本结构组成",
+      "chapter": 3,
+      "chapterLabel": "三",
+      "item": "Transformer 模型的基本结构组成",
+      "globalNo": 12,
+      "marker": "拓展",
+      "difficulty": 1,
+      "examTypes": [
+        "概念",
+        "公式",
+        "代码实现"
+      ],
+      "episode": "e12",
+      "episodes": [
+        "e12",
+        "e14"
+      ]
+    },
+    {
+      "conceptId": "c3.4",
+      "label": "三-Transformer 模型的详细配置",
+      "chapter": 3,
+      "chapterLabel": "三",
+      "item": "Transformer 模型的详细配置",
+      "globalNo": 13,
+      "marker": "拓展",
+      "difficulty": 2,
+      "examTypes": [
+        "概念",
+        "公式",
+        "实现与分析"
+      ],
+      "episode": "e15",
+      "episodes": [
+        "e15"
+      ]
+    },
+    {
+      "conceptId": "c3.5",
+      "label": "三-混合专家模型（MoE）",
+      "chapter": 3,
+      "chapterLabel": "三",
+      "item": "混合专家模型（MoE）",
+      "globalNo": 14,
+      "marker": "拓展",
+      "difficulty": 3,
+      "examTypes": [
+        "概念",
+        "公式",
+        "实现"
+      ],
+      "episode": "e15",
+      "episodes": [
+        "e15"
+      ]
+    },
+    {
+      "conceptId": "c3.6",
+      "label": "三-长上下文模型",
+      "chapter": 3,
+      "chapterLabel": "三",
+      "item": "长上下文模型",
+      "globalNo": 15,
+      "marker": "拓展",
+      "difficulty": 3,
+      "examTypes": [
+        "概念",
+        "方法",
+        "实现"
+      ],
+      "episode": "e15",
+      "episodes": [
+        "e15"
+      ]
+    },
+    {
+      "conceptId": "c3.7",
+      "label": "三-高效注意力架构",
+      "chapter": 3,
+      "chapterLabel": "三",
+      "item": "高效注意力架构",
+      "globalNo": 16,
+      "marker": "拓展",
+      "difficulty": 3,
+      "examTypes": [
+        "概念",
+        "公式",
+        "实现"
+      ],
+      "episode": "e15",
+      "episodes": [
+        "e15"
+      ]
+    },
+    {
+      "conceptId": "c4.1",
+      "label": "四-回归分析",
+      "chapter": 4,
+      "chapterLabel": "四",
+      "item": "回归分析",
+      "globalNo": 17,
+      "marker": "必修",
+      "difficulty": 1,
+      "examTypes": [
+        "概念",
+        "公式"
+      ],
+      "episode": "e16",
+      "episodes": [
+        "e16"
+      ]
+    },
+    {
+      "conceptId": "c4.2",
+      "label": "四-自监督学习",
+      "chapter": 4,
+      "chapterLabel": "四",
+      "item": "自监督学习",
+      "globalNo": 18,
+      "marker": "必修",
+      "difficulty": 1,
+      "examTypes": [
+        "概念",
+        "公式",
+        "简答"
+      ],
+      "episode": "e17",
+      "episodes": [
+        "e17",
+        "e19"
+      ]
+    },
+    {
+      "conceptId": "c4.3",
+      "label": "四-监督学习",
+      "chapter": 4,
+      "chapterLabel": "四",
+      "item": "监督学习",
+      "globalNo": 19,
+      "marker": "必修",
+      "difficulty": 1,
+      "examTypes": [
+        "概念"
+      ],
+      "episode": "e17",
+      "episodes": [
+        "e17"
+      ]
+    },
+    {
+      "conceptId": "c4.4",
+      "label": "四-预训练任务",
+      "chapter": 4,
+      "chapterLabel": "四",
+      "item": "预训练任务",
+      "globalNo": 20,
+      "marker": "必修",
+      "difficulty": 1,
+      "examTypes": [
+        "概念",
+        "公式",
+        "实现"
+      ],
+      "episode": "e18",
+      "episodes": [
+        "e18"
+      ]
+    },
+    {
+      "conceptId": "c4.5",
+      "label": "四-优化设置：基于批次数据的训练方法",
+      "chapter": 4,
+      "chapterLabel": "四",
+      "item": "优化设置：基于批次数据的训练方法",
+      "globalNo": 21,
+      "marker": "必修",
+      "difficulty": 1,
+      "examTypes": [
+        "概念",
+        "实现"
+      ],
+      "episode": "e20",
+      "episodes": [
+        "e20"
+      ]
+    },
+    {
+      "conceptId": "c4.6",
+      "label": "四-优化设置：学习率",
+      "chapter": 4,
+      "chapterLabel": "四",
+      "item": "优化设置：学习率",
+      "globalNo": 22,
+      "marker": "拓展",
+      "difficulty": 2,
+      "examTypes": [
+        "概念",
+        "实现"
+      ],
+      "episode": "e21",
+      "episodes": [
+        "e21"
+      ]
+    },
+    {
+      "conceptId": "c4.7",
+      "label": "四-优化设置：优化器",
+      "chapter": 4,
+      "chapterLabel": "四",
+      "item": "优化设置：优化器",
+      "globalNo": 23,
+      "marker": "拓展",
+      "difficulty": 2,
+      "examTypes": [
+        "概念",
+        "代码实现"
+      ],
+      "episode": "e21",
+      "episodes": [
+        "e21"
+      ]
+    },
+    {
+      "conceptId": "c4.8",
+      "label": "四-参数量计算",
+      "chapter": 4,
+      "chapterLabel": "四",
+      "item": "参数量计算",
+      "globalNo": 24,
+      "marker": "拓展",
+      "difficulty": 2,
+      "examTypes": [
+        "计算题"
+      ],
+      "episode": "e22",
+      "episodes": [
+        "e22"
+      ]
+    },
+    {
+      "conceptId": "c4.9",
+      "label": "四-训练运算量及时间计算",
+      "chapter": 4,
+      "chapterLabel": "四",
+      "item": "训练运算量及时间计算",
+      "globalNo": 25,
+      "marker": "拓展",
+      "difficulty": 3,
+      "examTypes": [
+        "计算题"
+      ],
+      "episode": "e23",
+      "episodes": [
+        "e23"
+      ]
+    },
+    {
+      "conceptId": "c4.10",
+      "label": "四-训练显存计算",
+      "chapter": 4,
+      "chapterLabel": "四",
+      "item": "训练显存计算",
+      "globalNo": 26,
+      "marker": "拓展",
+      "difficulty": 3,
+      "examTypes": [
+        "计算题"
+      ],
+      "episode": "e23",
+      "episodes": [
+        "e23"
+      ]
+    },
+    {
+      "conceptId": "c4.11",
+      "label": "四-稳定优化技术",
+      "chapter": 4,
+      "chapterLabel": "四",
+      "item": "稳定优化技术",
+      "globalNo": 27,
+      "marker": "拓展",
+      "difficulty": 3,
+      "examTypes": [
+        "概念"
+      ],
+      "episode": "e21",
+      "episodes": [
+        "e21"
+      ]
+    },
+    {
+      "conceptId": "c4.12",
+      "label": "四-并行训练",
+      "chapter": 4,
+      "chapterLabel": "四",
+      "item": "并行训练",
+      "globalNo": 28,
+      "marker": "拓展",
+      "difficulty": 3,
+      "examTypes": [
+        "概念"
+      ],
+      "episode": "e24",
+      "episodes": [
+        "e24"
+      ]
+    },
+    {
+      "conceptId": "c4.13",
+      "label": "四-训练精度",
+      "chapter": 4,
+      "chapterLabel": "四",
+      "item": "训练精度",
+      "globalNo": 29,
+      "marker": "拓展",
+      "difficulty": 3,
+      "examTypes": [
+        "概念"
+      ],
+      "episode": "e24",
+      "episodes": [
+        "e24"
+      ]
+    },
+    {
+      "conceptId": "c4.14",
+      "label": "四-高效训练技术",
+      "chapter": 4,
+      "chapterLabel": "四",
+      "item": "高效训练技术",
+      "globalNo": 30,
+      "marker": "拓展",
+      "difficulty": 3,
+      "examTypes": [
+        "概念",
+        "计算"
+      ],
+      "episode": "e24",
+      "episodes": [
+        "e24"
+      ]
+    },
+    {
+      "conceptId": "c5.1",
+      "label": "五-模型解码",
+      "chapter": 5,
+      "chapterLabel": "五",
+      "item": "模型解码",
+      "globalNo": 31,
+      "marker": "拓展",
+      "difficulty": 1,
+      "examTypes": [
+        "概念"
+      ],
+      "episode": "e25",
+      "episodes": [
+        "e25"
+      ]
+    },
+    {
+      "conceptId": "c5.2",
+      "label": "五-指令微调",
+      "chapter": 5,
+      "chapterLabel": "五",
+      "item": "指令微调",
+      "globalNo": 32,
+      "marker": "必修",
+      "difficulty": 1,
+      "examTypes": [
+        "概念"
+      ],
+      "episode": "e25",
+      "episodes": [
+        "e25"
+      ]
+    },
+    {
+      "conceptId": "c5.3",
+      "label": "五-指令数据集的构建",
+      "chapter": 5,
+      "chapterLabel": "五",
+      "item": "指令数据集的构建",
+      "globalNo": 33,
+      "marker": "必修",
+      "difficulty": 1,
+      "examTypes": [
+        "概念",
+        "实现"
+      ],
+      "episode": "e26",
+      "episodes": [
+        "e26"
+      ]
+    },
+    {
+      "conceptId": "c5.4",
+      "label": "五-指令数据构建提升方法",
+      "chapter": 5,
+      "chapterLabel": "五",
+      "item": "指令数据构建提升方法",
+      "globalNo": 34,
+      "marker": "拓展",
+      "difficulty": 2,
+      "examTypes": [
+        "概念",
+        "实现"
+      ],
+      "episode": "e27",
+      "episodes": [
+        "e27"
+      ]
+    },
+    {
+      "conceptId": "c5.5",
+      "label": "五-微调优化设置",
+      "chapter": 5,
+      "chapterLabel": "五",
+      "item": "微调优化设置",
+      "globalNo": 35,
+      "marker": "拓展",
+      "difficulty": 2,
+      "examTypes": [
+        "概念",
+        "实现"
+      ],
+      "episode": "e28",
+      "episodes": [
+        "e28"
+      ]
+    },
+    {
+      "conceptId": "c5.6",
+      "label": "五-数据组织策略",
+      "chapter": 5,
+      "chapterLabel": "五",
+      "item": "数据组织策略",
+      "globalNo": 36,
+      "marker": "拓展",
+      "difficulty": 2,
+      "examTypes": [
+        "概念",
+        "实现"
+      ],
+      "episode": "e27",
+      "episodes": [
+        "e27"
+      ]
+    },
+    {
+      "conceptId": "c5.7",
+      "label": "五-参数高效微调方法",
+      "chapter": 5,
+      "chapterLabel": "五",
+      "item": "参数高效微调方法",
+      "globalNo": 37,
+      "marker": "拓展",
+      "difficulty": 3,
+      "examTypes": [
+        "概念",
+        "公式",
+        "实现"
+      ],
+      "episode": "e29",
+      "episodes": [
+        "e29"
+      ]
+    },
+    {
+      "conceptId": "c6.1",
+      "label": "六-人类对齐的背景与标准",
+      "chapter": 6,
+      "chapterLabel": "六",
+      "item": "人类对齐的背景与标准",
+      "globalNo": 38,
+      "marker": "必修",
+      "difficulty": 1,
+      "examTypes": [
+        "概念"
+      ],
+      "episode": "e30",
+      "episodes": [
+        "e30"
+      ]
+    },
+    {
+      "conceptId": "c6.2",
+      "label": "六-人类偏好与反馈数据收集",
+      "chapter": 6,
+      "chapterLabel": "六",
+      "item": "人类偏好与反馈数据收集",
+      "globalNo": 39,
+      "marker": "拓展",
+      "difficulty": 2,
+      "examTypes": [
+        "概念"
+      ],
+      "episode": "e30",
+      "episodes": [
+        "e30"
+      ]
+    },
+    {
+      "conceptId": "c6.3",
+      "label": "六-非强化学习训练的对齐方法",
+      "chapter": 6,
+      "chapterLabel": "六",
+      "item": "非强化学习训练的对齐方法",
+      "globalNo": 40,
+      "marker": "拓展",
+      "difficulty": 2,
+      "examTypes": [
+        "概念",
+        "公式",
+        "实现"
+      ],
+      "episode": "e31",
+      "episodes": [
+        "e31"
+      ]
+    },
+    {
+      "conceptId": "c6.4",
+      "label": "六-奖励模型训练",
+      "chapter": 6,
+      "chapterLabel": "六",
+      "item": "奖励模型训练",
+      "globalNo": 41,
+      "marker": "拓展",
+      "difficulty": 2,
+      "examTypes": [
+        "概念",
+        "公式",
+        "实现"
+      ],
+      "episode": "e32",
+      "episodes": [
+        "e32"
+      ]
+    },
+    {
+      "conceptId": "c6.5",
+      "label": "六-幻象",
+      "chapter": 6,
+      "chapterLabel": "六",
+      "item": "幻象",
+      "globalNo": 42,
+      "marker": "加考",
+      "difficulty": 3,
+      "examTypes": [
+        "概念",
+        "实现"
+      ],
+      "episode": "e33",
+      "episodes": [
+        "e33"
+      ]
+    },
+    {
+      "conceptId": "c7.1",
+      "label": "七-解码方法",
+      "chapter": 7,
+      "chapterLabel": "七",
+      "item": "解码方法",
+      "globalNo": 43,
+      "marker": "必修",
+      "difficulty": 1,
+      "examTypes": [
+        "概念",
+        "公式"
+      ],
+      "episode": "e34",
+      "episodes": [
+        "e34"
+      ]
+    },
+    {
+      "conceptId": "c7.2",
+      "label": "七-随机采样及改进策略",
+      "chapter": 7,
+      "chapterLabel": "七",
+      "item": "随机采样及改进策略",
+      "globalNo": 44,
+      "marker": "加考",
+      "difficulty": 2,
+      "examTypes": [
+        "概念",
+        "公式",
+        "实现"
+      ],
+      "episode": "e35",
+      "episodes": [
+        "e35"
+      ]
+    },
+    {
+      "conceptId": "c7.3",
+      "label": "七-解码加速算法与实践",
+      "chapter": 7,
+      "chapterLabel": "七",
+      "item": "解码加速算法与实践",
+      "globalNo": 45,
+      "marker": "加考",
+      "difficulty": 3,
+      "examTypes": [
+        "概念"
+      ],
+      "episode": "e36",
+      "episodes": [
+        "e36"
+      ]
+    },
+    {
+      "conceptId": "c7.4",
+      "label": "七-低资源部署策略",
+      "chapter": 7,
+      "chapterLabel": "七",
+      "item": "低资源部署策略",
+      "globalNo": 46,
+      "marker": "加考",
+      "difficulty": 3,
+      "examTypes": [
+        "概念",
+        "实现"
+      ],
+      "episode": "e37",
+      "episodes": [
+        "e37"
+      ]
+    },
+    {
+      "conceptId": "c7.5",
+      "label": "七-模型压缩方法：蒸馏、剪枝、量化",
+      "chapter": 7,
+      "chapterLabel": "七",
+      "item": "模型压缩方法：蒸馏、剪枝、量化",
+      "globalNo": 47,
+      "marker": "拓展",
+      "difficulty": 3,
+      "examTypes": [
+        "概念",
+        "实现"
+      ],
+      "episode": "e38",
+      "episodes": [
+        "e38"
+      ]
+    },
+    {
+      "conceptId": "c7.6",
+      "label": "七-资源管理与性能优化",
+      "chapter": 7,
+      "chapterLabel": "七",
+      "item": "资源管理与性能优化",
+      "globalNo": 48,
+      "marker": "加考",
+      "difficulty": 3,
+      "examTypes": [
+        "概念"
+      ],
+      "episode": "e39",
+      "episodes": [
+        "e39"
+      ]
+    },
+    {
+      "conceptId": "c8.1",
+      "label": "八-提示工程",
+      "chapter": 8,
+      "chapterLabel": "八",
+      "item": "提示工程",
+      "globalNo": 49,
+      "marker": "必修",
+      "difficulty": 1,
+      "examTypes": [
+        "概念",
+        "简答"
+      ],
+      "episode": "e40",
+      "episodes": [
+        "e40"
+      ]
+    },
+    {
+      "conceptId": "c8.2",
+      "label": "八-人工提示设计",
+      "chapter": 8,
+      "chapterLabel": "八",
+      "item": "人工提示设计",
+      "globalNo": 50,
+      "marker": "必修",
+      "difficulty": 1,
+      "examTypes": [
+        "概念",
+        "实现"
+      ],
+      "episode": "e41",
+      "episodes": [
+        "e41"
+      ]
+    },
+    {
+      "conceptId": "c8.3",
+      "label": "八-上下文学习",
+      "chapter": 8,
+      "chapterLabel": "八",
+      "item": "上下文学习",
+      "globalNo": 51,
+      "marker": "拓展",
+      "difficulty": 2,
+      "examTypes": [
+        "概念",
+        "实现"
+      ],
+      "episode": "e42",
+      "episodes": [
+        "e42"
+      ]
+    },
+    {
+      "conceptId": "c8.4",
+      "label": "八-思维链提示",
+      "chapter": 8,
+      "chapterLabel": "八",
+      "item": "思维链提示",
+      "globalNo": 52,
+      "marker": "拓展",
+      "difficulty": 3,
+      "examTypes": [
+        "概念",
+        "实现"
+      ],
+      "episode": "e43",
+      "episodes": [
+        "e43"
+      ]
+    },
+    {
+      "conceptId": "c8.5",
+      "label": "八-检索增强",
+      "chapter": 8,
+      "chapterLabel": "八",
+      "item": "检索增强",
+      "globalNo": 53,
+      "marker": "加考",
+      "difficulty": 2,
+      "examTypes": [
+        "概念",
+        "实现"
+      ],
+      "episode": "e44",
+      "episodes": [
+        "e44",
+        "e60"
+      ]
+    },
+    {
+      "conceptId": "c9.1",
+      "label": "九-认知推理",
+      "chapter": 9,
+      "chapterLabel": "九",
+      "item": "认知推理",
+      "globalNo": 54,
+      "marker": "必修",
+      "difficulty": 1,
+      "examTypes": [
+        "概念"
+      ],
+      "episode": "e45",
+      "episodes": [
+        "e45"
+      ]
+    },
+    {
+      "conceptId": "c9.2",
+      "label": "九-长思维链模型",
+      "chapter": 9,
+      "chapterLabel": "九",
+      "item": "长思维链模型",
+      "globalNo": 55,
+      "marker": "必修",
+      "difficulty": 1,
+      "examTypes": [
+        "概念",
+        "实现"
+      ],
+      "episode": "e46",
+      "episodes": [
+        "e46"
+      ]
+    },
+    {
+      "conceptId": "c9.3",
+      "label": "九-基于监督微调的推理模型训练",
+      "chapter": 9,
+      "chapterLabel": "九",
+      "item": "基于监督微调的推理模型训练",
+      "globalNo": 56,
+      "marker": "拓展",
+      "difficulty": 2,
+      "examTypes": [
+        "概念",
+        "实现"
+      ],
+      "episode": "e47",
+      "episodes": [
+        "e47"
+      ]
+    },
+    {
+      "conceptId": "c9.4",
+      "label": "九-基于强化学习的推理模型训练",
+      "chapter": 9,
+      "chapterLabel": "九",
+      "item": "基于强化学习的推理模型训练",
+      "globalNo": 57,
+      "marker": "拓展",
+      "difficulty": 3,
+      "examTypes": [
+        "概念",
+        "公式",
+        "实现"
+      ],
+      "episode": "e47",
+      "episodes": [
+        "e47"
+      ]
+    },
+    {
+      "conceptId": "c9.5",
+      "label": "九-基于搜索的大模型推理",
+      "chapter": 9,
+      "chapterLabel": "九",
+      "item": "基于搜索的大模型推理",
+      "globalNo": 58,
+      "marker": "拓展",
+      "difficulty": 3,
+      "examTypes": [
+        "概念",
+        "实现"
+      ],
+      "episode": "e48",
+      "episodes": [
+        "e48"
+      ]
+    },
+    {
+      "conceptId": "c10.1",
+      "label": "十-智能体身份与角色（profile）设置",
+      "chapter": 10,
+      "chapterLabel": "十",
+      "item": "智能体身份与角色（profile）设置",
+      "globalNo": 59,
+      "marker": "必修",
+      "difficulty": 1,
+      "examTypes": [
+        "概念",
+        "实现"
+      ],
+      "episode": "e49",
+      "episodes": [
+        "e49"
+      ]
+    },
+    {
+      "conceptId": "c10.2",
+      "label": "十-智能体记忆机制",
+      "chapter": 10,
+      "chapterLabel": "十",
+      "item": "智能体记忆机制",
+      "globalNo": 60,
+      "marker": "拓展",
+      "difficulty": 2,
+      "examTypes": [
+        "概念",
+        "实现"
+      ],
+      "episode": "e50",
+      "episodes": [
+        "e50"
+      ]
+    },
+    {
+      "conceptId": "c10.3",
+      "label": "十-智能体工具使用",
+      "chapter": 10,
+      "chapterLabel": "十",
+      "item": "智能体工具使用",
+      "globalNo": 61,
+      "marker": "加考",
+      "difficulty": 2,
+      "examTypes": [
+        "概念",
+        "实现"
+      ],
+      "episode": "e51",
+      "episodes": [
+        "e51",
+        "e60"
+      ]
+    },
+    {
+      "conceptId": "c10.4",
+      "label": "十-多智能体通信结构",
+      "chapter": 10,
+      "chapterLabel": "十",
+      "item": "多智能体通信结构",
+      "globalNo": 62,
+      "marker": "拓展",
+      "difficulty": 3,
+      "examTypes": [
+        "概念",
+        "实现"
+      ],
+      "episode": "e52",
+      "episodes": [
+        "e52"
+      ]
+    },
+    {
+      "conceptId": "c10.5",
+      "label": "十-多智能体组件优化",
+      "chapter": 10,
+      "chapterLabel": "十",
+      "item": "多智能体组件优化",
+      "globalNo": 63,
+      "marker": "拓展",
+      "difficulty": 3,
+      "examTypes": [
+        "概念",
+        "实现"
+      ],
+      "episode": "e52",
+      "episodes": [
+        "e52"
+      ]
+    },
+    {
+      "conceptId": "c10.6",
+      "label": "十-智能体-人协作",
+      "chapter": 10,
+      "chapterLabel": "十",
+      "item": "智能体-人协作",
+      "globalNo": 64,
+      "marker": "拓展",
+      "difficulty": 3,
+      "examTypes": [
+        "概念",
+        "实现"
+      ],
+      "episode": "e52",
+      "episodes": [
+        "e52"
+      ]
+    },
+    {
+      "conceptId": "c10.7",
+      "label": "十-智能体交互环境",
+      "chapter": 10,
+      "chapterLabel": "十",
+      "item": "智能体交互环境",
+      "globalNo": 65,
+      "marker": "拓展",
+      "difficulty": 3,
+      "examTypes": [
+        "概念",
+        "实现"
+      ],
+      "episode": "e52",
+      "episodes": [
+        "e52"
+      ]
+    },
+    {
+      "conceptId": "c10.8",
+      "label": "十-智能体典型应用",
+      "chapter": 10,
+      "chapterLabel": "十",
+      "item": "智能体典型应用",
+      "globalNo": 66,
+      "marker": "拓展",
+      "difficulty": 2,
+      "examTypes": [
+        "概念",
+        "实现"
+      ],
+      "episode": "e52",
+      "episodes": [
+        "e52"
+      ]
+    },
+    {
+      "conceptId": "c11.1",
+      "label": "十一-评测流程",
+      "chapter": 11,
+      "chapterLabel": "十一",
+      "item": "评测流程",
+      "globalNo": 67,
+      "marker": "必修",
+      "difficulty": 1,
+      "examTypes": [
+        "概念",
+        "简答"
+      ],
+      "episode": "e53",
+      "episodes": [
+        "e53"
+      ]
+    },
+    {
+      "conceptId": "c11.2",
+      "label": "十一-评测指标",
+      "chapter": 11,
+      "chapterLabel": "十一",
+      "item": "评测指标",
+      "globalNo": 68,
+      "marker": "必修",
+      "difficulty": 1,
+      "examTypes": [
+        "概念",
+        "公式",
+        "实现"
+      ],
+      "episode": "e54",
+      "episodes": [
+        "e54"
+      ]
+    },
+    {
+      "conceptId": "c11.3",
+      "label": "十一-评测范式与方法",
+      "chapter": 11,
+      "chapterLabel": "十一",
+      "item": "评测范式与方法",
+      "globalNo": 69,
+      "marker": "必修",
+      "difficulty": 1,
+      "examTypes": [
+        "概念"
+      ],
+      "episode": "e55",
+      "episodes": [
+        "e55"
+      ]
+    },
+    {
+      "conceptId": "c11.4",
+      "label": "十一-公开综合评测集",
+      "chapter": 11,
+      "chapterLabel": "十一",
+      "item": "公开综合评测集",
+      "globalNo": 70,
+      "marker": "拓展",
+      "difficulty": 2,
+      "examTypes": [
+        "概念"
+      ],
+      "episode": "e55",
+      "episodes": [
+        "e55"
+      ]
+    },
+    {
+      "conceptId": "c11.5",
+      "label": "十一-语言能力评测",
+      "chapter": 11,
+      "chapterLabel": "十一",
+      "item": "语言能力评测",
+      "globalNo": 71,
+      "marker": "拓展",
+      "difficulty": 2,
+      "examTypes": [
+        "概念"
+      ],
+      "episode": "e56",
+      "episodes": [
+        "e56"
+      ]
+    },
+    {
+      "conceptId": "c11.6",
+      "label": "十一-知识利用能力评测",
+      "chapter": 11,
+      "chapterLabel": "十一",
+      "item": "知识利用能力评测",
+      "globalNo": 72,
+      "marker": "拓展",
+      "difficulty": 2,
+      "examTypes": [
+        "概念"
+      ],
+      "episode": "e56",
+      "episodes": [
+        "e56"
+      ]
+    },
+    {
+      "conceptId": "c11.7",
+      "label": "十一-复杂推理评测",
+      "chapter": 11,
+      "chapterLabel": "十一",
+      "item": "复杂推理评测",
+      "globalNo": 73,
+      "marker": "拓展",
+      "difficulty": 2,
+      "examTypes": [
+        "概念"
+      ],
+      "episode": "e56",
+      "episodes": [
+        "e56"
+      ]
+    },
+    {
+      "conceptId": "c11.8",
+      "label": "十一-其他评测",
+      "chapter": 11,
+      "chapterLabel": "十一",
+      "item": "其他评测",
+      "globalNo": 74,
+      "marker": "拓展",
+      "difficulty": 3,
+      "examTypes": [
+        "概念"
+      ],
+      "episode": "e57",
+      "episodes": [
+        "e57"
+      ]
+    },
+    {
+      "conceptId": "c12.1",
+      "label": "十二-模型偏见",
+      "chapter": 12,
+      "chapterLabel": "十二",
+      "item": "模型偏见",
+      "globalNo": 75,
+      "marker": "必修",
+      "difficulty": 1,
+      "examTypes": [
+        "概念",
+        "案例分析"
+      ],
+      "episode": "e58",
+      "episodes": [
+        "e58"
+      ]
+    },
+    {
+      "conceptId": "c12.2",
+      "label": "十二-隐私保护",
+      "chapter": 12,
+      "chapterLabel": "十二",
+      "item": "隐私保护",
+      "globalNo": 76,
+      "marker": "拓展",
+      "difficulty": 2,
+      "examTypes": [
+        "概念"
+      ],
+      "episode": "e59",
+      "episodes": [
+        "e59"
+      ]
+    },
+    {
+      "conceptId": "c12.3",
+      "label": "十二-数据安全",
+      "chapter": 12,
+      "chapterLabel": "十二",
+      "item": "数据安全",
+      "globalNo": 77,
+      "marker": "拓展",
+      "difficulty": 3,
+      "examTypes": [
+        "概念"
+      ],
+      "episode": "e59",
+      "episodes": [
+        "e59"
+      ]
+    }
+  ],
+  "derivedEpisodeLinks": [
+    {
+      "episode": "e60",
+      "conceptId": "c10.3",
+      "materialQuestion": "T1",
+      "knowledgePoint": "十-智能体工具使用"
+    },
+    {
+      "episode": "e60",
+      "conceptId": "c8.5",
+      "materialQuestion": "T2",
+      "knowledgePoint": "八-提示学习-检索增强"
+    }
+  ],
+  "parseNotes": [
+    {
+      "episode": "e61",
+      "raw": "七-解码加速（早退）",
+      "reason": "材料题知识点无法唯一对应附录 A 条目，未强行匹配"
+    },
+    {
+      "episode": "e61",
+      "raw": "九-长思维链",
+      "reason": "材料题知识点无法唯一对应附录 A 条目，未强行匹配"
+    },
+    {
+      "episode": "e61",
+      "raw": "十一-评测",
+      "reason": "材料题知识点无法唯一对应附录 A 条目，未强行匹配"
+    },
+    {
+      "episode": "e62",
+      "raw": "全",
+      "reason": "模考集覆盖全部条目，不展开为条目链接"
+    },
+    {
+      "episode": "e63",
+      "raw": "全",
+      "reason": "模考集覆盖全部条目，不展开为条目链接"
+    }
+  ]
+}

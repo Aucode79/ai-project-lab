@@ -1,0 +1,48 @@
+# 机械 · 校验门（schema 校验的空间化：通过走直道、拒绝走侧岔）
+assetId: mach_verify_gate
+kind: parametric
+blockTypes: [code_block, flow_]
+conceptIds: []
+footprint: [3, 2]
+anchor: bottom-center
+ports:
+  - id: input
+    kind: BOOL
+    dir: in
+  - id: pass
+    kind: BOOL
+    dir: out
+  - id: reject
+    kind: BOOL
+    dir: out
+  - id: control
+    kind: BOOL
+    dir: in
+defaults:
+  door_width: 1.0
+  fail_closed: true
+shots:
+  - shot: iso
+    action: idle
+    duration: 3.0
+    output: assets/mach_verify_gate/iso_idle/
+  - shot: iso
+    action: run
+    duration: 4.0
+    output: assets/mach_verify_gate/iso_run/
+  - shot: close
+    action: open
+    duration: 2.0
+    output: assets/mach_verify_gate/close_open/
+  - shot: close
+    action: close
+    duration: 2.0
+    output: assets/mach_verify_gate/close_close/
+  - shot: iso
+    action: fail
+    duration: 3.0
+    output: assets/mach_verify_gate/iso_fail/
+  - shot: front
+    action: fail
+    duration: 3.0
+    output: assets/mach_verify_gate/front_fail/

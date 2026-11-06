@@ -1,0 +1,28 @@
+# 基础件 · 标签牌（世界内的指向牌与标注；无端口）
+assetId: base_label
+kind: parametric
+blockTypes: [text_]
+conceptIds: []
+footprint: [2, 1]
+anchor: bottom-center
+ports: []
+defaults:
+  label_text: "标签"
+  panel_width: 1.5
+shots:
+  - shot: iso
+    action: idle
+    duration: 3.0
+    output: assets/base_label/iso_idle/
+  - shot: iso
+    action: run
+    duration: 3.0
+    output: assets/base_label/iso_run/
+  - shot: front
+    action: idle
+    duration: 2.0
+    output: assets/base_label/front_idle/
+  - shot: close
+    action: idle
+    duration: 2.0
+    output: assets/base_label/close_idle/

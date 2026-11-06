@@ -1,0 +1,50 @@
+# 概念装置 · 执行器（docs/10-契约/mini-codex.md §一 #9；L5 四件之一）。
+# 真跑代码与命令：带观测窗的机器，输出在窗里流动。
+# 世界状态注册见 game/scripts/levels/l5/l5_flow.gd setup_world()——
+# assetId/defaults/端口形状照抄运行时注册，防漂移。
+# blockTypes 理由：流程机械——执行节点（编译器投影 block=generate_call），
+# 工具调用的发动点，故家族一之外加 flow_；又加 output_（方块体系 §五 #9：
+# 生成的图、检测结果、原始返回）——执行器带观测窗、输出在窗里流动，
+# 观测窗展示的正是工具调用回来的原始输出。
+# 注：block 是 world_to_graph 的编译器投影参数（非学员可调），照抄注册值。
+assetId: conc_runner
+kind: parametric
+blockTypes: [code_block, flow_, output_]
+conceptIds: [c10.3]
+footprint: [2, 1]
+anchor: bottom-center
+ports:
+  - id: in
+    kind: ANALOG
+    dir: in
+  - id: out
+    kind: ANALOG
+    dir: out
+  - id: ctl
+    kind: BOOL
+    dir: in
+  - id: next
+    kind: BOOL
+    dir: out
+defaults:
+  block: "generate_call"
+  command: "run.count"
+  bad_calls: 1
+scene: game/scenes/levels/l5/components/runner.tscn
+shots:
+  - shot: iso
+    action: idle
+    duration: 3.0
+    output: assets/conc_runner/iso_idle/
+  - shot: iso
+    action: run
+    duration: 5.0
+    output: assets/conc_runner/iso_run/
+  - shot: front
+    action: idle
+    duration: 2.0
+    output: assets/conc_runner/front_idle/
+  - shot: close
+    action: run
+    duration: 4.0
+    output: assets/conc_runner/close_run/

@@ -1,0 +1,36 @@
+# 概念装置 · 机械臂（docs/10-契约/mini-codex.md §一 #13；L2 三件之一）。
+# 一切修改的工具头载体：放入（新增）或先取旧再放新（修改），落点留常驻标记。
+# 世界状态注册见 game/scripts/levels/l2/l2_flow.gd setup_world()——
+# assetId/defaults/端口形状照抄运行时注册（l2_arm），防漂移。
+# blockTypes 理由：流程机械（工具头）——写动作的载体（抓/放/替换），
+# 不承载表格或展示拓扑，归家族一 code_block。
+assetId: l2_arm
+kind: parametric
+blockTypes: [code_block]
+conceptIds: [c10.3]
+footprint: [2, 2]
+anchor: bottom-center
+ports:
+  - id: grip_busy
+    kind: BOOL
+    dir: out
+defaults:
+  step_seconds: 0.6
+scene: game/scenes/levels/l2/components/arm.tscn
+shots:
+  - shot: iso
+    action: idle
+    duration: 3.0
+    output: assets/l2_arm/iso_idle/
+  - shot: iso
+    action: run
+    duration: 5.0
+    output: assets/l2_arm/iso_run/
+  - shot: front
+    action: idle
+    duration: 2.0
+    output: assets/l2_arm/front_idle/
+  - shot: close
+    action: run
+    duration: 4.0
+    output: assets/l2_arm/close_run/

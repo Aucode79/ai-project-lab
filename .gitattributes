@@ -1,0 +1,9 @@
+# 跨 Windows/WSL 双栖：shell 脚本必须保持 LF，否则 WSL 里报 $'\r': command not found
+*.sh text eol=lf
+*.py text eol=lf
+*.gd text eol=lf
+*.tscn text eol=lf
+*.tres text eol=lf
+*.godot text eol=lf
+*.json text
+*.md text

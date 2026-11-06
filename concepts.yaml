@@ -1,0 +1,233 @@
+# AI Project Lab · 概念映射（spec docs/10-契约/specs/2026-09-13-sandbox-as-studio-design.md §4）。
+# 唯一事实源之一：微课按它取片段、沙盒按它摆机械、诊断题按它命题。
+#   planned_assets  尚未落库的计划中资产；tools/validate_concepts.py 据此放行
+#                   assetIds 引用（输出 PLANNED 提示，不失败）；资产落库后从本表删除
+#   concepts        concept 记录（§4.2 全字段）；conceptId/label/episodes 对账
+#                   research/lmcc/outline_index.json，不自造、不截断
+# 记录构成：五关视频集（spec §9.1.1）覆盖 c8.1/c8.5/c10.1/c10.2/c10.3 五条；
+#   spec §4.6 样例五条 c3.1/c3.2/c4.5/c10.3/c1.1（c10.3 两边重合，去重后共 9 条）。
+# 过渡口径：L2–L5 的十二件关卡组件已于 2026-09-14 落库（assets/ 主索引 26 件），
+#   c8.1/c10.2/c8.5 已改挂对应真件但暂保持陈列口径（不挂假旋钮，fail 仍用
+#   contrast 替代）；升为 operable 待微课命题给出真 knob/fail 后再做。
+#   c10.3 的旋钮 schema_fields 已改绑真校验门（conc_verify_gate.required_keys），
+#   专用件 conc_tool_slot_gate 仍未建、保留在 planned_assets。
+
+planned_assets:
+  - conc_attn_beam
+  - conc_arch_swap
+  - conc_batch_belt
+  - conc_tool_slot_gate
+  - concept_rings
+
+concepts:
+  # ---- spec §4.6 样例（c1.1，陈列）----
+
+  - conceptId: c1.1
+    label: "一-人工智能相关概念定义"
+    episodes: [e03]
+    kind: exhibit
+    examType: 概念辨析
+    knob: []
+    assetIds: [concept_rings]
+    knobBinding: {}
+    observe: []
+    fail: []
+    contrast: "「机器表现出智能行为」与「机器拥有智能」易混：概念环只展示可复现、可度量的智能行为，不承诺机器内部拥有智能"
+    caption: "机器表现出智能行为，不等于机器拥有智能"
+    formulaRef: ""
+
+  # ---- spec §4.6 样例（c3.1 / c3.2 / c4.5，可操作）----
+
+  - conceptId: c3.1
+    label: "三-注意力机制"
+    episodes: [e11, e12]
+    kind: operable
+    examType: 计算
+    knob:
+      - key: d_k
+        range: "正整数 1..16"
+      - key: temperature
+        range: "实数 0.1..2.0"
+    assetIds: [conc_attn_beam]
+    knobBinding:
+      d_k: {assetId: conc_attn_beam, paramKey: d_k}
+      temperature: {assetId: conc_attn_beam, paramKey: temperature}
+    observe:
+      - observeId: o1
+        targetRef: conc_attn_beam
+        kind: shape
+        expect: "softmax 归一化后，束状连线粗细随各 key 权重变化，权重总和恒为 1"
+    fail:
+      - failId: c3.1:1
+        condition: "注意力权重全部塌到同一个 key（其余权重为 0）"
+        symptom: "只剩一条最粗的束，其余束消失，softmax 输出退化为 one-hot"
+    contrast: ""
+    caption: "归一化之后，谁的权重高，束就往谁那里粗"
+    formulaRef: "Attention(Q,K,V) = softmax(QK^T / sqrt(d_k)) · V"
+
+  - conceptId: c3.2
+    label: "三-主流架构"
+    episodes: [e13]
+    kind: operable
+    examType: 概念辨析
+    knob:
+      - key: assembly_mode
+        range: [encoder_only, decoder_only, encoder_decoder]
+    assetIds: [conc_arch_swap]
+    knobBinding:
+      assembly_mode: {assetId: conc_arch_swap, paramKey: assembly_mode}
+    observe:
+      - observeId: o1
+        targetRef: conc_arch_swap
+        kind: state
+        expect: "装配方式切换后，数据流可见方向改变：仅编码器为双向，含解码器为单向自回归"
+    fail:
+      - failId: c3.2:1
+        condition: "给自回归生成任务装了仅编码器架构"
+        symptom: "装置缺逐步生成的单向通路，生成步无法推进，状态层报拓扑错误"
+    contrast: ""
+    caption: "装配方式换了，数据流的方向跟着换"
+    formulaRef: ""
+
+  - conceptId: c4.5
+    label: "四-优化设置：基于批次数据的训练方法"
+    episodes: [e20]
+    kind: operable
+    examType: 计算
+    knob:
+      - key: batch_size
+        range: "正整数 1..64"
+    assetIds: [conc_batch_belt]
+    knobBinding:
+      batch_size: {assetId: conc_batch_belt, paramKey: batch_size}
+    observe:
+      - observeId: o1
+        targetRef: conc_batch_belt
+        kind: value
+        expect: "每批方块数 = batch_size；总步数 = ceil(样本数 / batch_size)"
+      - observeId: o2
+        targetRef: conc_batch_belt
+        kind: motion
+        expect: "方块按批成组上带，组的大小随 batch_size 改变"
+    fail:
+      - failId: c4.5:1
+        condition: "样本数不能被 batch_size 整除时，最后一批未取整（直接丢弃或越界）"
+        symptom: "末批方块数与剩余样本数对不上，计数器总数不等于样本数"
+    contrast: ""
+    caption: "batch size 定了每批多少方块、一共走几步"
+    formulaRef: "steps = ceil(N / batch_size)"
+
+  # ---- 五关视频集覆盖（spec §9.1.1：e40/e50；c8.1/c8.5 过渡陈列）----
+
+  - conceptId: c8.1
+    label: "八-提示工程"
+    episodes: [e40]
+    kind: exhibit
+    examType: 概念辨析
+    knob: []
+    assetIds: [base_label, conc_thinker, conc_plan_board, conc_tool_belt]
+    knobBinding: {}
+    observe: []
+    fail: []
+    contrast: "提示工程与「换个说法再问一遍」易混：边界在是否有可复用的设计方法与效果度量；改提示改的是输入结构，不动模型参数"
+    caption: "提示工程：改的是输入的结构，不是模型的参数"
+    formulaRef: ""
+
+  - conceptId: c8.5
+    label: "八-检索增强"
+    episodes: [e44, e60]
+    kind: exhibit
+    examType: 程序填空
+    knob: []
+    assetIds: [base_slot, l2_scanner]
+    knobBinding: {}
+    observe: []
+    fail: []
+    contrast: "检索增强与长上下文易混：前者按需取回外挂内容插入上下文，后者把内容预先塞进窗口；边界在「内容何时进入上下文」"
+    caption: "检索增强：先取回，再回答"
+    formulaRef: ""
+
+  # ---- 五关视频集覆盖（spec §9.1.1：e49/e50/e51/e60）----
+
+  - conceptId: c10.1
+    label: "十-智能体身份与角色（profile）设置"
+    episodes: [e49]
+    kind: operable
+    examType: 概念辨析
+    knob:
+      - key: task_text
+        range: "非空文本，≤24 字（任务牌 12 列 ×2 行折行）"
+      - key: display_name
+        range: "非空文本，≤8 字"
+      - key: role
+        range: "文本，≤28 字（铭牌 14 列 ×2 行折行）"
+    assetIds: [conc_task_board, conc_nameplate]
+    knobBinding:
+      task_text: {assetId: conc_task_board, paramKey: task_text}
+      display_name: {assetId: conc_nameplate, paramKey: display_name}
+      role: {assetId: conc_nameplate, paramKey: role}
+    observe:
+      - observeId: o1
+        targetRef: conc_task_board
+        kind: state
+        expect: "学员 set_param(task_text) 成功后任务牌灯字翻「正在」；codex 接活（task_in≥1.0）后翻「完成」；写操作失败翻「出错」"
+      - observeId: o2
+        targetRef: conc_task_board:task_out
+        kind: value
+        expect: "codex 接活后 task_out=1.0，交付后复位 0.0"
+      - observeId: o3
+        targetRef: conc_nameplate:identity_out
+        kind: value
+        expect: "codex 报身份后 identity_out=1.0，铭牌青色边框发光常亮"
+    fail:
+      - failId: c10.1:1
+        condition: "步记录里没有任何针对本任务牌成功的 set_param(task_text)，任务牌却显示「完成」"
+        symptom: "状态灯跳过「正在」直接变绿，步记录缺 set_param 步"
+      - failId: c10.1:2
+        condition: "task_text 为空字符串仍宣告已下任务"
+        symptom: "任务牌面板停在占位句「（等一条任务）」，灯却在「正在」"
+    contrast: ""
+    caption: "任务牌接下一条任务，铭牌亮出 codex 的身份"
+    formulaRef: ""
+
+  - conceptId: c10.2
+    label: "十-智能体记忆机制"
+    episodes: [e50]
+    kind: exhibit
+    examType: 概念辨析
+    knob: []
+    assetIds: [base_container, conc_context_container, conc_memory_cabinet]
+    knobBinding: {}
+    observe: []
+    fail: []
+    contrast: "显式记忆与隐式记忆易混：显式=写进文件的记录，要一次显式读写；隐式=上下文窗口自动携带的内容，无需动作。边界在「是否需要显式存取」"
+    caption: "记忆柜里存显式记录，上下文窗口自动带隐式记忆"
+    formulaRef: ""
+
+  # ---- spec §4.6 样例 + 五关覆盖（e51/e60 双重身份）----
+
+  - conceptId: c10.3
+    label: "十-智能体工具使用"
+    episodes: [e51, e60]
+    kind: operable
+    examType: 程序阅读
+    knob:
+      - key: schema_fields
+        range: "工具方声明的返回字段名集合（如 {path, mode, content} 的子集）"
+    assetIds: [conc_tool_slot_gate, l2_scanner, l2_arm, l2_file_cabinet,
+               conc_runner, conc_verify_gate, conc_bypass, conc_loop_gallery,
+               conc_ops_chart]
+    knobBinding:
+      schema_fields: {assetId: conc_verify_gate, paramKey: required_keys}
+    observe:
+      - observeId: o1
+        targetRef: conc_verify_gate
+        kind: state
+        expect: "返回字段集与 schema 声明的字段集相等时闸门开，不等时闸门关"
+    fail:
+      - failId: c10.3:1
+        condition: "工具返回的字段集与 schema 声明的字段集不等"
+        symptom: "校验闸门保持关闭，该次调用在步记录里记为失败"
+    contrast: ""
+    caption: "工具插槽认 schema：字段对上，闸门开"
+    formulaRef: ""
